@@ -1,0 +1,17 @@
+@use '../../../assets/styles/settings';
+@use '../../../assets/styles/tools';
+
+:host(mustache-notification-icon) {
+  @include tools.navbarIcon;
+  position: relative;
+
+  &:hover > .icon--navbar {
+    filter: settings.$filter-primary-500;
+  }
+}
+
+mustache-badge {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+}

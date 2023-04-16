@@ -1,0 +1,19 @@
+@use '../../../assets/styles/settings';
+
+:host(mustache-language-selector) {
+  display: flex;
+  align-items: center;
+  border-radius: settings.$border-radius-xs;
+  padding: settings.$spacing-2xs settings.$spacing-xs;
+  transition: background-color 0.25s ease;
+  background-color: settings.$primary;
+
+  &:hover {
+    cursor: pointer;
+    background-color: settings.$primary-100;
+  }
+
+  .icon--chevron {
+    margin-left: settings.$spacing-2xs;
+  }
+}

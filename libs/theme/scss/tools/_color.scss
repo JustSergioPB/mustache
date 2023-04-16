@@ -1,0 +1,38 @@
+@use '../settings';
+
+@mixin iconColor($color) {
+  filter: map-get(settings.$filters, 'filter-' + $color + '-500');
+}
+
+@mixin buttonColor($color) {
+  background-color: map-get(settings.$colors, $color + '-500');
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: map-get(settings.$colors, $color + '-300');
+  }
+
+  &:active {
+    background-color: map-get(settings.$colors, $color + '-300');
+  }
+
+  &.button--empty {
+    background-color: settings.$bg-color;
+    color: map-get(settings.$colors, $color + '-500');
+    transition: background-color 0.25s;
+
+    &:hover {
+      background-color: map-get(settings.$colors, $color);
+    }
+  }
+}
+
+@mixin shapeColor($color) {
+  background-color: map-get(settings.$colors, $color);
+}
+
+@mixin hoverShapeColor($color) {
+  &:hover {
+    background-color: map-get(settings.$colors, $color + '-100');
+  }
+}

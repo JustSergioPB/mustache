@@ -1,0 +1,22 @@
+<button
+  class="button button--text button--{{ size }}"
+  [ngClass]="{
+    'button--empty': empty,
+    'button--disabled': disabled,
+    'button--primary': !disabled && variant === 'primary',
+    'button--accent': !disabled && variant === 'accent',
+    'button--danger': !disabled && variant === 'danger',
+    'button--success': !disabled && variant === 'success',
+    'button--warn': !disabled && variant === 'warn',
+    'button--discrete': !disabled && variant === 'discrete'
+  }"
+  [disabled]="disabled"
+>
+  <img
+    *ngIf="iconSrc"
+    class="icon icon--m icon--empty icon--{{ variant }}"
+    src="{{ iconSrc }}"
+    alt="'settings'"
+  />
+  <ng-content></ng-content>
+</button>

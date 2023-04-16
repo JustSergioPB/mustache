@@ -1,0 +1,51 @@
+@use '../../../assets/styles/settings';
+
+:host(mustache-notification-dropdown) {
+  position: relative;
+}
+
+.dropdown {
+  top: settings.$spacing-3xl; //TODO: do this calculation using icon heigth + space
+  left: -23.5rem; //TODO: do this calculation using dropdown and icon widths
+  width: 26rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: settings.$spacing-s settings.$spacing-m;
+    border-bottom: solid settings.$border-thickness-m settings.$gray-200;
+  }
+
+  &__body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: settings.$notifiacition-height * 3;
+
+    &--empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & .icon-wrapper {
+        margin-top: settings.$spacing-m;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: settings.$border-radius-xs;
+
+        &--primary {
+          background-color: settings.$primary;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    padding: settings.$spacing-s settings.$spacing-m;
+    border-top: solid settings.$border-thickness-m settings.$gray-200;
+  }
+}

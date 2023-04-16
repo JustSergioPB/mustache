@@ -1,0 +1,23 @@
+@use '../../../assets/styles/settings';
+
+:host(mustache-banner) {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: settings.$spacing-xs;
+  }
+}
+
+@media (max-width: settings.$breakpoint-s) {
+  .icon {
+    font-size: settings.$font-size-2xl;
+    height: settings.$font-size-2xl;
+    width: settings.$font-size-2xl;
+    margin-right: 0;
+  }
+
+  h1 {
+    display: none;
+  }
+}

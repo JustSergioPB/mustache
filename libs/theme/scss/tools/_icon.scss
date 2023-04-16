@@ -1,0 +1,15 @@
+@use '../settings';
+
+@mixin navbarIcon() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: settings.$border-radius-xs;
+  padding: settings.$spacing-xs;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: settings.$primary;
+  }
+}

@@ -1,0 +1,63 @@
+<div class="previous">
+  <div
+    *ngIf="notification.iconSrc"
+    class="circle circle--{{ notification.variant }} circle--s"
+  >
+    <img
+      class="icon icon--m icon--empty icon--{{ notification.variant }}"
+      src="{{ notification.iconSrc }}"
+      alt="'menu'"
+    />
+  </div>
+</div>
+<div class="content">
+  <div class="content__header">
+    <div class="content__title">
+      <p class="title text--comment-semibold">{{ notification.title }}</p>
+    </div>
+    <div class="content__actions">
+      <mustache-tooltip [message]="'Remove'">
+        <button
+          class="icon-wrapper icon-wrapper--navbar"
+          (click)="onRemoveClicked()"
+        >
+          <img
+            class="icon icon--delete icon--xs icon--empty icon--navbar"
+            src="'../../../../../assets/icons/x.svg"
+            alt="'menu'"
+          />
+        </button>
+      </mustache-tooltip>
+      <mustache-tooltip
+        [message]="
+          notification.status === 'unread' ? 'Mark as read' : 'Mark as unread'
+        "
+      >
+        <button
+          class="dot-wrapper {{
+            notification.status === 'unread'
+              ? 'dot-wrapper--primary'
+              : 'dot-wrapper--discrete'
+          }}"
+          (click)="onReadClicked()"
+        >
+          <div
+            class="dot dot--s {{
+              notification.status === 'unread'
+                ? 'dot--primary'
+                : 'dot--discrete'
+            }}"
+          ></div>
+        </button>
+      </mustache-tooltip>
+    </div>
+  </div>
+  <div class="content__description">
+    <p class="text--comment-medium text--gray-600">
+      {{ notification.description }}
+    </p>
+  </div>
+  <p class="text--label-regular text--gray-500">
+    {{ notification.date | notificationDate }}
+  </p>
+</div>

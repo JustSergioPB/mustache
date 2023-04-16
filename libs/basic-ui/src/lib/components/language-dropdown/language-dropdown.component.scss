@@ -1,0 +1,34 @@
+@use '../../../assets/styles/settings';
+
+:host(mustache-language-dropdown) {
+  position: relative;
+}
+
+.dropdown {
+  top: settings.$spacing-2xl;
+  left: -5.5rem;
+  min-width: 9rem;
+  padding: settings.$spacing-s;
+}
+
+.dropdown__item {
+  display: flex;
+  align-items: center;
+  gap: settings.$spacing-s;
+  margin-bottom: settings.$spacing-xs;
+  padding: settings.$spacing-xs;
+  border-radius: settings.$border-radius-xs;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: settings.$primary;
+
+    .text--comment {
+      color: settings.$primary-500;
+    }
+  }
+}

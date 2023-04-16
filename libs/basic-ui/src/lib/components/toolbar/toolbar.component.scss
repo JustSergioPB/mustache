@@ -1,0 +1,37 @@
+@use '../../../assets/styles/settings';
+
+:host(mustache-toolbar) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //TODO: separate this into level logic for config
+  //border-bottom: solid settings.$border-thickness-m settings.$gray-200;
+  //box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  padding: settings.$spacing-l settings.$spacing-xl;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: settings.$spacing-xl;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: settings.$spacing-m;
+}
+
+@media (max-width: settings.$breakpoint-s) {
+  :host(mustache-toolbar) {
+    padding: settings.$spacing-m;
+    border-bottom: none;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: settings.$breakpoint-s) {
+  .icon--menu {
+    display: none;
+  }
+}

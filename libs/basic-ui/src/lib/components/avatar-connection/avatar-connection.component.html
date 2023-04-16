@@ -1,0 +1,15 @@
+<mustache-avatar
+  [imgSrc]="imgSrc"
+  [size]="size"
+  [variant]="variant"
+  [initial]="initial"
+></mustache-avatar>
+<div
+  class="dot dot--m"
+  [ngClass]="{
+    'dot--warn': status === 'inactive',
+    'dot--success': status === 'active',
+    'dot--discrete': status === 'out',
+    'dot--danger': status === 'busy'
+  }"
+></div>

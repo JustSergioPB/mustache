@@ -1,0 +1,6 @@
+@use '../settings';
+
+.emoji--m {
+  font-size: settings.$font-size-l;
+  line-height: settings.$line-height-l;
+}

@@ -1,0 +1,29 @@
+@use '../../../assets/styles/settings';
+
+:host(mustache-status) {
+  display: flex;
+  align-items: center;
+  gap: settings.$spacing-xs;
+  transition: background-color 0.3s;
+  border-radius: settings.$border-radius-xs;
+  margin-bottom: settings.$spacing-xs;
+  padding: settings.$spacing-xs settings.$spacing-s;
+
+  //TODO: refactor to not call this class directly
+  .text--comment-regular {
+    color: settings.$gray-500;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: settings.$primary;
+
+    .text--comment-regular {
+      color: settings.$primary-500;
+    }
+  }
+}

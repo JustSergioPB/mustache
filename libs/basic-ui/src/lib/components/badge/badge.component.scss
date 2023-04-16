@@ -1,0 +1,53 @@
+@use '../../../assets/styles/settings';
+
+@mixin badgeColor($color) {
+  background-color: map-get(settings.$colors, $color + '-500');
+}
+
+@mixin emptyColor($color) {
+  background-color: map-get(settings.$colors, $color);
+  color: map-get(settings.$colors, $color + '-500');
+}
+
+.badge {
+  display: block;
+  color: white;
+  padding: settings.$spacing-2xs settings.$spacing-xs;
+  border-radius: settings.$border-radius-s;
+
+  &--primary {
+    @include badgeColor('primary');
+
+    &.badge--empty {
+      @include emptyColor('primary');
+    }
+  }
+  &--accent {
+    @include badgeColor('accent');
+
+    &.badge--empty {
+      @include emptyColor('accent');
+    }
+  }
+  &--danger {
+    @include badgeColor('danger');
+
+    &.badge--empty {
+      @include emptyColor('danger');
+    }
+  }
+  &--warn {
+    @include badgeColor('warn');
+
+    &.badge--empty {
+      @include emptyColor('warn');
+    }
+  }
+  &--success {
+    @include badgeColor('success');
+
+    &.badge--empty {
+      @include emptyColor('success');
+    }
+  }
+}

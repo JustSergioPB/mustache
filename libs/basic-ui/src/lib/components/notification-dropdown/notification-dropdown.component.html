@@ -1,0 +1,55 @@
+<ng-content></ng-content>
+<div class="dropdown" [ngClass]="{ 'dropdown--visible': isOpen }">
+  <div class="dropdown__header">
+    <p class="text--body-semibold">Notifications</p>
+    <mustache-button
+      [variant]="'primary'"
+      [empty]="true"
+      [size]="'s'"
+      *ngIf="notifications.length > 0"
+      (click)="onReadAllClicked()"
+    >
+      Mark all as read
+    </mustache-button>
+  </div>
+  <div
+    class="dropdown__body"
+    [ngClass]="{ 'dropdown__body--empty': notifications.length === 0 }"
+  >
+    <ng-container *ngIf="notifications.length > 0; else emptyList">
+      <mustache-notification
+        *ngFor="let notification of notifications; let i = index"
+        [notification]="notification"
+        (click)="onNotificationClicked(i)"
+        (readClicked)="onReadClicked(i, $event)"
+        (removeClicked)="onRemoveClicked(i)"
+      >
+      </mustache-notification>
+    </ng-container>
+  </div>
+  <div class="dropdown__footer">
+    <mustache-button
+      class="button"
+      [variant]="'discrete'"
+      [empty]="true"
+      [size]="'s'"
+      (click)="onTurnOffClicked()"
+    >
+      Turn {{ notificationsOn ? 'off' : 'on' }} notifications
+    </mustache-button>
+  </div>
+</div>
+
+<ng-template #emptyList>
+  <p class="text--title-semibold">No notifications</p>
+  <p class="text--comment-medium text--gray-500">
+    If you receive notifications, they'll apear here
+  </p>
+  <div class="icon-wrapper icon-wrapper--primary">
+    <img
+      class="icon icon--l icon--empty icon--primary"
+      src="'../../../../../assets/icons/bell.svg"
+      alt="'menu'"
+    />
+  </div>
+</ng-template>

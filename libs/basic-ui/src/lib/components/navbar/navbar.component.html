@@ -1,0 +1,43 @@
+<ng-container *ngFor="let item of items; let i = index">
+  <ng-container
+    *ngTemplateOutlet="
+      item.leafs?.length > 0 ? dropdown : navigationItem;
+      context: { item: item, index: i }
+    "
+  ></ng-container>
+</ng-container>
+
+<ng-template let-item="item" #navigationItem>
+  <div
+    class="item"
+    [ngClass]="{ 'item--active': item.route === activeRoute }"
+    (click)="onItemClick(item)"
+  >
+    <p
+      class="text--comment-medium {{
+        item.route === activeRoute ? 'text--primary-500' : 'text--gray-600'
+      }}"
+    >
+      {{ item.title }}
+    </p>
+  </div>
+</ng-template>
+
+<ng-template let-item="item" let-index="index" #dropdown>
+  <mustache-dropdown
+    class="item"
+    [isOpen]="index === openDropdownIndex"
+    [ngClass]="{ 'item--active': item.route === activeRoute }"
+    [items]="item.leafs | leafToDropdown"
+    (itemClicked)="onItemClick(item, $event)"
+    (click)="onDropdownClick(index)"
+  >
+    <p
+      class="text--comment-medium {{
+        item.route === activeRoute ? 'text--primary-500' : 'text--gray-600'
+      }}"
+    >
+      {{ item.title }}
+    </p>
+  </mustache-dropdown>
+</ng-template>

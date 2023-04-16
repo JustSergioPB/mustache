@@ -1,0 +1,11 @@
+<ng-content></ng-content>
+<div class="dropdown" [ngClass]="{ 'dropdown--visible': isOpen }">
+  <div
+    class="dropdown__item"
+    *ngFor="let language of languages; let i = index"
+    (click)="onItemClick(i)"
+  >
+    <p mustacheEmoji="{{ language.iconSrc }}" class="emoji emoji--m"></p>
+    <p class="text--comment">{{ language.name }}</p>
+  </div>
+</div>

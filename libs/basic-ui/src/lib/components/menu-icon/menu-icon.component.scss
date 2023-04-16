@@ -1,0 +1,9 @@
+@use '../../../assets/styles/settings';
+@use '../../../assets/styles/tools';
+
+:host(mustache-menu-icon) {
+  @include tools.navbarIcon;
+  &:hover > .icon--navbar {
+    filter: settings.$filter-primary-500;
+  }
+}

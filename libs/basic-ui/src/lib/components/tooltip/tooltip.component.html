@@ -1,0 +1,14 @@
+<ng-content></ng-content>
+<div
+  class="tooltip"
+  [ngClass]="{
+    'tooltip--top': position === 'top',
+    'tooltip--bottom': position === 'bottom',
+    'tooltip--left': position === 'left',
+    'tooltip--right': position === 'right'
+  }"
+>
+  <p class="message text--label-regular text--gray">
+    {{ message }}
+  </p>
+</div>

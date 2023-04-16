@@ -1,0 +1,58 @@
+@use '../settings';
+
+.dot {
+  border-radius: 100%;
+
+  &--m {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  &--s {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  &--primary {
+    background-color: settings.$primary-500;
+  }
+
+  &--success {
+    background-color: settings.$success-500;
+  }
+
+  &--warn {
+    background-color: settings.$warn-500;
+  }
+
+  &--danger {
+    background-color: settings.$danger-500;
+  }
+
+  &--discrete {
+    background-color: settings.$gray-500;
+  }
+}
+
+.dot-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 100%;
+  border: solid settings.$border-thickness-m rgba(255, 255, 255, .4);
+  transition: border 0.3s;
+
+  &--primary {
+    &:hover {
+      border: solid settings.$border-thickness-m settings.$primary-500;
+    }
+  }
+
+  &--discrete {
+    &:hover {
+      border: solid settings.$border-thickness-m settings.$gray-500;
+    }
+  }
+}

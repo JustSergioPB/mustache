@@ -1,0 +1,12 @@
+<div class="circle circle--m circle--{{ variant }}">
+  <p
+    *ngIf="!imgSrc; else image"
+    class="text text--body-semibold text--{{ variant }}-500"
+  >
+    {{ initial }}
+  </p>
+</div>
+
+<ng-template #image>
+  <img class="circle__img" src="{{ imgSrc }}" alt="avatar" />
+</ng-template>

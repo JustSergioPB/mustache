@@ -1,0 +1,10 @@
+@use '../../../assets/styles/settings';
+@use '../../../assets/styles/tools';
+
+.button--icon {
+  border-radius: settings.$border-radius-m;
+  padding: settings.$spacing-s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,17 @@
+<ng-content></ng-content>
+<div class="dropdown" [ngClass]="{ 'dropdown--visible': isOpen }">
+  <div
+    class="dropdown__item"
+    *ngFor="let item of items; let i = index"
+    (click)="onItemClick(i)"
+  >
+    <div class="icon-wrapper icon-wrapper--primary">
+      <img
+        src="{{ item.iconSrc }}"
+        alt="Decorative"
+        class="icon icon--primary icon--empty icon--m"
+      />
+    </div>
+    <p class="text--comment">{{ item.title }}</p>
+  </div>
+</div>

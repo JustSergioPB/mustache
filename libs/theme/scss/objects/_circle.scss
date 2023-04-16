@@ -1,0 +1,34 @@
+@use '../tools';
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+
+  &--s {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &--m {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  &--primary {
+    @include tools.shapeColor('primary');
+  }
+  &--accent {
+    @include tools.shapeColor('accent');
+  }
+  &--danger {
+    @include tools.shapeColor('danger');
+  }
+  &--warn {
+    @include tools.shapeColor('warn');
+  }
+  &--success {
+    @include tools.shapeColor('success');
+  }
+}

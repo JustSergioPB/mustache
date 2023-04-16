@@ -1,0 +1,32 @@
+@use '../../../assets/styles/settings';
+
+:host(mustache-navbar) {
+  display: flex;
+  align-items: center;
+  gap: settings.$spacing-s;
+
+  .item {
+    padding: settings.$spacing-xs;
+    transition: background-color 0.25s ease;
+
+    &:not(.item--active) {
+      border-radius: settings.$border-radius-xs;
+
+      &:hover {
+        background-color: settings.$primary;
+
+        & > .text--comment-medium {
+          color: settings.$primary-500;
+        }
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--active {
+      border-bottom: solid settings.$border-thickness-m settings.$primary-500;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+<mustache-toolbar>
+  <ng-container left>
+    <mustache-banner [logoSrc]="'../assets/icons/cherry.svg'"
+      >Mustache</mustache-banner
+    >
+    <mustache-navbar
+      [items]="items"
+      [activeRoute]="activeRoute"
+      (itemClicked)="onItemClick($event)"
+    >
+    </mustache-navbar>
+  </ng-container>
+  <ng-container right>
+    <mustache-language-dropdown
+      [languages]="supportedLangs"
+      [value]="lang$ | async"
+      [isOpen]="langsOpen"
+      (languageChanged)="onLanguageChanged($event)"
+    >
+      <mustache-language-selector
+        [iconSrc]="(lang$ | async).iconSrc"
+        (click)="langsOpen = !langsOpen"
+      >
+      </mustache-language-selector>
+    </mustache-language-dropdown>
+    <mustache-notification-dropdown
+      [notifications]="notifications$ | async"
+      [notificationsOn]="notificationsOn"
+      [isOpen]="notificationsOpen"
+      (readAllClicked)="onReadAllClicked($event)"
+      (turnOffClicked)="onTurnOffClicked($event)"
+      (readClicked)="onReadClicked($event)"
+      (removeClicked)="onRemoveClicked($event)"
+      (notificationClicked)="onNotificationClicked($event)"
+    >
+      <mustache-notification-icon
+        [iconSrc]="'../assets/icons/bell.svg'"
+        [numberOfNotifications]="notifications$ | async | unreadNotifications"
+        (click)="notificationsOpen = !notificationsOpen"
+      ></mustache-notification-icon>
+    </mustache-notification-dropdown>
+    <mustache-avatar-dropdown
+      [userNickname]="(session$ | async).nickName"
+      [isOpen]="avatarOpen"
+    >
+      <ng-container iconButton>
+        <mustache-avatar-connection
+          [status]="connectionStatus$ | async"
+          (click)="avatarOpen = !avatarOpen"
+        ></mustache-avatar-connection>
+      </ng-container>
+      <ng-container body>
+        <mustache-status
+          [variant]="'success'"
+          (click)="onStatusClicked('active')"
+        >
+          Active
+        </mustache-status>
+        <mustache-status
+          [variant]="'warn'"
+          (click)="onStatusClicked('inactive')"
+        >
+          Inactive
+        </mustache-status>
+        <mustache-status [variant]="'danger'" (click)="onStatusClicked('busy')">
+          Busy
+        </mustache-status>
+        <mustache-status
+          [variant]="'discrete'"
+          (click)="onStatusClicked('out')"
+        >
+          Out
+        </mustache-status>
+      </ng-container>
+      <ng-container actions>
+        <mustache-toggle
+          [value]="darkModeOn"
+          (valueChanged)="onDarkModeChange($event)"
+          >Dark mode</mustache-toggle
+        >
+        <mustache-button
+          [variant]="'discrete'"
+          [empty]="true"
+          [size]="'s'"
+          [iconSrc]="'../../../assets/icons/settings.svg'"
+          (click)="onSettingsClicked()"
+        >
+          Settings
+        </mustache-button>
+        <mustache-button
+          [variant]="'discrete'"
+          [empty]="true"
+          [size]="'s'"
+          [iconSrc]="'../../../assets/icons/logout.svg'"
+          (click)="onLogOutClicked()"
+        >
+          Log out
+        </mustache-button>
+      </ng-container>
+    </mustache-avatar-dropdown>
+  </ng-container>
+</mustache-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,38 @@
+@use '../../../assets/styles/settings';
+
+$dropdown-width: 12rem;
+$button-width: 2.5rem;
+$header-horizontal-padding: settings.$spacing-m;
+
+:host(mustache-avatar-dropdown) {
+  position: relative;
+}
+
+.dropdown {
+  top: settings.$spacing-3xl; //TODO: do this calculation using icon heigth + space
+  left: -$dropdown-width + $button-width;
+  min-width: 12rem;
+
+  &__header {
+    padding: settings.$spacing-s $header-horizontal-padding;
+    border-bottom: solid settings.$border-thickness-m settings.$gray-200;
+  }
+
+  &__body {
+    padding: settings.$spacing-s settings.$spacing-m;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    padding: settings.$spacing-s settings.$spacing-m;
+    border-top: solid settings.$border-thickness-m settings.$gray-200;
+  }
+}
+
+.nickname {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: $dropdown-width - 2 * $header-horizontal-padding;
+}

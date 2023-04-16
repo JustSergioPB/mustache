@@ -1,0 +1,145 @@
+@use '../settings';
+
+.text--desktop-h1 {
+  font-size: settings.$font-size-6xl;
+  line-height: settings.$line-height-6xl;
+  font-weight: 700;
+}
+.text--desktop-h2 {
+  font-size: settings.$font-size-5xl;
+  line-height: settings.$line-height-5xl;
+  font-weight: 700;
+}
+.text--desktop-h3 {
+  font-size: settings.$font-size-4xl;
+  line-height: settings.$line-height-4xl;
+  font-weight: 700;
+}
+.text--desktop-h4 {
+  font-size: settings.$font-size-3xl;
+  line-height: settings.$line-height-3xl;
+  font-weight: 700;
+}
+.text--desktop-h5 {
+  font-size: settings.$font-size-2xl;
+  line-height: settings.$line-height-2xl;
+  font-weight: 600;
+}
+.text--desktop-h6 {
+  font-size: settings.$font-size-xl;
+  line-height: settings.$line-height-xl;
+  font-weight: 600;
+}
+
+.text--mobile-h1 {
+  font-size: settings.$font-size-5xl;
+  line-height: settings.$line-height-5xl;
+  font-weight: 700;
+}
+.text--mobile-h2 {
+  font-size: settings.$font-size-4xl;
+  line-height: settings.$line-height-4xl;
+  font-weight: 700;
+}
+.text--mobile-h3 {
+  font-size: settings.$font-size-3xl;
+  line-height: settings.$line-height-3xl;
+  font-weight: 700;
+}
+.text--mobile-h4 {
+  font-size: settings.$font-size-2xl;
+  line-height: settings.$line-height-2xl;
+  font-weight: 600;
+}
+.text--mobile-h5 {
+  font-size: settings.$font-size-xl;
+  line-height: settings.$line-height-xl;
+  font-weight: 600;
+}
+.text--mobile-h6 {
+  font-size: settings.$font-size-l;
+  line-height: settings.$line-height-l;
+  font-weight: 600;
+}
+
+//TODO: check what the hell is wrong with this
+.text--title {
+  &-semibold {
+    font-weight: 600;
+    font-size: settings.$font-size-l;
+    line-height: settings.$line-height-l;
+  }
+
+  &-medium {
+    font-weight: 500;
+    font-size: settings.$font-size-l;
+    line-height: settings.$line-height-l;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+}
+
+.text--body {
+  font-size: settings.$font-size-m;
+  line-height: settings.$line-height-m;
+
+  &-semibold {
+    font-weight: 600;
+  }
+
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+}
+
+.text--comment {
+  font-size: settings.$font-size-s;
+  line-height: settings.$line-height-s;
+
+  &-semibold {
+    font-weight: 600;
+    font-size: settings.$font-size-s;
+    line-height: settings.$line-height-s;
+  }
+
+  &-medium {
+    font-weight: 500;
+    font-size: settings.$font-size-s;
+    line-height: settings.$line-height-s;
+  }
+
+  &-regular {
+    font-weight: 400;
+    font-size: settings.$font-size-s;
+    line-height: settings.$line-height-s;
+  }
+}
+.text--label {
+  &-semibold {
+    font-weight: 600;
+    font-size: settings.$font-size-xs;
+    line-height: settings.$line-height-xs;
+  }
+
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-regular {
+    font-weight: 400;
+    font-size: settings.$font-size-xs;
+    line-height: settings.$line-height-xs;
+  }
+}
+
+@each $color, $value in settings.$colors {
+  .text--#{$color} {
+    color: $value;
+  }
+}

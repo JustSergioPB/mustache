@@ -1,0 +1,14 @@
+<ng-content select="[iconButton]"> </ng-content>
+<div class="dropdown" [ngClass]="{ 'dropdown--visible': isOpen }">
+  <div class="dropdown__header">
+    <p class="text--comment-regular text--gray-500">Signed in as</p>
+    <p class="nickname text--label-semibold">{{ userNickname }}</p>
+  </div>
+  <div class="dropdown__body">
+    <!-- TODO: change this for buttons for better SEO-->
+    <ng-content select="[body]"></ng-content>
+  </div>
+  <div class="dropdown__footer">
+    <ng-content select="[actions]"></ng-content>
+  </div>
+</div>
