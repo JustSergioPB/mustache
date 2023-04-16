@@ -1,0 +1,10 @@
+<label class="text--comment-semibold" for="checkbox">
+  <input
+    type="checkbox"
+    id="checkbox"
+    [checked]="value"
+    [disabled]="disabled"
+    (click)="onValueChanged()"
+  />
+  <ng-content></ng-content>
+</label>

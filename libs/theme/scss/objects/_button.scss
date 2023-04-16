@@ -66,6 +66,10 @@
     }
   }
 
+  &--center {
+    justify-content: center;
+  }
+
   &--s {
     border-radius: settings.$border-radius-xs;
     padding: settings.$spacing-xs settings.$spacing-s;

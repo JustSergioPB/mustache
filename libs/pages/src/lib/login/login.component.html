@@ -1,0 +1,38 @@
+<div class="login">
+  <div class="login__container">
+    <h1 class="text--desktop-h5 text--primary-700">
+      <ng-content select="[title]"></ng-content>
+    </h1>
+    <h2 class="text--body-regular text--gray-400">
+      <ng-content select="[subtitle]"></ng-content>
+    </h2>
+    <form class="login__form">
+      <label class="text--label-regular" for="email"> Email </label>
+      <input
+        id="email"
+        mustacheInput
+        type="email"
+        placeholder="john.doe@gmail.com"
+      />
+      <label class="text--label-regular" for="password"> Password </label>
+      <input
+        id="password"
+        mustacheInput
+        type="password"
+        placeholder="mustaches"
+      />
+    </form>
+    <button mustacheButton [position]="'center'">Login</button>
+    <div class="login__options">
+      <mustache-checkbox>
+        <ng-content select="[remember]"></ng-content>
+      </mustache-checkbox>
+      <a class="link link--primary-500 text--comment-semibold text--primary-500"
+        ><ng-content select="[forgot]"></ng-content
+      ></a>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <ng-content select="[content]"></ng-content>
+</div>

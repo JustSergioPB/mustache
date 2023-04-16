@@ -17,3 +17,4 @@ export * from './status/status.component';
 export * from './toggle/toggle.component';
 export * from './toolbar/toolbar.component';
 export * from './tooltip/tooltip.component';
+export * from './checkbox/checkbox.component';

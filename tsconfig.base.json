@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mustache/basic-ui": ["libs/basic-ui/src/index.ts"]
+      "@mustache/basic-ui": ["libs/basic-ui/src/index.ts"],
+      "@mustache/pages": ["libs/pages/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

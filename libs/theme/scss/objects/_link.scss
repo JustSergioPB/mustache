@@ -1,0 +1,15 @@
+@use '../settings';
+
+.link {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+@each $color, $value in settings.$colors {
+  .link--#{$color} {
+    color: $value;
+    text-decoration-color: $value;
+  }
+}

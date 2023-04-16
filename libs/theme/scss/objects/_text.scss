@@ -87,14 +87,20 @@
 
   &-semibold {
     font-weight: 600;
+    font-size: settings.$font-size-m;
+    line-height: settings.$line-height-m;
   }
 
   &-medium {
     font-weight: 500;
+    font-size: settings.$font-size-m;
+    line-height: settings.$line-height-m;
   }
 
   &-regular {
     font-weight: 400;
+    font-size: settings.$font-size-m;
+    line-height: settings.$line-height-m;
   }
 }
 

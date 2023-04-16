@@ -1,16 +1,15 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'mustache-toggle',
+  selector: 'mustache-checkbox',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './toggle.component.html',
-  styleUrls: ['./toggle.component.scss'],
+  templateUrl: './checkbox.component.html',
+  styleUrls: ['./checkbox.component.scss'],
 })
-export class ToggleComponent {
+export class CheckboxComponent {
   @Input() value = false;
-  //TODO create disabling 
   @Input() disabled = false;
   @Output() valueChanged = new EventEmitter<boolean>();
 
