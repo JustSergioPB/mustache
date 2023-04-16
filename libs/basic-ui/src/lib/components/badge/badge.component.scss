@@ -1,4 +1,4 @@
-@use '../../../assets/styles/settings';
+@use '../../../../../theme/scss/settings';
 
 @mixin badgeColor($color) {
   background-color: map-get(settings.$colors, $color + '-500');

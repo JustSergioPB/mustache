@@ -9,6 +9,12 @@ $spacing-3xl: 3rem !default;
 $spacing-4xl: 4rem !default;
 $spacing-5xl: 5rem !default;
 
+$gutter: 1.5rem !default;
+$margin: 2rem !default;
+$desktop-column-width: calc((100vw - $gutter * 11 - $margin * 2) / 12);
+$tablet-column-width: calc((100vw - $gutter * 11 - $margin * 2) / 8);
+$mobile-column-width: calc((100vw - $gutter * 11 - $margin * 2) / 4);
+
 $level-1: 1 !default;
 $level-2: 10 !default;
 $level-3: 100 !default;

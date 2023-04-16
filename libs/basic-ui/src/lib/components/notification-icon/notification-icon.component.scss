@@ -1,5 +1,5 @@
-@use '../../../assets/styles/settings';
-@use '../../../assets/styles/tools';
+@use '../../../../../theme/scss/settings';
+@use '../../../../../theme/scss/tools';
 
 :host(mustache-notification-icon) {
   @include tools.navbarIcon;
