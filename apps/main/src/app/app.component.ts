@@ -10,10 +10,9 @@ import {
   AvatarConnectionComponent,
   AvatarDropdownComponent,
   BannerComponent,
-  ButtonComponent,
+  ButtonDirective,
   ConnectionMockService,
   ConnectionStatus,
-  IconButtonComponent,
   Language,
   LanguageDropdownComponent,
   LanguageMockService,
@@ -41,8 +40,6 @@ import { NAVBAR_CONFIG } from './navbar.config';
   imports: [
     RouterModule,
     CommonModule,
-    ButtonComponent,
-    IconButtonComponent,
     NavbarComponent,
     AvatarConnectionComponent,
     AvatarDropdownComponent,
@@ -55,6 +52,7 @@ import { NAVBAR_CONFIG } from './navbar.config';
     ToggleComponent,
     StatusComponent,
     UnreadNotificationsPipe,
+    ButtonDirective,
   ],
   providers: [
     {

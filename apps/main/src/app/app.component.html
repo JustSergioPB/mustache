@@ -78,24 +78,34 @@
           (valueChanged)="onDarkModeChange($event)"
           >Dark mode</mustache-toggle
         >
-        <mustache-button
+        <button
+          mustacheButton
           [variant]="'discrete'"
-          [empty]="true"
+          [filled]="false"
           [size]="'s'"
-          [iconSrc]="'../../../assets/icons/settings.svg'"
           (click)="onSettingsClicked()"
         >
+          <img
+            class="icon icon--m icon--empty icon--discrete"
+            src="../assets/icons/settings.svg"
+            alt="'settings'"
+          />
           Settings
-        </mustache-button>
-        <mustache-button
+        </button>
+        <button
+          mustacheButton
           [variant]="'discrete'"
-          [empty]="true"
+          [filled]="false"
           [size]="'s'"
-          [iconSrc]="'../../../assets/icons/logout.svg'"
           (click)="onLogOutClicked()"
         >
+          <img
+            class="icon icon--m icon--empty icon--discrete"
+            src="../assets/icons/logout.svg"
+            alt="'log out'"
+          />
           Log out
-        </mustache-button>
+        </button>
       </ng-container>
     </mustache-avatar-dropdown>
   </ng-container>

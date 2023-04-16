@@ -2,15 +2,16 @@
 <div class="dropdown" [ngClass]="{ 'dropdown--visible': isOpen }">
   <div class="dropdown__header">
     <p class="text--body-semibold">Notifications</p>
-    <mustache-button
+    <button
+      mustacheButton
       [variant]="'primary'"
-      [empty]="true"
+      [filled]="false"
       [size]="'s'"
       *ngIf="notifications.length > 0"
       (click)="onReadAllClicked()"
     >
       Mark all as read
-    </mustache-button>
+    </button>
   </div>
   <div
     class="dropdown__body"
@@ -28,15 +29,15 @@
     </ng-container>
   </div>
   <div class="dropdown__footer">
-    <mustache-button
-      class="button"
+    <button
+      mustacheButton
       [variant]="'discrete'"
-      [empty]="true"
+      [filled]="false"
       [size]="'s'"
       (click)="onTurnOffClicked()"
     >
       Turn {{ notificationsOn ? 'off' : 'on' }} notifications
-    </mustache-button>
+    </button>
   </div>
 </div>
 
