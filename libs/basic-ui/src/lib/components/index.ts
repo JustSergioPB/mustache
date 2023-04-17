@@ -18,3 +18,4 @@ export * from './toggle/toggle.component';
 export * from './toolbar/toolbar.component';
 export * from './tooltip/tooltip.component';
 export * from './checkbox/checkbox.component';
+export * from './form-field/form-field.component';

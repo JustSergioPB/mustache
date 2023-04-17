@@ -1,0 +1,17 @@
+@use '../settings';
+
+.input {
+  font-size: settings.$font-size-s;
+  width: 100%;
+
+  &::placeholder {
+    color: settings.$gray-400;
+    font-size: settings.$font-size-s;
+  }
+
+  &--focused {
+    &::placeholder {
+      color: settings.$primary-500;
+    }
+  }
+}

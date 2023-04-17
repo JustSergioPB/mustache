@@ -35,6 +35,12 @@
     font-size: settings.$font-size-3xl;
   }
 
+  &--login {
+    height: settings.$font-size-6xl;
+    width: settings.$font-size-6xl;
+    font-size: settings.$font-size-6xl;
+  }
+
   &.icon--empty {
     &.icon--primary {
       @include tools.iconColor('primary');

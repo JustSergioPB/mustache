@@ -1,4 +1,14 @@
+@use '../../../../../../libs/theme/scss/settings';
+
 :host(main-login-page) {
   display: block;
   height: 100%;
+}
+
+.icon {
+  margin-bottom: settings.$spacing-xl;
+}
+
+.title {
+  margin-bottom: settings.$spacing-m;
 }

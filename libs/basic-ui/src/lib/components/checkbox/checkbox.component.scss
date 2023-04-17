@@ -1,0 +1,43 @@
+@use '../../../../../theme/scss/settings';
+
+input[type='checkbox'] {
+  width: settings.$spacing-m;
+  height: settings.$spacing-m;
+  border-radius: 0.3rem;
+  border: settings.$border-thickness-m solid settings.$gray-300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &::before {
+    content: '';
+    width: 0.6rem;
+    height: 0.6rem;
+    transform: scale(0);
+    transition: 120ms transform border ease-in-out;
+    box-shadow: inset 1em 1em settings.$primary;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  &:checked {
+    border: settings.$border-thickness-m solid settings.$primary-500;
+    background-color: settings.$primary-500;
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: settings.$spacing-xs;
+}

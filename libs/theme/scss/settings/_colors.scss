@@ -1,14 +1,14 @@
 $bg-color: white !default;
-$primary-900: #001824 !default;
-$primary-800: #003049 !default;
-$primary-700: #00476d !default;
-$primary-600: #005f92 !default;
-$primary-500: #0077b6 !default;
-$primary-400: #1a85bd !default;
-$primary-300: #4da0cc !default;
-$primary-200: #80bbdb !default;
-$primary-100: #b3d6e9 !default;
-$primary: #e6f1f8 !default;
+$primary-900: #00084c !default;
+$primary-800: #000e80 !default;
+$primary-700: #0014b3 !default;
+$primary-600: #0019e6 !default;
+$primary-500: #001cff !default;
+$primary-400: #1a33ff !default;
+$primary-300: #4d60ff !default;
+$primary-200: #808eff !default;
+$primary-100: #b3bbff !default;
+$primary: #e6e8ff !default;
 $accent-900: #4b2a01 !default;
 $accent-800: #7d4601 !default;
 $accent-700: #af6201 !default;
@@ -123,8 +123,8 @@ $colors: (
   'gray': $gray,
 );
 
-$filter-primary-500: invert(27%) sepia(95%) saturate(1823%) hue-rotate(180deg)
-  brightness(90%) contrast(101%);
+$filter-primary-500: invert(8%) sepia(100%) saturate(7315%) hue-rotate(242deg)
+  brightness(108%) contrast(128%);
 $filter-accent-500: invert(61%) sepia(23%) saturate(6348%) hue-rotate(2deg)
   brightness(104%) contrast(98%);
 $filter-warn-500: invert(73%) sepia(46%) saturate(4186%) hue-rotate(358deg)

@@ -1,38 +1,63 @@
 <div class="login">
   <div class="login__container">
-    <h1 class="text--desktop-h5 text--primary-700">
+    <h1 class="text--desktop-h5">
       <ng-content select="[title]"></ng-content>
     </h1>
     <h2 class="text--body-regular text--gray-400">
       <ng-content select="[subtitle]"></ng-content>
     </h2>
     <form class="login__form">
-      <label class="text--label-regular" for="email"> Email </label>
-      <input
-        id="email"
-        mustacheInput
-        type="email"
-        placeholder="john.doe@gmail.com"
-      />
-      <label class="text--label-regular" for="password"> Password </label>
-      <input
-        id="password"
-        mustacheInput
-        type="password"
-        placeholder="mustaches"
-      />
+      <mustache-form-field>
+        <ng-container label>
+          <label mustacheLabel for="email"> Email </label>
+        </ng-container>
+        <ng-container input>
+          <input
+            id="email"
+            mustacheInput
+            type="email"
+            placeholder="mr.mustache@gmail.com"
+          />
+        </ng-container>
+      </mustache-form-field>
+      <mustache-form-field>
+        <ng-container label>
+          <label mustacheLabel for="password"> Password </label>
+        </ng-container>
+        <ng-container input>
+          <input
+            id="password"
+            mustacheInput
+            type="password"
+            placeholder="mustache"
+          />
+        </ng-container>
+      </mustache-form-field>
+      <div class="login__options">
+        <mustache-checkbox>
+          <ng-content select="[remember]"></ng-content>
+        </mustache-checkbox>
+        <a
+          class="link link--primary-500 text--comment-semibold text--primary-500"
+          ><ng-content select="[forgot]"></ng-content
+        ></a>
+      </div>
+      <button mustacheButton [position]="'center'">Login</button>
     </form>
-    <button mustacheButton [position]="'center'">Login</button>
-    <div class="login__options">
-      <mustache-checkbox>
-        <ng-content select="[remember]"></ng-content>
-      </mustache-checkbox>
-      <a class="link link--primary-500 text--comment-semibold text--primary-500"
-        ><ng-content select="[forgot]"></ng-content
-      ></a>
+    <div class="login__signup">
+      <p class="text--comment-semibold text--gray-400">
+        <ng-content select="[account]"></ng-content>
+      </p>
+      <a
+        class="link link--primary-500 text--comment-semibold text--primary-500"
+      >
+        <ng-content select="[signup]"></ng-content>
+      </a>
     </div>
   </div>
 </div>
 <div class="content">
-  <ng-content select="[content]"></ng-content>
+  <div class="content__wrapper">
+    <ng-content select="[content]"></ng-content>
+  </div>
 </div>

@@ -1,7 +1,8 @@
-<label class="text--comment-semibold" for="checkbox">
+<label class="container text--comment-semibold text--gray-600" for="checkbox">
   <input
     type="checkbox"
     id="checkbox"
+    class="checkbox checkbox--{{ this.variant }}"
     [checked]="value"
     [disabled]="disabled"
     (click)="onValueChanged()"

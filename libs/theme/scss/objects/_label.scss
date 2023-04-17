@@ -1,0 +1,5 @@
+@use '../settings';
+
+.label {
+  color: settings.$gray-600;
+}
