@@ -1,11 +1,19 @@
-<mustache-login>
-  <ng-container title> Welcome back! </ng-container>
-  <ng-container subtitle> Start building applications faster </ng-container>
-  <ng-container remember> Remember me</ng-container>
-  <ng-container forgot>Forgot Password?</ng-container>
-  <ng-container account>Don't you have an account?</ng-container>
-  <ng-container signup>Sign up</ng-container>
-  <ng-container content>
+<div class="login">
+  <div class="login__container">
+    <h1 class="text--desktop-h5">Welcome back!</h1>
+    <h2 class="text--body-regular text--gray-400">
+      Start building applications faster
+    </h2>
+    <mustache-login>
+      <ng-container remember> Remember me</ng-container>
+      <ng-container forgot>Forgot Password?</ng-container>
+      <ng-container account>Don't you have an account?</ng-container>
+      <ng-container signup>Sign up</ng-container>
+    </mustache-login>
+  </div>
+</div>
+<div class="content">
+  <div class="content__wrapper">
     <img
       src="../../../assets/icons/moustache.svg"
       alt="logo"
@@ -15,8 +23,8 @@
       Build your dream application in a blink using mustache
     </p>
     <p class="subtitle text--title-semibold text--primary-100">
-      Mustache is a highly customizable and ready to go UI library built in the latest Angular
-      version.
+      Mustache is a highly customizable and ready to go UI library built in the
+      latest Angular version.
     </p>
-  </ng-container>
-</mustache-login>
+  </div>
+</div>

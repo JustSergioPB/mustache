@@ -1,7 +1,7 @@
 @use '../../../../../../libs/theme/scss/settings';
 
 :host(main-login-page) {
-  display: block;
+  display: flex;
   height: 100%;
 }
 
@@ -11,4 +11,29 @@
 
 .title {
   margin-bottom: settings.$spacing-m;
+}
+
+.login {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    width: calc(3 * settings.$desktop-column-width + 2 * settings.$gutter);
+  }
+}
+
+.content {
+  flex-basis: 50%;
+  padding: settings.$spacing-m;
+
+  &__wrapper {
+    height: 100%;
+    border-radius: settings.$border-radius-s;
+    background-color: settings.$primary-500;
+    padding: settings.$spacing-4xl;
+    display: flex;
+    flex-direction: column;
+  }
 }

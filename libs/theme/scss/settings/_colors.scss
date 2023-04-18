@@ -1,54 +1,54 @@
 $bg-color: white !default;
-$primary-900: #00084c !default;
-$primary-800: #000e80 !default;
-$primary-700: #0014b3 !default;
-$primary-600: #0019e6 !default;
-$primary-500: #001cff !default;
-$primary-400: #1a33ff !default;
-$primary-300: #4d60ff !default;
-$primary-200: #808eff !default;
-$primary-100: #b3bbff !default;
-$primary: #e6e8ff !default;
-$accent-900: #4b2a01 !default;
-$accent-800: #7d4601 !default;
-$accent-700: #af6201 !default;
-$accent-600: #e17e02 !default;
-$accent-500: #fa8c02 !default;
-$accent-400: #fb981b !default;
-$accent-300: #fcaf4e !default;
-$accent-200: #fdc681 !default;
-$accent-100: #feddb3 !default;
-$accent: #fff4e6 !default;
-$warn-900: #4c3401 !default;
-$warn-800: #805702 !default;
-$warn-700: #b37902 !default;
-$warn-600: #e69c03 !default;
-$warn-500: #ffad03 !default;
-$warn-400: #ffb51c !default;
-$warn-300: #ffc64f !default;
-$warn-200: #ffd681 !default;
-$warn-100: #ffe6b3 !default;
-$warn: #fff7e6 !default;
-$success-900: #0f2e2e !default;
-$success-800: #194c4d !default;
-$success-700: #236a6c !default;
-$success-600: #2d898b !default;
-$success-500: #32989a !default;
-$success-400: #47a2a4 !default;
-$success-300: #70b7b8 !default;
-$success-200: #99cccd !default;
-$success-100: #c2e0e1 !default;
-$success: #ebf5f5 !default;
-$danger-900: #470820 !default;
-$danger-800: #770e36 !default;
-$danger-700: #a7134c !default;
-$danger-600: #d61861 !default;
-$danger-500: #ee1b6c !default;
-$danger-400: #f0327b !default;
-$danger-300: #f35f98 !default;
-$danger-200: #f78db6 !default;
-$danger-100: #fabbd3 !default;
-$danger: #fde8f0 !default;
+$primary-900: #140033 !default;
+$primary-800: #280066 !default;
+$primary-700: #3b0099 !default;
+$primary-600: #4f00cc !default;
+$primary-500: #6300ff !default;
+$primary-400: #731aff !default;
+$primary-300: #924dff !default;
+$primary-200: #b180ff !default;
+$primary-100: #d0b3ff !default;
+$primary: #efe6ff !default;
+$accent-900: #330018 !default;
+$accent-800: #66002f !default;
+$accent-700: #990047 !default;
+$accent-600: #cc005e !default;
+$accent-500: #ff0076 !default;
+$accent-400: #ff1a84 !default;
+$accent-300: #ff4d9f !default;
+$accent-200: #ff80bb !default;
+$accent-100: #ffb3d6 !default;
+$accent: #ffe6f1 !default;
+$warn-900: #332d00 !default;
+$warn-800: #665b00 !default;
+$warn-700: #998800 !default;
+$warn-600: #ccb600 !default;
+$warn-500: #ffe300 !default;
+$warn-400: #ffe61a !default;
+$warn-300: #ffeb4d !default;
+$warn-200: #fff180 !default;
+$warn-100: #fff7b3 !default;
+$warn: #fffce6 !default;
+$success-900: #233102 !default;
+$success-800: #466303 !default;
+$success-700: #6a9405 !default;
+$success-600: #8dc606 !default;
+$success-500: #b0f708 !default;
+$success-400: #b8f821 !default;
+$success-300: #c8f952 !default;
+$success-200: #d8fb84 !default;
+$success-100: #e7fdb5 !default;
+$success: #f7fee6 !default;
+$danger-900: #330006 !default;
+$danger-800: #66000b !default;
+$danger-700: #990011 !default;
+$danger-600: #cc0016 !default;
+$danger-500: #ff001c !default;
+$danger-400: #ff1a33 !default;
+$danger-300: #ff4d60 !default;
+$danger-200: #ff808e !default;
+$danger-100: #ffb3bb !default;
+$danger: #ffe6e8 !default;
 $gray-900: #171717 !default;
 $gray-800: #262626 !default;
 $gray-700: #404040 !default;
@@ -123,16 +123,16 @@ $colors: (
   'gray': $gray,
 );
 
-$filter-primary-500: invert(8%) sepia(100%) saturate(7315%) hue-rotate(242deg)
-  brightness(108%) contrast(128%);
-$filter-accent-500: invert(61%) sepia(23%) saturate(6348%) hue-rotate(2deg)
-  brightness(104%) contrast(98%);
-$filter-warn-500: invert(73%) sepia(46%) saturate(4186%) hue-rotate(358deg)
-  brightness(109%) contrast(103%);
-$filter-danger-500: invert(18%) sepia(78%) saturate(5011%) hue-rotate(327deg)
-  brightness(98%) contrast(91%);
-$filter-success-500: invert(49%) sepia(75%) saturate(352%) hue-rotate(132deg)
-  brightness(89%) contrast(91%);
+$filter-primary-500: invert(9%) sepia(99%) saturate(6048%) hue-rotate(266deg)
+  brightness(107%) contrast(130%);
+$filter-accent-500: invert(12%) sepia(79%) saturate(7461%) hue-rotate(327deg)
+  brightness(102%) contrast(103%);
+$filter-warn-500: invert(78%) sepia(81%) saturate(955%) hue-rotate(0deg)
+  brightness(104%) contrast(104%);
+$filter-danger-500: invert(12%) sepia(73%) saturate(6241%) hue-rotate(347deg)
+  brightness(109%) contrast(115%);
+$filter-success-500: invert(90%) sepia(85%) saturate(3172%) hue-rotate(18deg)
+  brightness(98%) contrast(98%);
 $filter-gray-500: invert(45%) sepia(4%) saturate(22%) hue-rotate(1deg)
   brightness(98%) contrast(84%);
 
