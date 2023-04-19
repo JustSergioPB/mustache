@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import {
   AbstractConnectionService,
   AbstractLanguageService,
-  AbstractNotificationService,
   AbstractSessionService,
   AvatarConnectionComponent,
   AvatarDropdownComponent,
@@ -19,22 +18,24 @@ import {
   LanguageSelectorComponent,
   NavbarComponent,
   NavbarItem,
-  Notification,
-  NotificationDropdownComponent,
-  NotificationIconComponent,
-  NotificationMockService,
-  NotificationReadEvent,
   Session,
   SessionMockService,
   StatusComponent,
   SUPPORTED_LANGS,
   ToggleComponent,
   ToolbarComponent,
-  UnreadNotificationsPipe,
 } from '@mustache/basic-ui';
+import {
+  AbstractNotificationService,
+  Notification,
+  NotificationDropdownComponent,
+  NotificationIconComponent,
+  NotificationMockService,
+  NotificationReadEvent,
+  UnreadNotificationsPipe,
+} from '@mustache/notification-ui';
 import { Observable } from 'rxjs';
 import { NAVBAR_CONFIG } from './navbar.config';
-
 
 @Component({
   standalone: true,

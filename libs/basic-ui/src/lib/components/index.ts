@@ -1,5 +1,4 @@
 export * from './avatar/avatar.component';
-export * from './avatar-connection/avatar-connection.component';
 export * from './avatar-dropdown/avatar-dropdown.component';
 export * from './avatar-group/avatar-group.component';
 export * from './badge/badge.component';
@@ -10,10 +9,6 @@ export * from './language-selector/language-selector.component';
 export * from './loading-bar/loading-bar.component';
 export * from './menu-icon/menu-icon.component';
 export * from './navbar/navbar.component';
-export * from './notification/notification.component';
-export * from './notification-dropdown/notification-dropdown.component';
-export * from './notification-icon/notification-icon.component';
-export * from './status/status.component';
 export * from './toggle/toggle.component';
 export * from './toolbar/toolbar.component';
 export * from './tooltip/tooltip.component';

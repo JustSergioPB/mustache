@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@mustache/auth-ui": ["libs/auth-ui/src/index.ts"],
-      "@mustache/basic-ui": ["libs/basic-ui/src/index.ts"]
+      "@mustache/basic-ui": ["libs/basic-ui/src/index.ts"],
+      "@mustache/chat-ui": ["libs/chat-ui/src/index.ts"],
+      "@mustache/notification-ui": ["libs/notification-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
