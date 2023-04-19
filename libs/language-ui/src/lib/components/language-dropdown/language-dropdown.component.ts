@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Language } from '../../models';
-import { EmojiDirective } from '../../directives';
+import { EmojiDirective } from '@mustache/basic-ui';
 
 @Component({
   selector: 'mustache-language-dropdown',
@@ -13,7 +13,8 @@ import { EmojiDirective } from '../../directives';
 export class LanguageDropdownComponent {
   @Input() languages: Language[] = [];
   @Input() isOpen = false;
-  @Input() value: Language;
+  //TODO: add default value for this
+  @Input() value: Language | undefined;
   @Output() languageChanged = new EventEmitter<number>();
 
   public onItemClick(index: number): void {

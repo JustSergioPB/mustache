@@ -14,6 +14,7 @@ import { ColorVariant, TooltipComponent } from '@mustache/basic-ui';
   styleUrls: ['./notification.component.scss'],
 })
 export class NotificationComponent {
+  //TODO: add default value
   @Input() notification: Notification;
   @Input() variant: ColorVariant = 'primary';
   @Output() readClicked = new EventEmitter<boolean>();

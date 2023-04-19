@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorVariant } from '../../models';
+import { AvatarSize, ColorVariant } from '../../models';
 
 @Component({
   selector: 'mustache-avatar',
@@ -10,8 +10,8 @@ import { ColorVariant } from '../../models';
   styleUrls: ['./avatar.component.scss'],
 })
 export class AvatarComponent {
-  @Input() imgSrc: string;
-  @Input() size: string;
+  @Input() imgSrc: string | undefined;
+  @Input() size: AvatarSize = 'm';
   @Input() variant: ColorVariant = 'primary';
-  @Input() initial = 'G';
+  @Input() initial = 'm';
 }

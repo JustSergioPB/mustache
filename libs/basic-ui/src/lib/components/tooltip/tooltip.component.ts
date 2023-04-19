@@ -9,6 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
-  @Input() message: string;
+  @Input() message = 'Tooltip';
   @Input() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
 }

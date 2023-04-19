@@ -4,8 +4,6 @@ export * from './avatar-group/avatar-group.component';
 export * from './badge/badge.component';
 export * from './banner/banner.component';
 export * from './dropdown/dropdown.component';
-export * from './language-dropdown/language-dropdown.component';
-export * from './language-selector/language-selector.component';
 export * from './loading-bar/loading-bar.component';
 export * from './menu-icon/menu-icon.component';
 export * from './navbar/navbar.component';

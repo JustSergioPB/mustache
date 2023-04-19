@@ -3,28 +3,34 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
-  AbstractConnectionService,
-  AbstractLanguageService,
   AbstractSessionService,
+  SessionMockService,
+  Session,
+} from '@mustache/auth-ui';
+import {
+  AbstractConnectionService,
   AvatarConnectionComponent,
+  ConnectionMockService,
+  ConnectionStatus,
+  StatusComponent,
+} from '@mustache/chat-ui';
+import {
   AvatarDropdownComponent,
   BannerComponent,
   ButtonDirective,
-  ConnectionMockService,
-  ConnectionStatus,
+  NavbarComponent,
+  NavbarItem,
+  ToggleComponent,
+  ToolbarComponent,
+} from '@mustache/basic-ui';
+import {
+  AbstractLanguageService,
   Language,
   LanguageDropdownComponent,
   LanguageMockService,
   LanguageSelectorComponent,
-  NavbarComponent,
-  NavbarItem,
-  Session,
-  SessionMockService,
-  StatusComponent,
   SUPPORTED_LANGS,
-  ToggleComponent,
-  ToolbarComponent,
-} from '@mustache/basic-ui';
+} from '@mustache/language-ui';
 import {
   AbstractNotificationService,
   Notification,
@@ -34,6 +40,7 @@ import {
   NotificationReadEvent,
   UnreadNotificationsPipe,
 } from '@mustache/notification-ui';
+
 import { Observable } from 'rxjs';
 import { NAVBAR_CONFIG } from './navbar.config';
 

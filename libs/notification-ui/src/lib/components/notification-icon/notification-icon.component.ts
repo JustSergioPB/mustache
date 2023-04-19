@@ -10,7 +10,7 @@ import { ColorVariant, BadgeComponent } from '@mustache/basic-ui';
   styleUrls: ['./notification-icon.component.scss'],
 })
 export class NotificationIconComponent {
-  @Input() numberOfNotifications: number;
-  @Input() iconSrc: string;
+  @Input() numberOfNotifications: number | undefined;
+  @Input() iconSrc: string | undefined;
   @Input() variant: ColorVariant = 'primary';
 }

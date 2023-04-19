@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./menu-icon.component.scss'],
 })
 export class MenuIconComponent {
-  @Input() iconSrc: string;
+  @Input() iconSrc: string | undefined;
 }

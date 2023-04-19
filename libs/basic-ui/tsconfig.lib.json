@@ -17,5 +17,5 @@
     "src/**/*.ts",
     "../notification-ui/src/lib/pipes/index.ts",
     "../notification-ui/src/lib/models/index.ts"
-, "../notification-ui/src/lib/services/abstract-notification.service.ts", "../chat-ui/src/lib/models/connection-status.ts", "../chat-ui/src/lib/services/abstract-connection.service.ts"  ]
+, "../notification-ui/src/lib/services/abstract-notification.service.ts", "../chat-ui/src/lib/models/connection-status.ts", "../chat-ui/src/lib/services/abstract-connection.service.ts", "../language-ui/src/lib/services/abstract-language.service.ts"  ]
 }

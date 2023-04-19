@@ -24,8 +24,8 @@ export class NavbarComponent {
 
   public onItemClick(parent: NavbarItem, childIndex?: number): void {
     const routes = [parent.route];
-    if (childIndex) {
-      routes.push(parent.leafs[childIndex]?.route);
+    if (parent.leafs && childIndex) {
+      routes.push(parent.leafs[childIndex].route);
     }
     this.itemClicked.emit(routes);
   }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmojiDirective } from '../../directives';
+import { EmojiDirective } from '@mustache/basic-ui';
 
 @Component({
   selector: 'mustache-language-selector',
@@ -10,5 +10,5 @@ import { EmojiDirective } from '../../directives';
   styleUrls: ['./language-selector.component.scss'],
 })
 export class LanguageSelectorComponent {
-  @Input() iconSrc: string;
+  @Input() iconSrc: string | undefined;
 }

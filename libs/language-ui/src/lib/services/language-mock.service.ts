@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SUPPORTED_LANGS } from './supported-langs';
 import { AbstractLanguageService } from '.';
-import { Language } from '../../models';
+import { Language } from '../models';
 
 @Injectable({
   providedIn: 'root',

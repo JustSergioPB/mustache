@@ -7,7 +7,6 @@ import {
   InputDirective,
   LabelDirective,
 } from '@mustache/basic-ui';
-import { FormGroup } from '@angular/forms';
 
 //TODO: add types for different styling
 //TODO: add position for right | left

@@ -1,4 +1,4 @@
-import { Language } from '../../models';
+import { Language } from '../models';
 
 export const SUPPORTED_LANGS: Language[] = [
   {

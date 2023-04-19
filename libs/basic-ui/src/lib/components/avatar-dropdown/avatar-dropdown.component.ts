@@ -9,6 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./avatar-dropdown.component.scss'],
 })
 export class AvatarDropdownComponent {
-  @Input() userNickname: string;
+  @Input() userNickname = "mr. mustache";
   @Input() isOpen = false;
 }

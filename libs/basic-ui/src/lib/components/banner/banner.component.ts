@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent {
-  @Input() logoSrc: string;
+  @Input() logoSrc: string | undefined;
 }
