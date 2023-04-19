@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   ButtonDirective,
@@ -7,6 +7,7 @@ import {
   InputDirective,
   LabelDirective,
 } from '@mustache/basic-ui';
+import { FormGroup } from '@angular/forms';
 
 //TODO: add types for different styling
 //TODO: add position for right | left
@@ -24,4 +25,25 @@ import {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {}
+export class LoginComponent {
+  @Output() signUpClicked = new EventEmitter<void>();
+  @Output() recoverClicked = new EventEmitter<void>();
+  @Output() rememberMeClicked = new EventEmitter<void>();
+  @Output() loginSubmited = new EventEmitter<void>();
+
+  onSignUpClicked(): void {
+    this.signUpClicked.emit();
+  }
+
+  onRecoverClicked(): void {
+    this.recoverClicked.emit();
+  }
+
+  onRememberMeClicked(): void {
+    this.rememberMeClicked.emit();
+  }
+
+  onLoginClicked(): void {
+    this.loginSubmited.emit();
+  }
+}

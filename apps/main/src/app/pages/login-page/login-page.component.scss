@@ -5,7 +5,7 @@
   height: 100%;
 }
 
-.icon {
+.icon--login {
   margin-bottom: settings.$spacing-xl;
 }
 
@@ -16,11 +16,20 @@
 .login {
   flex-basis: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   &__container {
-    width: calc(3 * settings.$desktop-column-width + 2 * settings.$gutter);
+    width: calc(4 * settings.$desktop-column-width + 3 * settings.$gutter);
+  }
+
+  &__options {
+    width: calc(4 * settings.$desktop-column-width + 3 * settings.$gutter);
+    display: flex;
+    flex-wrap: wrap;
+    gap: settings.$spacing-m;
+    margin: settings.$spacing-m 0 0 0;
   }
 }
 

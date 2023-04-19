@@ -25,28 +25,31 @@
       />
     </ng-container>
   </mustache-form-field>
-  <div class="options">
-    <mustache-checkbox (valueChanged)="onRememberMeClicked()">
-      Remember me
-    </mustache-checkbox>
-    <a
-      class="link link--primary-500 text--comment-semibold text--primary-500"
-      (click)="onRecoverClicked()"
-      >Forgot Password?</a
-    >
-  </div>
-  <button mustacheButton [position]="'center'" (click)="onLoginClicked()">
-    Log in
+  <mustache-form-field>
+    <ng-container label>
+      <label mustacheLabel for="repeat"> Repeat your password </label>
+    </ng-container>
+    <ng-container input>
+      <input
+        id="repeat"
+        mustacheInput
+        type="repeat"
+        placeholder="mustache"
+      />
+    </ng-container>
+  </mustache-form-field>
+  <button mustacheButton [position]="'center'" (click)="onSignUpClicked()">
+    Sign up
   </button>
 </form>
-<div class="signup">
+<div class="login">
   <p class="text--comment-semibold text--gray-400">
-    Don't you have an account?
+    Already have an account?
   </p>
   <a
     class="link link--primary-500 text--comment-semibold text--primary-500"
-    (click)="onSignUpClicked()"
+    (click)="onLoginClicked()"
   >
-    Sign up
+    Log in
   </a>
 </div>
