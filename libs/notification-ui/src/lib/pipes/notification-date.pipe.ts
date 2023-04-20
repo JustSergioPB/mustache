@@ -19,15 +19,18 @@ const EN_MONTHS = [
   standalone: true,
 })
 export class NotificationDatePipe implements PipeTransform {
-  transform(dateISOString: string): string {
-    const date = new Date(dateISOString);
-    const hours =
-      date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours();
-    const minutes =
-      date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes();
-    const month = EN_MONTHS[date.getMonth()];
-    const day = date.getDate() <= 9 ? `0${date.getDate()}` : date.getDate();
-    const transformed = `${month} ${day}, ${hours}:${minutes}`;
+  transform(dateISOString: string | undefined): string {
+    let transformed = '--';
+    if (dateISOString) {
+      const date = new Date(dateISOString);
+      const hours =
+        date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours();
+      const minutes =
+        date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes();
+      const month = EN_MONTHS[date.getMonth()];
+      const day = date.getDate() <= 9 ? `0${date.getDate()}` : date.getDate();
+      transformed = `${month} ${day}, ${hours}:${minutes}`;
+    }
 
     return transformed;
   }

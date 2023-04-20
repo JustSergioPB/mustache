@@ -18,7 +18,7 @@
       (languageChanged)="onLanguageChanged($event)"
     >
       <mustache-language-selector
-        [iconSrc]="(lang$ | async).iconSrc"
+        [iconSrc]="(lang$ | async)?.iconSrc"
         (click)="langsOpen = !langsOpen"
       >
       </mustache-language-selector>
@@ -40,7 +40,7 @@
       ></mustache-notification-icon>
     </mustache-notification-dropdown>
     <mustache-avatar-dropdown
-      [userNickname]="(session$ | async).nickName"
+      [userNickname]="(session$ | async)?.nickName"
       [isOpen]="avatarOpen"
     >
       <ng-container iconButton>

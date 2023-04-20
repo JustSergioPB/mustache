@@ -12,7 +12,7 @@ import { ColorVariant, AvatarComponent, AvatarSize } from '@mustache/basic-ui';
 })
 export class AvatarConnectionComponent {
   @Input() imgSrc: string | undefined;
-  @Input() status: ConnectionStatus = 'out';
+  @Input() status: ConnectionStatus | undefined | null = 'out';
   @Input() size: AvatarSize = 'm';
   @Input() variant: ColorVariant = 'primary';
   @Input() initial = 'G';

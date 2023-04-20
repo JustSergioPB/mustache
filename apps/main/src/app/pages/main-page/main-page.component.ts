@@ -25,6 +25,7 @@ import {
 } from '@mustache/basic-ui';
 import {
   AbstractLanguageService,
+  DEFAULT_LANG,
   Language,
   LanguageDropdownComponent,
   LanguageMockService,
@@ -64,6 +65,10 @@ import { NAVBAR_CONFIG } from './navbar.config';
     ButtonDirective,
   ],
   providers: [
+    {
+      provide: DEFAULT_LANG,
+      useValue: SUPPORTED_LANGS[0],
+    },
     {
       provide: AbstractNotificationService,
       useClass: NotificationMockService,
@@ -105,9 +110,9 @@ export class MainPageComponent {
 
   /** SESSION */
   avatarOpen = false;
-  connectionStatus$: Observable<ConnectionStatus> =
+  connectionStatus$: Observable<ConnectionStatus | null> =
     this.connectionService.connectionStatus$;
-  session$: Observable<Session> = this.sessionService.session$;
+  session$: Observable<Session | null> = this.sessionService.session$;
 
   /** THEME */
   darkModeOn = false;

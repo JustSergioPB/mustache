@@ -2,10 +2,10 @@ import { Language } from '../models';
 
 export const SUPPORTED_LANGS: Language[] = [
   {
-    id: 'en-GB',
+    id: 'en-US',
     value: 'EN',
     name: 'English',
-    country: 'United Kingdom',
+    country: 'United States',
     iconSrc: '&#x1F1FA;&#x1F1F8;',
   },
   {

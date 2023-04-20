@@ -21,7 +21,7 @@ export class EmojiDirective implements OnChanges {
     if (changes['emoji']) {
       const sanitized = this.domSanitizer.sanitize(
         SecurityContext.HTML,
-        changes['emoji']
+        changes['emoji'].currentValue
       );
       this.el.nativeElement.innerHTML = sanitized;
     }

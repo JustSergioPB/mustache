@@ -13,8 +13,7 @@ import { EmojiDirective } from '@mustache/basic-ui';
 export class LanguageDropdownComponent {
   @Input() languages: Language[] = [];
   @Input() isOpen = false;
-  //TODO: add default value for this
-  @Input() value: Language | undefined;
+  @Input() value: Language | undefined | null;
   @Output() languageChanged = new EventEmitter<number>();
 
   public onItemClick(index: number): void {

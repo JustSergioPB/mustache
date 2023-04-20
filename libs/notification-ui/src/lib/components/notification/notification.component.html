@@ -1,11 +1,12 @@
 <div class="previous">
   <div
-    *ngIf="notification.iconSrc"
-    class="circle circle--{{ notification.variant }} circle--s"
+    class="circle circle--{{ notification?.variant || 'primary' }} circle--s"
   >
     <img
-      class="icon icon--m icon--empty icon--{{ notification.variant }}"
-      src="{{ notification.iconSrc }}"
+      class="icon icon--m icon--empty icon--{{
+        notification?.variant || 'primary'
+      }}"
+      src="{{ notification?.iconSrc || 'assets/icons/bell.svg' }}"
       alt="'menu'"
     />
   </div>
@@ -13,7 +14,9 @@
 <div class="content">
   <div class="content__header">
     <div class="content__title">
-      <p class="title text--comment-semibold">{{ notification.title }}</p>
+      <p class="title text--comment-semibold">
+        {{ notification?.title || '--' }}
+      </p>
     </div>
     <div class="content__actions">
       <mustache-tooltip [message]="'Remove'">
@@ -30,12 +33,12 @@
       </mustache-tooltip>
       <mustache-tooltip
         [message]="
-          notification.status === 'unread' ? 'Mark as read' : 'Mark as unread'
+          notification?.status === 'unread' ? 'Mark as read' : 'Mark as unread'
         "
       >
         <button
           class="dot-wrapper {{
-            notification.status === 'unread'
+            notification?.status === 'unread'
               ? 'dot-wrapper--primary'
               : 'dot-wrapper--discrete'
           }}"
@@ -43,7 +46,7 @@
         >
           <div
             class="dot dot--s {{
-              notification.status === 'unread'
+              notification?.status === 'unread'
                 ? 'dot--primary'
                 : 'dot--discrete'
             }}"
@@ -54,10 +57,10 @@
   </div>
   <div class="content__description">
     <p class="text--comment-medium text--gray-600">
-      {{ notification.description }}
+      {{ notification?.description || '--' }}
     </p>
   </div>
   <p class="text--label-regular text--gray-500">
-    {{ notification.date | notificationDate }}
+    {{ notification?.date | notificationDate }}
   </p>
 </div>

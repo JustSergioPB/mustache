@@ -1,7 +1,7 @@
 <ng-container *ngFor="let item of items; let i = index">
   <ng-container
     *ngTemplateOutlet="
-      item.leafs?.length > 0 ? dropdown : navigationItem;
+      item.leafs ? dropdown : navigationItem;
       context: { item: item, index: i }
     "
   ></ng-container>

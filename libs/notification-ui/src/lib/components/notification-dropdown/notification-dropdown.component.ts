@@ -13,7 +13,7 @@ import { ButtonDirective } from '@mustache/basic-ui';
   styleUrls: ['./notification-dropdown.component.scss'],
 })
 export class NotificationDropdownComponent {
-  @Input() notifications: Notification[] = [];
+  @Input() notifications: Notification[] | null = [];
   @Input() notificationsOn = true;
   @Input() isOpen = false;
   @Input() isLoading = false;

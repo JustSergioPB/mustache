@@ -7,7 +7,7 @@
       [variant]="'primary'"
       [filled]="false"
       [size]="'s'"
-      *ngIf="notifications.length > 0"
+      *ngIf="notifications?.length"
       (click)="onReadAllClicked()"
     >
       Mark all as read
@@ -15,9 +15,9 @@
   </div>
   <div
     class="dropdown__body"
-    [ngClass]="{ 'dropdown__body--empty': notifications.length === 0 }"
+    [ngClass]="{ 'dropdown__body--empty': notifications?.length === 0 }"
   >
-    <ng-container *ngIf="notifications.length > 0; else emptyList">
+    <ng-container *ngIf="notifications?.length; else emptyList">
       <mustache-notification
         *ngFor="let notification of notifications; let i = index"
         [notification]="notification"

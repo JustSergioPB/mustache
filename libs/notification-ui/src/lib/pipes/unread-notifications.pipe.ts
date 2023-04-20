@@ -7,7 +7,11 @@ import { Notification } from '../models';
   standalone: true,
 })
 export class UnreadNotificationsPipe implements PipeTransform {
-  transform(notifiactions: Notification[]): number {
-    return notifiactions.filter((n) => n.status === 'unread').length;
+  transform(notifications: Notification[] | null): number | null {
+    let count = null;
+    if (notifications) {
+      count = notifications.filter((n) => n.status === 'unread').length;
+    }
+    return count;
   }
 }
