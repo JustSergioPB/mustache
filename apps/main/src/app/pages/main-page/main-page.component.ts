@@ -30,7 +30,6 @@ import {
   LanguageDropdownComponent,
   LanguageMockService,
   LanguageSelectorComponent,
-  SUPPORTED_LANGS,
 } from '@mustache/language-ui';
 import {
   AbstractNotificationService,
@@ -44,6 +43,7 @@ import {
 
 import { Observable } from 'rxjs';
 import { NAVBAR_CONFIG } from './navbar.config';
+import { SUPPORTED_LANGS } from '../../supported-langs';
 
 @Component({
   standalone: true,

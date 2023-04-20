@@ -1,5 +1,4 @@
 import { Inject, Injectable } from '@angular/core';
-import { SUPPORTED_LANGS } from './supported-langs';
 import { AbstractLanguageService } from '.';
 import { Language } from '../models';
 import { DEFAULT_LANG } from '../tokens/tokens';
@@ -13,7 +12,7 @@ export class LanguageMockService extends AbstractLanguageService {
   }
 
   public getLanguage(): void {
-    this._language$.next(SUPPORTED_LANGS[0]);
+    this._language$.next(this.defaultLanguage);
   }
 
   public changeLanguage(lang: Language): void {

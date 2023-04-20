@@ -1,4 +1,4 @@
-import { Language } from '../models';
+import { Language } from "@mustache/language-ui";
 
 export const SUPPORTED_LANGS: Language[] = [
   {
