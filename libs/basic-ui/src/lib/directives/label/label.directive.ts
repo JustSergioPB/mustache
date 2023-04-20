@@ -6,13 +6,12 @@ import { Directive, HostBinding, Input } from '@angular/core';
 })
 export class LabelDirective {
   @Input() hasError = false;
-  isFocused = false;
   isDisabled = false;
-  isRequired = false;
+  @Input() isRequired = false;
 
   @HostBinding('class') get classes(): string {
-    return `text--label-regular label label--${
-      this.isFocused ? 'label--focused' : ''
-    } label--${this.hasError ? 'label--error' : ''}`;
+    return `text--label-regular label ${this.hasError ? 'label--error' : ''} ${
+      this.isRequired ? 'label--required' : ''
+    }`;
   }
 }

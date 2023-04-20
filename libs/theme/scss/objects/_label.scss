@@ -1,5 +1,17 @@
 @use '../settings';
 
 .label {
+  position: relative;
+  top: -(settings.$spacing-xl + settings.$spacing-s);
+  left: - settings.$spacing-xs;
   color: settings.$gray-600;
+
+  &:focus-within {
+    color: settings.$primary-500;
+  }
+
+  &--required::after {
+    content: '*';
+    color: settings.$primary-500;
+  }
 }

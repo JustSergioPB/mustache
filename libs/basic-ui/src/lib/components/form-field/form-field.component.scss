@@ -2,17 +2,14 @@
 @use '../../../../../theme/scss/tools';
 
 :host(mustache-form-field) {
-  display: flex;
-  flex-direction: column;
-}
-
-.label {
-  margin-left: settings.$spacing-xs;
-}
-
-.input {
+  display: block;
   border-radius: settings.$border-radius-s;
-  padding: settings.$spacing-s;
-  margin-top: settings.$spacing-2xs;
+  padding: settings.$spacing-m;
+  height: settings.$spacing-m * 2 + settings.$font-size-s;
+  margin-top: settings.$spacing-xs * 2 + settings.$font-size-xs;
   border: solid settings.$border-thickness-m settings.$gray-300;
+
+  &:focus-within {
+    border: solid settings.$border-thickness-m settings.$primary-500;
+  }
 }

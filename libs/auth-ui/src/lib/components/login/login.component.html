@@ -1,29 +1,16 @@
 <form class="form">
   <mustache-form-field>
-    <ng-container label>
-      <label mustacheLabel for="email"> Email </label>
-    </ng-container>
-    <ng-container input>
-      <input
-        id="email"
-        mustacheInput
-        type="email"
-        placeholder="mr.mustache@gmail.com"
-      />
-    </ng-container>
+    <label mustacheLabel for="email"> Email </label>
+    <input
+      id="email"
+      mustacheInput
+      type="email"
+      placeholder="mr.mustache@gmail.com"
+    />
   </mustache-form-field>
   <mustache-form-field>
-    <ng-container label>
-      <label mustacheLabel for="password"> Password </label>
-    </ng-container>
-    <ng-container input>
-      <input
-        id="password"
-        mustacheInput
-        type="password"
-        placeholder="mustache"
-      />
-    </ng-container>
+    <label mustacheLabel for="password"> Password </label>
+    <input id="password" mustacheInput type="password" placeholder="mustache" />
   </mustache-form-field>
   <div class="options">
     <mustache-checkbox (valueChanged)="onRememberMeClicked()">

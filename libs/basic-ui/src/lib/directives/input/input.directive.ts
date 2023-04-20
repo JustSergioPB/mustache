@@ -6,20 +6,11 @@ import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 })
 export class InputDirective {
   @Input() hasError = false;
-  isFocused = false;
   isDisabled = false;
 
   @HostBinding('class') get classes(): string {
-    return `input input--${this.hasError ? 'input--error' : ''} input--${
-      this.isFocused ? 'input--focused' : ''
-    } input--${this.isDisabled ? 'input--disabled' : ''}`;
-  }
-
-  @HostListener('focus') onFocus() {
-    this.isFocused = true;
-  }
-
-  @HostListener('blur') onblur() {
-    this.isFocused = false;
+    return `input ${this.hasError ? 'input--error' : ''} ${
+      this.isDisabled ? 'input--disabled' : ''
+    }`;
   }
 }

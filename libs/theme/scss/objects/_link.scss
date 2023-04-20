@@ -5,6 +5,10 @@
     cursor: pointer;
     text-decoration: underline;
   }
+
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 @each $color, $value in settings.$colors {

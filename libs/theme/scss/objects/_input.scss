@@ -1,6 +1,8 @@
 @use '../settings';
 
 .input {
+  position: relative;
+  top: - settings.$spacing-xl;
   font-size: settings.$font-size-s;
   width: 100%;
 
@@ -9,9 +11,7 @@
     font-size: settings.$font-size-s;
   }
 
-  &--focused {
-    &::placeholder {
-      color: settings.$primary-500;
-    }
+  &:focus {
+    color: settings.$primary-500;
   }
 }
