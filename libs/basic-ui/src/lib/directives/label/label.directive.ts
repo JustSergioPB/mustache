@@ -5,12 +5,11 @@ import { Directive, HostBinding, Input } from '@angular/core';
   standalone: true,
 })
 export class LabelDirective {
-  @Input() hasError = false;
+  isRequired = false;
   isDisabled = false;
-  @Input() isRequired = false;
 
   @HostBinding('class') get classes(): string {
-    return `text--label-regular label ${this.hasError ? 'label--error' : ''} ${
+    return `text--label-regular label  ${
       this.isRequired ? 'label--required' : ''
     }`;
   }

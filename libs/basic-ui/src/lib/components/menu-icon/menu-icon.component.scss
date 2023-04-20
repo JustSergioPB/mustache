@@ -3,7 +3,7 @@
 
 :host(mustache-menu-icon) {
   @include tools.navbarIcon;
-  &:hover > .icon--navbar {
+  &:hover > .icon--discrete {
     filter: settings.$filter-primary-500;
   }
 }

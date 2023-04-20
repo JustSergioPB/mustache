@@ -5,7 +5,7 @@
   @include tools.navbarIcon;
   position: relative;
 
-  &:hover > .icon--navbar {
+  &:hover > .icon--discrete {
     filter: settings.$filter-primary-500;
   }
 }

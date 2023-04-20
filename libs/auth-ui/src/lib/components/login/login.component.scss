@@ -9,14 +9,14 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: settings.$spacing-m;
-  margin: settings.$spacing-m 0 settings.$spacing-xl 0;
+  margin-bottom: settings.$spacing-xl;
 }
 
 .options {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: settings.$spacing-xs 0 settings.$spacing-m 0;
 }
 
 .signup {

@@ -4,10 +4,10 @@
 :host(mustache-form-field) {
   display: block;
   border-radius: settings.$border-radius-s;
-  padding: settings.$spacing-m;
-  height: settings.$spacing-m * 2 + settings.$font-size-s;
-  margin-top: settings.$spacing-xs * 2 + settings.$font-size-xs;
   border: solid settings.$border-thickness-m settings.$gray-300;
+  position: relative;
+  height: settings.$spacing-m * 3;
+  margin: settings.$spacing-l 0;
 
   &:focus-within {
     border: solid settings.$border-thickness-m settings.$primary-500;

@@ -1,0 +1,7 @@
+@use '../settings';
+
+.error {
+  position: absolute;
+  top: settings.$spacing-3xl + settings.$spacing-2xs;
+  left: settings.$spacing-xs;
+}

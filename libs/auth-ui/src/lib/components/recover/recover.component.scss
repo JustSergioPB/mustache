@@ -9,8 +9,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: settings.$spacing-m;
-  margin: settings.$spacing-m 0 settings.$spacing-xl 0;
+  margin-bottom: settings.$spacing-xl;
 }
 
 .login {

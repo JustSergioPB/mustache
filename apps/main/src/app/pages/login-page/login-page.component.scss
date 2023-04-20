@@ -46,3 +46,9 @@
     flex-direction: column;
   }
 }
+
+mustache-login,
+mustache-recover,
+mustache-signup {
+  margin-top: settings.$spacing-xl;
+}

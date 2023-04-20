@@ -46,10 +46,6 @@
       background-color: map-get(settings.$colors, 'gray-300');
     }
 
-    &:active {
-      background-color: map-get(settings.$colors, 'gray-300');
-    }
-
     &.button--empty {
       background-color: settings.$bg-color;
       color: settings.$gray-500;

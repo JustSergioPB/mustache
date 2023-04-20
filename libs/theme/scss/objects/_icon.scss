@@ -41,6 +41,12 @@
     font-size: settings.$font-size-6xl;
   }
 
+  &--formfield {
+    position: absolute;
+    top: settings.$spacing-s;
+    right: settings.$spacing-s;
+  }
+
   &.icon--empty {
     &.icon--primary {
       @include tools.iconColor('primary');
@@ -58,9 +64,6 @@
       @include tools.iconColor('success');
     }
     &.icon--discrete {
-      @include tools.iconColor('gray');
-    }
-    &.icon--navbar {
       @include tools.iconColor('gray');
     }
     &.icon--disabled {

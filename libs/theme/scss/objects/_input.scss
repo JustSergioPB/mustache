@@ -1,8 +1,9 @@
 @use '../settings';
 
 .input {
-  position: relative;
-  top: - settings.$spacing-xl;
+  position: absolute;
+  top: settings.$spacing-s;
+  left: settings.$spacing-s;
   font-size: settings.$font-size-s;
   width: 100%;
 
@@ -13,5 +14,13 @@
 
   &:focus {
     color: settings.$primary-500;
+  }
+
+  &.input--error:focus {
+    color: settings.$danger-500;
+  }
+
+  &.input--error::placeholder {
+    color: settings.$danger-500;
   }
 }

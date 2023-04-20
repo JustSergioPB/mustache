@@ -1,61 +1,42 @@
 <form class="form">
   <mustache-form-field>
-    <ng-container label>
-      <label mustacheLabel for="email"> Email </label>
-    </ng-container>
-    <ng-container input>
-      <input
-        id="email"
-        mustacheInput
-        type="email"
-        placeholder="mr.mustache@gmail.com"
-      />
-    </ng-container>
+    <label mustacheLabel for="email"> Email </label>
+    <input
+      id="email"
+      mustacheInput
+      type="email"
+      placeholder="mr.mustache@gmail.com"
+    />
   </mustache-form-field>
   <button mustacheButton [position]="'center'" (click)="onSendCodeClicked()">
     Send code
   </button>
+</form>
+<form class="form">
   <mustache-form-field>
-    <ng-container label>
-      <label mustacheLabel for="code"> Code </label>
-    </ng-container>
-    <ng-container input>
-      <input id="code" mustacheInput type="code" placeholder="000000" />
-    </ng-container>
+    <label mustacheLabel for="code"> Code </label>
+    <input id="code" mustacheInput type="code" placeholder="000000" />
   </mustache-form-field>
   <mustache-form-field>
-    <ng-container label>
-      <label mustacheLabel for="password"> Password </label>
-    </ng-container>
-    <ng-container input>
-      <input
-        id="password"
-        mustacheInput
-        type="password"
-        placeholder="mustache"
-      />
-    </ng-container>
+    <label mustacheLabel for="password"> Password </label>
+    <input id="password" mustacheInput type="password" placeholder="mustache" />
   </mustache-form-field>
   <mustache-form-field>
-    <ng-container label>
-      <label mustacheLabel for="repeat"> Repeat your password </label>
-    </ng-container>
-    <ng-container input>
-      <input id="repeat" mustacheInput type="repeat" placeholder="mustache" />
-    </ng-container>
+    <label mustacheLabel for="repeat"> Repeat your password </label>
+    <input id="repeat" mustacheInput type="repeat" placeholder="mustache" />
   </mustache-form-field>
   <button mustacheButton [position]="'center'" (click)="onResetClicked()">
     Reset password
   </button>
 </form>
 <div class="login">
-    <p class="text--comment-semibold text--gray-400">
-      Have you remembered your password?
-    </p>
-    <a
-      class="link link--primary-500 text--comment-semibold text--primary-500"
-      (click)="onLoginClicked()"
-    >
-      Log in
-    </a>
-  </div>
+  <p class="text--comment-semibold text--gray-400">
+    Have you remembered your password?
+  </p>
+  <a
+    class="link link--primary-500 text--comment-semibold text--primary-500"
+    (click)="onLoginClicked()"
+  >
+    Log in
+  </a>
+</div>
