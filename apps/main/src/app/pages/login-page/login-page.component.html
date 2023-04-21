@@ -19,8 +19,8 @@
     ></mustache-signup>
     <mustache-recover
       *ngIf="shownWidget === 'recover'"
-      (sendCodeSubmited)="onSendCodeClicked()"
-      (resetSubmited)="onResetClicked()"
+      (sendCodeSubmited)="onSendCodeSubmited()"
+      (resetSubmited)="onResetSubmited()"
       (loginClicked)="onLoginClicked()"
     ></mustache-recover>
     <mustache-third-parties *ngIf="shownWidget === 'thirdParties'">

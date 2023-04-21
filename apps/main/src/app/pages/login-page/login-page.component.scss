@@ -15,6 +15,7 @@
 
 .login {
   flex-basis: 50%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,14 +23,6 @@
 
   &__container {
     width: calc(4 * settings.$desktop-column-width + 3 * settings.$gutter);
-  }
-
-  &__options {
-    width: calc(4 * settings.$desktop-column-width + 3 * settings.$gutter);
-    display: flex;
-    flex-wrap: wrap;
-    gap: settings.$spacing-m;
-    margin: settings.$spacing-m 0 0 0;
   }
 }
 
@@ -51,4 +44,19 @@ mustache-login,
 mustache-recover,
 mustache-signup {
   margin-top: settings.$spacing-xl;
+}
+
+@media (max-width: settings.$breakpoint-s) {
+  .content {
+    display: none;
+  }
+
+  .login {
+    &__container {
+      border-top-left-radius: settings.$border-radius-m;
+      border-top-right-radius: settings.$border-radius-m;
+      padding: settings.$margin;
+      width: 100%;
+    }
+  }
 }

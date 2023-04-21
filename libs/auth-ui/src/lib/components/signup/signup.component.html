@@ -16,16 +16,26 @@
     <label mustacheLabel for="repeat"> Repeat your password </label>
     <input id="repeat" mustacheInput type="repeat" placeholder="mustache" />
   </mustache-form-field>
+  <span class="policy text--comment-semibold text--gray-400"
+    >By signing up, you agree to our
+    <a class="link link--primary-500 text--comment-semibold text--primary-500">
+      Terms & conditions
+    </a>
+    and
+    <a class="link link--primary-500 text--comment-semibold text--primary-500">
+      Privacy policy
+    </a>
+  </span>
   <button mustacheButton [position]="'center'" (click)="onSignUpClicked()">
     Sign up
   </button>
 </form>
-<div class="login">
-  <p class="text--comment-semibold text--gray-400">Already have an account?</p>
+<span class="redirect text--comment-semibold text--gray-400">
+  Already have an account?
   <a
     class="link link--primary-500 text--comment-semibold text--primary-500"
     (click)="onLoginClicked()"
   >
     Log in
   </a>
-</div>
+</span>

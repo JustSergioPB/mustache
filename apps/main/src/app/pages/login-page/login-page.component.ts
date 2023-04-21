@@ -37,8 +37,8 @@ export class LoginPageComponent {
 
   onRecoverClicked(): void {
     this.shownWidget = 'recover';
-    this.title = "Don't worry!";
-    this.subtitle = 'We have you covered';
+    this.title = 'Forgot your password?';
+    this.subtitle = "Don't worry! We've got you covered";
   }
 
   onLoginClicked(): void {
@@ -53,7 +53,7 @@ export class LoginPageComponent {
 
   onSubmitSignUp(): void {}
 
-  onSendCodeClicked(): void {}
+  onSendCodeSubmited(): void {}
 
-  onResetClicked(): void {}
+  onResetSubmited(): void {}
 }

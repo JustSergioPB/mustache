@@ -9,19 +9,21 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin-bottom: settings.$spacing-xl;
+  margin-bottom: settings.$spacing-3xl;
 }
 
 .options {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: settings.$spacing-xs 0 settings.$spacing-m 0;
 }
 
-.signup {
+.redirect {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: settings.$spacing-xs;
 }

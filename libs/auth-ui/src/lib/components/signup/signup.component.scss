@@ -9,12 +9,18 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin-bottom: settings.$spacing-xl;
+  margin-bottom: settings.$spacing-3xl;
 }
 
-.login {
+.redirect {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: settings.$spacing-xs;
+}
+
+.policy {
+  margin-bottom: settings.$spacing-m;
+  word-break: break-all;
 }

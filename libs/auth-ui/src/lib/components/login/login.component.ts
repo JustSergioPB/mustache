@@ -84,6 +84,7 @@ export class LoginComponent {
   }
 
   onLoginClicked(): void {
+    this.form.markAllAsTouched();
     if (this.form.valid) {
       this.loginSubmited.emit({
         ...this.form.getRawValue(),
