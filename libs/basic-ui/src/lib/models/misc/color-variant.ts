@@ -1,7 +1,7 @@
 export type ColorVariant =
   | 'primary'
   | 'accent'
-  | 'discrete'
+  | 'gray'
   | 'danger'
   | 'warn'
   | 'success';
