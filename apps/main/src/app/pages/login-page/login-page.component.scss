@@ -46,6 +46,12 @@ mustache-signup {
   margin-top: settings.$spacing-xl;
 }
 
+mustache-login {
+  button {
+    flex: 1 1 0;
+  }
+}
+
 @media (max-width: settings.$breakpoint-s) {
   .content {
     display: none;

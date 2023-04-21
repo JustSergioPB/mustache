@@ -17,7 +17,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserCredentials } from '../../models/user-crendentials';
-
 @Component({
   selector: 'mustache-login',
   standalone: true,
@@ -41,6 +40,7 @@ export class LoginComponent {
     password: FormControl<string>;
   }>;
   private rememberMe = false;
+  @Input() thirdPartiesEnabled: boolean | undefined = false;
   @Output() signUpClicked = new EventEmitter<void>();
   @Output() recoverClicked = new EventEmitter<void>();
   @Output() loginSubmited = new EventEmitter<UserCredentials>();

@@ -65,10 +65,7 @@
         <mustache-status [variant]="'danger'" (click)="onStatusClicked('busy')">
           Busy
         </mustache-status>
-        <mustache-status
-          [variant]="'discrete'"
-          (click)="onStatusClicked('out')"
-        >
+        <mustache-status [variant]="'gray'" (click)="onStatusClicked('out')">
           Out
         </mustache-status>
       </ng-container>
@@ -80,8 +77,7 @@
         >
         <button
           mustacheButton
-          [variant]="'discrete'"
-          [filled]="false"
+          [type]="'empty'"
           [size]="'s'"
           (click)="onSettingsClicked()"
         >
@@ -94,8 +90,7 @@
         </button>
         <button
           mustacheButton
-          [variant]="'discrete'"
-          [filled]="false"
+          [type]="'empty'"
           [size]="'s'"
           (click)="onLogOutClicked()"
         >

@@ -51,6 +51,16 @@
     Log in
   </button>
 </form>
+<div class="third-parties" *ngIf="thirdPartiesEnabled">
+  <div class="third-parties__or">
+    <hr class="divider" />
+    <p class="text--comment-semibold text--gray-400">OR</p>
+    <hr class="divider" />
+  </div>
+  <div class="third-parties__buttons">
+    <ng-content></ng-content>
+  </div>
+</div>
 <span class="redirect text--comment-semibold text--gray-400">
   Don't you have an account?
   <a

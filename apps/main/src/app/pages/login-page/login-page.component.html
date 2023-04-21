@@ -5,12 +5,63 @@
       {{ subtitle }}
     </h2>
     <mustache-login
-      *ngIf="shownWidget === 'login'"
+      [thirdPartiesEnabled]="true"
       (signUpClicked)="onSignUpClicked()"
       (recoverClicked)="onRecoverClicked()"
-      (rememberMeClicked)="onRememberMeClicked()"
       (loginSubmited)="onSubmitLogin()"
     >
+      <button
+        mustacheButton
+        [type]="'complementary'"
+        [position]="'center'"
+        (click)="onLoginWithGoogleClicked()"
+      >
+        <img
+          class="icon icon--m icon--empty icon--discrete"
+          src="../../../assets/icons/brand-google.svg"
+          alt="'log out'"
+        />
+        Google
+      </button>
+      <button
+        mustacheButton
+        [type]="'complementary'"
+        [position]="'center'"
+        (click)="onLoginWithGoogleClicked()"
+      >
+        <img
+          class="icon icon--m icon--empty icon--discrete"
+          src="../../../assets/icons/brand-apple.svg"
+          alt="'log out'"
+        />
+        Apple
+      </button>
+      <button
+        mustacheButton
+        [type]="'complementary'"
+        [position]="'center'"
+        (click)="onLoginWithGoogleClicked()"
+      >
+        <img
+          class="icon icon--m icon--empty icon--discrete"
+          src="../../../assets/icons/brand-windows.svg"
+          alt="'log out'"
+        />
+        Microsoft
+      </button>
+      <button
+        mustacheButton
+        [type]="'complementary'"
+        [position]="'center'"
+        (click)="onLoginWithGoogleClicked()"
+      >
+        <img
+          class="icon icon--m icon--empty icon--discrete"
+          src="../../../assets/icons/wallet.svg"
+          alt="'log out'"
+        />
+        Web3
+      </button>
     </mustache-login>
     <mustache-signup
       *ngIf="shownWidget === 'signup'"
@@ -23,50 +74,6 @@
       (resetSubmited)="onResetSubmited()"
       (loginClicked)="onLoginClicked()"
     ></mustache-recover>
-    <mustache-third-parties *ngIf="shownWidget === 'thirdParties'">
-      <button
-        mustacheButton
-        [position]="'center'"
-        [variant]="'discrete'"
-        [filled]="false"
-        (click)="onLoginWithGoogleClicked()"
-      >
-        <img
-          class="icon icon--m icon--empty icon--discrete"
-          src="../../../assets/icons/brand-google.svg"
-          alt="'log out'"
-        />
-        Log in with Google
-      </button>
-      <button
-        mustacheButton
-        [position]="'center'"
-        [variant]="'discrete'"
-        [filled]="false"
-        (click)="onLoginWithGoogleClicked()"
-      >
-        <img
-          class="icon icon--m icon--empty icon--discrete"
-          src="../../../assets/icons/brand-apple.svg"
-          alt="'log out'"
-        />
-        Log in with Apple
-      </button>
-      <button
-        mustacheButton
-        [position]="'center'"
-        [variant]="'discrete'"
-        [filled]="false"
-        (click)="onLoginWithGoogleClicked()"
-      >
-        <img
-          class="icon icon--m icon--empty icon--discrete"
-          src="../../../assets/icons/brand-windows.svg"
-          alt="'log out'"
-        />
-        Log in with Microsoft
-      </button>
-    </mustache-third-parties>
   </div>
 </div>
 <div class="content">

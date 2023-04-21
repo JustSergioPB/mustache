@@ -4,7 +4,6 @@ import {
   LoginComponent,
   RecoverComponent,
   SignupComponent,
-  ThirdPartiesComponent,
 } from '@mustache/auth-ui';
 import { ButtonDirective } from '@mustache/basic-ui';
 
@@ -16,14 +15,13 @@ import { ButtonDirective } from '@mustache/basic-ui';
     LoginComponent,
     SignupComponent,
     RecoverComponent,
-    ThirdPartiesComponent,
     ButtonDirective,
   ],
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent {
-  shownWidget: 'login' | 'signup' | 'recover' | 'thirdParties' = 'login';
+  shownWidget: 'login' | 'signup' | 'recover'  = 'login';
   title = 'Welcome back!';
   subtitle = 'Start building applications faster';
 
@@ -46,8 +44,6 @@ export class LoginPageComponent {
     this.title = 'Welcome back!';
     this.subtitle = 'Start building applications faster';
   }
-
-  onRememberMeClicked(): void {}
 
   onSubmitLogin(): void {}
 

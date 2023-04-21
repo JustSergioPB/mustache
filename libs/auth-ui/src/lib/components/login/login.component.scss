@@ -9,7 +9,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin-bottom: settings.$spacing-3xl;
+  margin-bottom: settings.$spacing-xl;
 }
 
 .options {
@@ -18,6 +18,31 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: settings.$spacing-xs 0 settings.$spacing-m 0;
+}
+
+.third-parties {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: settings.$spacing-3xl;
+  gap: settings.$spacing-s;
+
+  &__or {
+    display: flex;
+    align-items: center;
+    gap: settings.$spacing-s;
+    margin-bottom: settings.$spacing-l;
+
+    .divider {
+      flex-basis: 50%;
+      border-top: solid settings.$border-thickness-m settings.$gray-300;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: settings.$spacing-s;
+  }
 }
 
 .redirect {
