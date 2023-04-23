@@ -1,15 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ButtonDirective, SpinnerComponent } from '@mustache/basic-ui';
 import {
-  ButtonDirective,
   CheckboxComponent,
   FormFieldComponent,
   FormFieldErrorDirective,
   FormFieldIconDirective,
   InputDirective,
   LabelDirective,
-  SpinnerComponent,
-} from '@mustache/basic-ui';
+} from '@mustache/forms-ui';
 import {
   FormControl,
   FormGroup,

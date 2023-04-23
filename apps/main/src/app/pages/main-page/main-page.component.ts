@@ -21,7 +21,6 @@ import {
   NavbarComponent,
   NavbarItem,
   Result,
-  ToggleComponent,
   ToolbarComponent,
 } from '@mustache/basic-ui';
 import {
@@ -45,6 +44,7 @@ import {
 import { Observable } from 'rxjs';
 import { NAVBAR_CONFIG } from './navbar.config';
 import { SUPPORTED_LANGS } from '../../supported-langs';
+import { ToggleComponent } from '@mustache/forms-ui';
 
 @Component({
   standalone: true,

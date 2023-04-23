@@ -66,7 +66,9 @@ export class LoginPageComponent implements OnDestroy {
   constructor(
     private sessionService: AbstractSessionService,
     private router: Router
-  ) {}
+  ) {
+    this.onRecoverClicked();
+  }
 
   ngOnDestroy(): void {
     this.destroy$.next();
@@ -82,7 +84,8 @@ export class LoginPageComponent implements OnDestroy {
   onRecoverClicked(): void {
     this.shownWidget = 'recover';
     this.title = 'Forgot your password?';
-    this.subtitle = "Don't worry! We've got you covered";
+    this.subtitle =
+      "Don't worry! We've got you covered. Where should we send you a recovery code?";
   }
 
   onLoginClicked(): void {

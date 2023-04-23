@@ -1,0 +1,10 @@
+@use '../../../../../theme/scss/settings';
+@use '../../../../../theme/scss/tools';
+
+:host(mustache-countdown) {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: settings.$spacing-xl;
+  height: settings.$spacing-xl;
+}

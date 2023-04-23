@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorVariant } from '../../models';
+import { ColorVariant } from '@mustache/basic-ui';
 
 @Component({
   selector: 'mustache-checkbox',

@@ -8,14 +8,16 @@ import {
 import { CommonModule } from '@angular/common';
 import {
   ButtonDirective,
+  RequirementComponent,
+  SpinnerComponent,
+} from '@mustache/basic-ui';
+import {
   FormFieldComponent,
   FormFieldErrorDirective,
   FormFieldIconDirective,
   InputDirective,
   LabelDirective,
-  RequirementComponent,
-  SpinnerComponent,
-} from '@mustache/basic-ui';
+} from '@mustache/forms-ui';
 import { UserCredentials } from '../../models';
 import {
   FormControl,
@@ -61,7 +63,7 @@ export class SignupComponent implements OnDestroy {
   @Input() isSuccessful: boolean | null | undefined = false;
   @Input() isLoading: boolean | null | undefined = false;
   @Input() errorMessage: string | null | undefined;
-  
+
   @Output() signUpSubmited = new EventEmitter<UserCredentials>();
   @Output() loginClicked = new EventEmitter<void>();
   @Output() termsClicked = new EventEmitter<void>();

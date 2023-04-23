@@ -11,9 +11,24 @@
   flex-direction: column;
   margin-bottom: settings.$spacing-3xl;
 
-  &:first-child{
+  &:first-child {
     margin-bottom: settings.$spacing-l;
   }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: settings.$spacing-s;
+
+    button {
+      flex: 1 1 0;
+    }
+  }
+}
+
+.hint {
+  text-align: center;
+  margin-bottom: settings.$spacing-m;
 }
 
 .redirect {

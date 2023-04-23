@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" *ngIf="!codeIsVerified">
   <mustache-form-field>
     <label mustacheLabel for="email"> Email </label>
     <input
@@ -8,26 +8,52 @@
       placeholder="mr.mustache@gmail.com"
     />
   </mustache-form-field>
-  <button mustacheButton [position]="'center'" (click)="onSendCodeClicked()">
-    Send code
-  </button>
+  <p
+    class="hint text--label-semibold text--gray-400"
+    *ngIf="firstCodeSent && !counterIsVisible"
+  >
+    Haven't received a code? Hit the button again
+  </p>
+  <div class="form__actions">
+    <button
+      mustacheButton
+      [position]="'center'"
+      (click)="onSendCodeSubmited()"
+      [disabled]="counterIsVisible"
+    >
+      Send code
+    </button>
+    <mustache-countdown
+      *ngIf="counterIsVisible"
+      [totalSeconds]="60"
+      (counterFinished)="counterIsVisible = !counterIsVisible"
+    ></mustache-countdown>
+  </div>
 </form>
 <form class="form">
   <mustache-form-field>
     <label mustacheLabel for="code"> Code </label>
     <input id="code" mustacheInput type="code" placeholder="000000" />
   </mustache-form-field>
+  <button mustacheButton [position]="'center'" (click)="onVerifySubmited()">
+    Verify
+  </button>
+</form>
+<form class="form" *ngIf="codeIsVerified">
   <mustache-form-field>
     <label mustacheLabel for="password"> Password </label>
     <input id="password" mustacheInput type="password" placeholder="mustache" />
   </mustache-form-field>
-  <mustache-form-field>
-    <label mustacheLabel for="repeat"> Repeat your password </label>
-    <input id="repeat" mustacheInput type="repeat" placeholder="mustache" />
-  </mustache-form-field>
-  <button mustacheButton [position]="'center'" (click)="onResetClicked()">
-    Reset password
-  </button>
+  <div class="form__actions">
+    <button mustacheButton [position]="'center'" (click)="onResetSubmited()">
+      Reset password
+    </button>
+    <mustache-spinner
+      *ngIf="showSpinner"
+      [isLoading]="isLoading"
+      [success]="isSuccessful"
+    ></mustache-spinner>
+  </div>
 </form>
 <div class="redirect text--comment-semibold text--gray-400">
   Remembered your password?

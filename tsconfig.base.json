@@ -18,6 +18,7 @@
       "@mustache/auth-ui": ["libs/auth-ui/src/index.ts"],
       "@mustache/basic-ui": ["libs/basic-ui/src/index.ts"],
       "@mustache/chat-ui": ["libs/chat-ui/src/index.ts"],
+      "@mustache/forms-ui": ["libs/forms-ui/src/index.ts"],
       "@mustache/language-ui": ["libs/language-ui/src/index.ts"],
       "@mustache/notification-ui": ["libs/notification-ui/src/index.ts"]
     }
