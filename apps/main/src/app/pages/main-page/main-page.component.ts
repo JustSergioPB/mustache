@@ -1,6 +1,6 @@
 /* eslint-disable @angular-eslint/component-selector */
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
   AbstractSessionService,
@@ -20,6 +20,7 @@ import {
   ButtonDirective,
   NavbarComponent,
   NavbarItem,
+  Result,
   ToggleComponent,
   ToolbarComponent,
 } from '@mustache/basic-ui';
@@ -90,7 +91,7 @@ import { SUPPORTED_LANGS } from '../../supported-langs';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
   title = 'main';
 
   /** NAVBAR */
@@ -112,7 +113,7 @@ export class MainPageComponent {
   avatarOpen = false;
   connectionStatus$: Observable<ConnectionStatus | null> =
     this.connectionService.connectionStatus$;
-  session$: Observable<Session | null> = this.sessionService.session$;
+  session$: Observable<Result<Session>> = this.sessionService.session$;
 
   /** THEME */
   darkModeOn = false;

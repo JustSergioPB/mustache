@@ -40,7 +40,7 @@
       ></mustache-notification-icon>
     </mustache-notification-dropdown>
     <mustache-avatar-dropdown
-      [userNickname]="(session$ | async)?.nickName"
+      [userNickname]="(session$ | async)?.value?.nickName"
       [isOpen]="avatarOpen"
     >
       <ng-container iconButton>

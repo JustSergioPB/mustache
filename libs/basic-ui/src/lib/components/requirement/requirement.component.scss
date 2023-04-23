@@ -1,0 +1,8 @@
+@use '../../../../../theme/scss/settings';
+@use '../../../../../theme/scss/tools';
+
+:host(mustache-requirement) {
+  display: flex;
+  align-items: center;
+  gap: settings.$spacing-xs;
+}

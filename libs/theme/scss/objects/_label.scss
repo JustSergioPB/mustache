@@ -2,7 +2,7 @@
 
 .label {
   position: absolute;
-  top: - settings.$spacing-l + settings.$spacing-2xs;
+  top: -(settings.$spacing-l);
   left: settings.$spacing-xs;
 
   &:focus-within {
@@ -12,5 +12,13 @@
   &--required::after {
     content: '*';
     color: settings.$primary-500;
+  }
+
+  &--error {
+    color: settings.$danger-500;
+  }
+
+  &--error.label--required::after {
+    color: settings.$danger-500;
   }
 }

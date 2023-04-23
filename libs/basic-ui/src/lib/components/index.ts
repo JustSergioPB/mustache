@@ -12,3 +12,5 @@ export * from './toolbar/toolbar.component';
 export * from './tooltip/tooltip.component';
 export * from './checkbox/checkbox.component';
 export * from './form-field/form-field.component';
+export * from './spinner/spinner.component';
+export * from './requirement/requirement.component';

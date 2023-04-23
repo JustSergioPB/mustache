@@ -1,0 +1,30 @@
+@use '../../../../../theme/scss/settings';
+@use '../../../../../theme/scss/tools';
+
+$spinner-thickness: 6px;
+
+.spinner {
+  display: none;
+  width: settings.$spacing-2xl;
+  height: settings.$spacing-2xl;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, settings.$primary-500 94%, #0000)
+      top/$spinner-thickness $spinner-thickness no-repeat,
+    conic-gradient(#0000 30%, settings.$primary-500);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #0000 calc(100% - $spinner-thickness),
+    #000 0
+  );
+  animation: spinnning 1s infinite linear;
+  
+  &--visible {
+    display: block;
+  }
+}
+
+@keyframes spinnning {
+  100% {
+    transform: rotate(1turn);
+  }
+}

@@ -6,6 +6,7 @@ import {
   FormFieldComponent,
   LabelDirective,
 } from '@mustache/basic-ui';
+import { RecoverCrendetials, RecoverMethod } from '../../models';
 
 @Component({
   selector: 'mustache-recover',
@@ -21,8 +22,8 @@ import {
   styleUrls: ['./recover.component.scss'],
 })
 export class RecoverComponent {
-  @Output() sendCodeSubmited = new EventEmitter<void>();
-  @Output() resetSubmited = new EventEmitter<void>();
+  @Output() sendCodeSubmited = new EventEmitter<RecoverMethod>();
+  @Output() resetSubmited = new EventEmitter<RecoverCrendetials>();
   @Output() loginClicked = new EventEmitter<void>();
 
   onSendCodeClicked(): void {

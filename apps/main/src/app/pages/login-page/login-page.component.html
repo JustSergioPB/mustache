@@ -4,74 +4,85 @@
     <h2 class="text--body-regular text--gray-400">
       {{ subtitle }}
     </h2>
-    <mustache-login
-      [thirdPartiesEnabled]="true"
-      (signUpClicked)="onSignUpClicked()"
-      (recoverClicked)="onRecoverClicked()"
-      (loginSubmited)="onSubmitLogin()"
-    >
-      <button
-        mustacheButton
-        [type]="'complementary'"
-        [position]="'center'"
-        (click)="onLoginWithGoogleClicked()"
+    <ng-container *ngIf="shownWidget === 'login'">
+      <mustache-login
+        *ngIf="session$ | async as session"
+        [isLoading]="session.loading"
+        [isSuccessful]="!!session.value"
+        [errorMessage]="session.error?.message"
+        [thirdPartiesEnabled]="true"
+        (signUpClicked)="onSignUpClicked()"
+        (recoverClicked)="onRecoverClicked()"
+        (loginSubmited)="onSubmitLogin($event)"
       >
-        <img
-          class="icon icon--m icon--empty icon--discrete"
-          src="../../../assets/icons/brand-google.svg"
-          alt="'log out'"
-        />
-        Google
-      </button>
-      <button
-        mustacheButton
-        [type]="'complementary'"
-        [position]="'center'"
-        (click)="onLoginWithGoogleClicked()"
-      >
-        <img
-          class="icon icon--m icon--empty icon--discrete"
-          src="../../../assets/icons/brand-apple.svg"
-          alt="'log out'"
-        />
-        Apple
-      </button>
-      <button
-        mustacheButton
-        [type]="'complementary'"
-        [position]="'center'"
-        (click)="onLoginWithGoogleClicked()"
-      >
-        <img
-          class="icon icon--m icon--empty icon--discrete"
-          src="../../../assets/icons/brand-windows.svg"
-          alt="'log out'"
-        />
-        Microsoft
-      </button>
-      <button
-        mustacheButton
-        [type]="'complementary'"
-        [position]="'center'"
-        (click)="onLoginWithGoogleClicked()"
-      >
-        <img
-          class="icon icon--m icon--empty icon--discrete"
-          src="../../../assets/icons/wallet.svg"
-          alt="'log out'"
-        />
-        Web3
-      </button>
-    </mustache-login>
-    <mustache-signup
-      *ngIf="shownWidget === 'signup'"
-      (signUpSubmited)="onSubmitSignUp()"
-      (loginClicked)="onLoginClicked()"
-    ></mustache-signup>
+        <button
+          mustacheButton
+          [type]="'complementary'"
+          [position]="'center'"
+          (click)="onLoginWithGoogleClicked()"
+        >
+          <img
+            class="icon icon--m icon--empty icon--discrete"
+            src="../../../assets/icons/brand-google.svg"
+            alt="'log out'"
+          />
+          Google
+        </button>
+        <button
+          mustacheButton
+          [type]="'complementary'"
+          [position]="'center'"
+          (click)="onLoginWithGoogleClicked()"
+        >
+          <img
+            class="icon icon--m icon--empty icon--discrete"
+            src="../../../assets/icons/brand-apple.svg"
+            alt="'log out'"
+          />
+          Apple
+        </button>
+        <button
+          mustacheButton
+          [type]="'complementary'"
+          [position]="'center'"
+          (click)="onLoginWithGoogleClicked()"
+        >
+          <img
+            class="icon icon--m icon--empty icon--discrete"
+            src="../../../assets/icons/brand-windows.svg"
+            alt="'log out'"
+          />
+          Microsoft
+        </button>
+        <button
+          mustacheButton
+          [type]="'complementary'"
+          [position]="'center'"
+          (click)="onLoginWithGoogleClicked()"
+        >
+          <img
+            class="icon icon--m icon--empty icon--discrete"
+            src="../../../assets/icons/wallet.svg"
+            alt="'log out'"
+          />
+          Web3
+        </button>
+      </mustache-login>
+    </ng-container>
+    <ng-container *ngIf="shownWidget === 'signup'">
+      <mustache-signup
+        *ngIf="session$ | async as session"
+        [isLoading]="session.loading"
+        [isSuccessful]="!!session.value"
+        [errorMessage]="session.error?.message"
+        (signUpSubmited)="onSubmitSignUp($event)"
+        (loginClicked)="onLoginClicked()"
+      ></mustache-signup>
+    </ng-container>
     <mustache-recover
       *ngIf="shownWidget === 'recover'"
-      (sendCodeSubmited)="onSendCodeSubmited()"
-      (resetSubmited)="onResetSubmited()"
+      (sendCodeSubmited)="onSendCodeSubmited($event)"
+      (resetSubmited)="onResetSubmited($event)"
       (loginClicked)="onLoginClicked()"
     ></mustache-recover>
   </div>

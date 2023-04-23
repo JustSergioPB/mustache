@@ -1,0 +1,18 @@
+<div
+  class="circle circle--xs {{
+    isFulfilled ? 'circle--success' : 'circle--dotted'
+  }}"
+>
+  <img
+    *ngIf="isFulfilled"
+    src="assets/icons/check.svg"
+    class="icon icon--s icon--empty icon--success"
+  />
+</div>
+<p
+  class="text--comment-semibold {{
+    isFulfilled ? 'text--success-600' : 'text--gray-400'
+  }}"
+>
+  <ng-content></ng-content>
+</p>

@@ -12,4 +12,16 @@
   &:focus-within {
     border: solid settings.$border-thickness-m settings.$primary-500;
   }
+
+  &.form-field--error:focus-within {
+    border: solid settings.$border-thickness-m settings.$danger-500;
+  }
+
+  &.form-field--disabled {
+    background-color: settings.$gray-100;
+
+    &:focus-within {
+      border: solid settings.$border-thickness-m settings.$gray-300;
+    }
+  }
 }

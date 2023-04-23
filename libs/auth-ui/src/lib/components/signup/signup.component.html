@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" [formGroup]="form">
   <mustache-form-field>
     <label mustacheLabel for="email"> Email </label>
     <input
@@ -6,16 +6,55 @@
       mustacheInput
       type="email"
       placeholder="mr.mustache@gmail.com"
+      formControlName="email"
     />
+    <p
+      mustacheFormFieldError
+      *ngIf="form.controls.email.touched && form.controls.email.invalid"
+    >
+      {{ getEmailError() }}
+    </p>
   </mustache-form-field>
   <mustache-form-field>
     <label mustacheLabel for="password"> Password </label>
-    <input id="password" mustacheInput type="password" placeholder="mustache" />
+    <input
+      id="password"
+      mustacheInput
+      type="{{ showPassword ? 'text' : 'password' }}"
+      placeholder="mustache"
+      formControlName="password"
+    />
+    <button mustacheFormFieldIcon (click)="showPassword = !showPassword">
+      <img
+        class="icon icon--m icon--empty icon--discrete"
+        src="../../../assets/icons/{{ showPassword ? 'eye-off' : 'eye' }}.svg"
+        alt="'show password'"
+      />
+    </button>
+    <p
+      mustacheFormFieldError
+      *ngIf="form.controls.password.touched && form.controls.password.invalid"
+    >
+      {{ getPasswordError() }}
+    </p>
   </mustache-form-field>
-  <mustache-form-field>
-    <label mustacheLabel for="repeat"> Repeat your password </label>
-    <input id="repeat" mustacheInput type="repeat" placeholder="mustache" />
-  </mustache-form-field>
+  <div class="form__requirements">
+    <mustache-requirement [isFulfilled]="hasLowerCaseChar"
+      >One lowercase character</mustache-requirement
+    >
+    <mustache-requirement [isFulfilled]="hasUpperCaseChar"
+      >One uppercase character</mustache-requirement
+    >
+    <mustache-requirement [isFulfilled]="hasSpecialChar"
+      >One special character</mustache-requirement
+    >
+    <mustache-requirement [isFulfilled]="hasOneNumber"
+      >One number character</mustache-requirement
+    >
+    <mustache-requirement [isFulfilled]="isLongerThan8"
+      >8 character minimum</mustache-requirement
+    >
+  </div>
   <span class="policy text--comment-semibold text--gray-400"
     >By signing up, you agree to our
     <a class="link link--primary-500 text--comment-semibold text--primary-500">
@@ -26,9 +65,27 @@
       Privacy policy
     </a>
   </span>
-  <button mustacheButton [position]="'center'" (click)="onSignUpClicked()">
-    Sign up
-  </button>
+  <div class="form__actions">
+    <button
+      mustacheButton
+      [position]="'center'"
+      (click)="onSignUpSubmited()"
+      [disabled]="isLoading"
+    >
+      Sign up
+    </button>
+    <mustache-spinner
+      *ngIf="showSpinner"
+      [isLoading]="isLoading"
+      [success]="isSuccessful"
+    ></mustache-spinner>
+  </div>
+  <p
+    class="form-error text--comment-semibold text--danger-500"
+    *ngIf="errorMessage"
+  >
+    {{ errorMessage }}
+  </p>
 </form>
 <span class="redirect text--comment-semibold text--gray-400">
   Already have an account?

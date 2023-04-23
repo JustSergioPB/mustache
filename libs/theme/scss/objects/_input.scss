@@ -19,8 +19,4 @@
   &.input--error:focus {
     color: settings.$danger-500;
   }
-
-  &.input--error::placeholder {
-    color: settings.$danger-500;
-  }
 }

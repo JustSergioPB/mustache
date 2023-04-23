@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  AbstractSessionService,
   LoginComponent,
   RecoverComponent,
+  RecoverCrendetials,
+  RecoverMethod,
+  Session,
+  SessionMockService,
   SignupComponent,
+  UserCredentials,
 } from '@mustache/auth-ui';
+import { Error, Result } from '@mustache/basic-ui';
 import { ButtonDirective } from '@mustache/basic-ui';
+import { animate, style, transition, trigger } from '@angular/animations';
+import {
+  debounceTime,
+  filter,
+  Observable,
+  Subject,
+  takeUntil,
+  tap,
+  throttleTime,
+} from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'main-login-page',
@@ -17,15 +35,43 @@ import { ButtonDirective } from '@mustache/basic-ui';
     RecoverComponent,
     ButtonDirective,
   ],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({ transform: 'translateY(-100%)' }),
+        animate('200ms ease-in', style({ transform: 'translateY(0%)' })),
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({ transform: 'translateY(-100%)' })),
+      ]),
+    ]),
+  ],
+  providers: [
+    {
+      provide: AbstractSessionService,
+      useClass: SessionMockService,
+    },
+  ],
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
 })
-export class LoginPageComponent {
-  shownWidget: 'login' | 'signup' | 'recover'  = 'login';
+export class LoginPageComponent implements OnDestroy {
+  shownWidget: 'login' | 'signup' | 'recover' = 'login';
   title = 'Welcome back!';
   subtitle = 'Start building applications faster';
 
-  onLoginWithGoogleClicked(): void {}
+  session$: Observable<Result<Session>> = this.sessionService.session$;
+  private destroy$: Subject<void> = new Subject();
+
+  constructor(
+    private sessionService: AbstractSessionService,
+    private router: Router
+  ) {}
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 
   onSignUpClicked(): void {
     this.shownWidget = 'signup';
@@ -45,11 +91,35 @@ export class LoginPageComponent {
     this.subtitle = 'Start building applications faster';
   }
 
-  onSubmitLogin(): void {}
+  onSubmitLogin(crendentials: UserCredentials): void {
+    this.sessionService.login(crendentials);
+    this.session$
+      .pipe(
+        takeUntil(this.destroy$),
+        debounceTime(350),
+        filter((result) => !!result.value),
+        tap(() => this.router.navigate(['']))
+      )
+      .subscribe();
+  }
 
-  onSubmitSignUp(): void {}
+  onSubmitSignUp(credentials: UserCredentials): void {
+    this.sessionService.signup(credentials);
+    this.session$
+      .pipe(
+        takeUntil(this.destroy$),
+        debounceTime(350),
+        filter((result) => !!result.value),
+        tap(() => this.router.navigate(['']))
+      )
+      .subscribe();
+  }
 
-  onSendCodeSubmited(): void {}
+  onSendCodeSubmited(method: RecoverMethod): void {
+    this.sessionService.sendCode(method);
+  }
 
-  onResetSubmited(): void {}
+  onResetSubmited(credentials: RecoverCrendetials): void {}
+
+  onLoginWithGoogleClicked(): void {}
 }

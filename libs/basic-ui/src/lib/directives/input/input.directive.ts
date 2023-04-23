@@ -1,4 +1,5 @@
 import { Directive, ElementRef, HostBinding } from '@angular/core';
+import { NgControl } from '@angular/forms';
 
 @Directive({
   selector: '[mustacheInput]',
@@ -7,9 +8,7 @@ import { Directive, ElementRef, HostBinding } from '@angular/core';
 export class InputDirective {
   private inputElement: HTMLInputElement = this.el.nativeElement;
 
-  constructor(private el: ElementRef) {
-    
-  }
+  constructor(private el: ElementRef) {}
 
   @HostBinding('class') get classes(): string {
     return `input ${this.inputElement.disabled ? 'input--disabled' : ''}`;

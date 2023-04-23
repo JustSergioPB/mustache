@@ -1,0 +1,11 @@
+<div class="spinner {{ isLoading ? 'spinner--visible' : '' }}"></div>
+<div
+  class="circle circle--m {{ isLoading ? 'circle--invisible' : '' }} circle--{{
+    success ? 'success' : 'danger'
+  }}"
+>
+  <img
+    src="{{ success ? 'assets/icons/check.svg' : 'assets/icons/x.svg' }}"
+    class="icon icon--l icon--empty icon--{{ success ? 'success' : 'danger' }}"
+  />
+</div>

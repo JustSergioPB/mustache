@@ -20,16 +20,17 @@
     <input
       id="password"
       mustacheInput
-      type="password"
+      type="{{ showPassword ? 'text' : 'password' }}"
       placeholder="mustache"
       formControlName="password"
     />
-    <img
-      mustacheFormFieldIcon
-      class="icon icon--m icon--empty icon--discrete"
-      src="../../../assets/icons/eye.svg"
-      alt="'show password'"
-    />
+    <button mustacheFormFieldIcon (click)="showPassword = !showPassword">
+      <img
+        class="icon icon--m icon--empty icon--discrete"
+        src="../../../assets/icons/{{ showPassword ? 'eye-off' : 'eye' }}.svg"
+        alt="'show password'"
+      />
+    </button>
     <p
       mustacheFormFieldError
       *ngIf="form.controls.password.touched && form.controls.password.invalid"
@@ -37,7 +38,7 @@
       {{ getPasswordError() }}
     </p>
   </mustache-form-field>
-  <div class="options">
+  <div class="form__options">
     <mustache-checkbox (valueChanged)="onRememberMeClicked()">
       Remember me
     </mustache-checkbox>
@@ -47,9 +48,27 @@
       >Forgot Password?</a
     >
   </div>
-  <button mustacheButton [position]="'center'" (click)="onLoginClicked()">
-    Log in
-  </button>
+  <div class="form__actions">
+    <button
+      mustacheButton
+      [position]="'center'"
+      (click)="onLoginSubmited()"
+      [disabled]="isLoading"
+    >
+      Log in
+    </button>
+    <mustache-spinner
+      *ngIf="showSpinner"
+      [isLoading]="isLoading"
+      [success]="isSuccessful"
+    ></mustache-spinner>
+  </div>
+  <p
+    class="form-error text--comment-semibold text--danger-500"
+    *ngIf="errorMessage"
+  >
+    {{ errorMessage }}
+  </p>
 </form>
 <div class="third-parties" *ngIf="thirdPartiesEnabled">
   <div class="third-parties__or">

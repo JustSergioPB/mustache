@@ -1,3 +1,4 @@
+@use '../settings';
 @use '../tools';
 
 .circle {
@@ -5,6 +6,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 100%;
+
+  &--xs {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
 
   &--s {
     height: 2rem;
@@ -14,6 +20,14 @@
   &--m {
     height: 2.5rem;
     width: 2.5rem;
+  }
+
+  &--invisible {
+    display: none;
+  }
+
+  &--dotted {
+    border: dotted settings.$gray-400;
   }
 
   &--primary {

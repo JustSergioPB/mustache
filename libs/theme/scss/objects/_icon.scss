@@ -45,6 +45,16 @@
     position: absolute;
     top: settings.$spacing-s;
     right: settings.$spacing-s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4rem;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: settings.$primary;
+    }
   }
 
   &.icon--empty {

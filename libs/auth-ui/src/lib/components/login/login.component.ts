@@ -8,6 +8,7 @@ import {
   FormFieldIconDirective,
   InputDirective,
   LabelDirective,
+  SpinnerComponent,
 } from '@mustache/basic-ui';
 import {
   FormControl,
@@ -30,17 +31,25 @@ import { UserCredentials } from '../../models/user-crendentials';
     LabelDirective,
     FormFieldIconDirective,
     FormFieldErrorDirective,
+    SpinnerComponent,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  form: FormGroup<{
+  public form: FormGroup<{
     email: FormControl<string>;
     password: FormControl<string>;
   }>;
+  public showPassword = false;
+  public showSpinner = false;
   private rememberMe = false;
-  @Input() thirdPartiesEnabled: boolean | undefined = false;
+
+  @Input() isSuccessful: boolean | null | undefined = false;
+  @Input() isLoading: boolean | null | undefined = false;
+  @Input() errorMessage: string | null | undefined;
+
+  @Input() thirdPartiesEnabled: boolean | null = false;
   @Output() signUpClicked = new EventEmitter<void>();
   @Output() recoverClicked = new EventEmitter<void>();
   @Output() loginSubmited = new EventEmitter<UserCredentials>();
@@ -65,7 +74,7 @@ export class LoginComponent {
 
   getPasswordError(): string {
     let error = '';
-    if (this.form.controls.email.hasError('required')) {
+    if (this.form.controls.password.hasError('required')) {
       error = 'This field is required';
     }
     return error;
@@ -83,13 +92,15 @@ export class LoginComponent {
     this.rememberMe = !this.rememberMe;
   }
 
-  onLoginClicked(): void {
+  onLoginSubmited(): void {
     this.form.markAllAsTouched();
     if (this.form.valid) {
       this.loginSubmited.emit({
         ...this.form.getRawValue(),
         rememberMe: this.rememberMe,
       });
+      this.isLoading = true;
+      this.showSpinner = true;
     }
   }
 }
