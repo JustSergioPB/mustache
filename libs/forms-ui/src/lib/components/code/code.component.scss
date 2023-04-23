@@ -1,0 +1,44 @@
+@use '../../../../../theme/scss/settings';
+@use '../../../../../theme/scss/tools';
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+:host(mustache-code) {
+  display: block;
+  margin-bottom: settings.$spacing-l;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  height: settings.$spacing-m * 3;
+  gap: settings.$spacing-xs;
+
+  mustache-form-field {
+    min-width: settings.$spacing-m * 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input {
+    width: settings.$font-size-s;
+    //TODO: this mesurement is related to width
+    left: 0.95rem;
+    text-align: center;
+  }
+}
+
+.code-label {
+  margin-left: settings.$spacing-xs;
+  margin-bottom: settings.$spacing-xs;
+}

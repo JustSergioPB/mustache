@@ -31,10 +31,7 @@
   </div>
 </form>
 <form class="form">
-  <mustache-form-field>
-    <label mustacheLabel for="code"> Code </label>
-    <input id="code" mustacheInput type="code" placeholder="000000" />
-  </mustache-form-field>
+  <mustache-code [label]="'Code label'" [digits]="6"> </mustache-code>
   <button mustacheButton [position]="'center'" (click)="onVerifySubmited()">
     Verify
   </button>

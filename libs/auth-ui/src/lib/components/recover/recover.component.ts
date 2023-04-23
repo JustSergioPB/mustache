@@ -15,6 +15,7 @@ import {
   InputDirective,
   FormFieldComponent,
   LabelDirective,
+  CodeComponent,
 } from '@mustache/forms-ui';
 import { RecoverCrendetials, RecoverMethod } from '../../models';
 
@@ -29,6 +30,7 @@ import { RecoverCrendetials, RecoverMethod } from '../../models';
     LabelDirective,
     CountdownComponent,
     SpinnerComponent,
+    CodeComponent,
   ],
   templateUrl: './recover.component.html',
   styleUrls: ['./recover.component.scss'],
