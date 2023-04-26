@@ -25,40 +25,11 @@ import {
 } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SUPPORTED_DIALLING_CODES } from '../../supported-dialling-codes';
-import {
-  AbstractLanguageService,
-  DEFAULT_LANG,
-  Language,
-  LanguageMockService,
-  LanguageSelectorComponent,
-} from '@mustache/language-ui';
+import { AbstractLanguageService, Language } from '@mustache/language-ui';
 import { SUPPORTED_LANGS } from '../../supported-langs';
 
 @Component({
-  selector: 'main-login-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    LoginComponent,
-    SignupComponent,
-    RecoverComponent,
-    ButtonDirective,
-    LanguageSelectorComponent,
-  ],
-  providers: [
-    {
-      provide: DEFAULT_LANG,
-      useValue: SUPPORTED_LANGS[0],
-    },
-    {
-      provide: AbstractSessionService,
-      useClass: SessionMockService,
-    },
-    {
-      provide: AbstractLanguageService,
-      useClass: LanguageMockService,
-    },
-  ],
+  selector: 'core-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
 })

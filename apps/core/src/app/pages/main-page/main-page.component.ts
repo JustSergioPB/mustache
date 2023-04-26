@@ -1,91 +1,20 @@
-/* eslint-disable @angular-eslint/component-selector */
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import {
-  AbstractSessionService,
-  SessionMockService,
-  Session,
-} from '@mustache/auth-ui';
-import {
-  AbstractConnectionService,
-  AvatarConnectionComponent,
-  ConnectionMockService,
-  ConnectionStatus,
-  StatusComponent,
-} from '@mustache/chat-ui';
-import {
-  AvatarDropdownComponent,
-  BannerComponent,
-  ButtonDirective,
-  NavbarComponent,
-  NavbarItem,
-  Result,
-  ToolbarComponent,
-} from '@mustache/basic-ui';
-import {
-  AbstractLanguageService,
-  DEFAULT_LANG,
-  Language,
-  LanguageMockService,
-  LanguageSelectorComponent,
-} from '@mustache/language-ui';
+import { AbstractSessionService, Session } from '@mustache/auth-ui';
+import { AbstractConnectionService, ConnectionStatus } from '@mustache/chat-ui';
+import { NavbarItem, Result } from '@mustache/basic-ui';
+import { AbstractLanguageService, Language } from '@mustache/language-ui';
 import {
   AbstractNotificationService,
   Notification,
-  NotificationDropdownComponent,
-  NotificationIconComponent,
-  NotificationMockService,
   NotificationReadEvent,
-  UnreadNotificationsPipe,
 } from '@mustache/notification-ui';
 
 import { Observable } from 'rxjs';
 import { NAVBAR_CONFIG } from './navbar.config';
 import { SUPPORTED_LANGS } from '../../supported-langs';
-import { ToggleComponent } from '@mustache/forms-ui';
 
 @Component({
-  standalone: true,
-  imports: [
-    RouterModule,
-    CommonModule,
-    NavbarComponent,
-    AvatarConnectionComponent,
-    AvatarDropdownComponent,
-    NotificationDropdownComponent,
-    NotificationIconComponent,
-    BannerComponent,
-    ToolbarComponent,
-    LanguageSelectorComponent,
-    ToggleComponent,
-    StatusComponent,
-    UnreadNotificationsPipe,
-    ButtonDirective,
-  ],
-  providers: [
-    {
-      provide: DEFAULT_LANG,
-      useValue: SUPPORTED_LANGS[0],
-    },
-    {
-      provide: AbstractNotificationService,
-      useClass: NotificationMockService,
-    },
-    {
-      provide: AbstractSessionService,
-      useClass: SessionMockService,
-    },
-    {
-      provide: AbstractConnectionService,
-      useClass: ConnectionMockService,
-    },
-    {
-      provide: AbstractLanguageService,
-      useClass: LanguageMockService,
-    },
-  ],
-  selector: 'main-main-page',
+  selector: 'core-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
 })

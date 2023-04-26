@@ -1,22 +1,22 @@
 {
-  "name": "main",
+  "name": "core",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "main",
-  "sourceRoot": "apps/main/src",
+  "prefix": "mustache",
+  "sourceRoot": "apps/core/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/main",
-        "index": "apps/main/src/index.html",
-        "main": "apps/main/src/main.ts",
+        "outputPath": "dist/apps/core",
+        "index": "apps/core/src/index.html",
+        "main": "apps/core/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/main/tsconfig.app.json",
-        "assets": ["apps/main/src/favicon.ico", "apps/main/src/assets"],
-        "styles": ["apps/main/src/styles.scss"],
+        "tsConfig": "apps/core/tsconfig.app.json",
+        "assets": ["apps/core/src/favicon.ico", "apps/core/src/assets"],
+        "styles": ["apps/core/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -50,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "main:build:production"
+          "browserTarget": "core:build:production"
         },
         "development": {
-          "browserTarget": "main:build:development"
+          "browserTarget": "core:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -61,21 +61,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "main:build"
+        "browserTarget": "core:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/main/**/*.ts", "apps/main/**/*.html"]
+        "lintFilePatterns": ["apps/core/**/*.ts", "apps/core/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/main/jest.config.ts",
+        "jestConfig": "apps/core/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
