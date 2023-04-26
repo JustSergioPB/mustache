@@ -25,6 +25,14 @@ import {
 } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SUPPORTED_DIALLING_CODES } from '../../supported-dialling-codes';
+import {
+  AbstractLanguageService,
+  DEFAULT_LANG,
+  Language,
+  LanguageMockService,
+  LanguageSelectorComponent,
+} from '@mustache/language-ui';
+import { SUPPORTED_LANGS } from '../../supported-langs';
 
 @Component({
   selector: 'main-login-page',
@@ -35,11 +43,20 @@ import { SUPPORTED_DIALLING_CODES } from '../../supported-dialling-codes';
     SignupComponent,
     RecoverComponent,
     ButtonDirective,
+    LanguageSelectorComponent,
   ],
   providers: [
     {
+      provide: DEFAULT_LANG,
+      useValue: SUPPORTED_LANGS[0],
+    },
+    {
       provide: AbstractSessionService,
       useClass: SessionMockService,
+    },
+    {
+      provide: AbstractLanguageService,
+      useClass: LanguageMockService,
     },
   ],
   templateUrl: './login-page.component.html',
@@ -58,10 +75,17 @@ export class LoginPageComponent implements OnDestroy {
   diallingCodes = SUPPORTED_DIALLING_CODES;
 
   session$: Observable<Result<Session>> = this.sessionService.session$;
+
+  /** LANGUAGE */
+  lang$: Observable<Language> = this.languageService.language$;
+  langsOpen = false;
+  supportedLangs: Language[] = SUPPORTED_LANGS;
+
   private destroy$: Subject<void> = new Subject();
 
   constructor(
     private sessionService: AbstractSessionService,
+    private languageService: AbstractLanguageService,
     private router: Router,
     private route: ActivatedRoute
   ) {
@@ -129,4 +153,9 @@ export class LoginPageComponent implements OnDestroy {
   onResetSubmited(credentials: RecoverCrendetials): void {}
 
   onLoginWithGoogleClicked(): void {}
+
+  /** LANGUAGE */
+  public onLanguageChanged(index: number): void {
+    this.languageService.changeLanguage(this.supportedLangs[index]);
+  }
 }

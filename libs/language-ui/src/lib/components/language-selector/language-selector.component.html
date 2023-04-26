@@ -5,9 +5,10 @@
   [size]="'xs'"
   (click)="isOpen = !isOpen"
 >
-  <p mustacheEmoji="{{ value?.iconSrc }}" class="emoji emoji--m"></p>
+  <p mustacheEmoji="{{ value?.iconSrc }}" class="emoji emoji--l"></p>
+  <!--TODO: change this so it works as expected with appearance-->
   <img
-    class="icon icon--chevron icon--m icon--empty icon--primary"
+    class="icon icon--chevron icon--m icon icon--empty icon--discrete"
     src="'../../../../../assets/icons/chevron-down.svg"
     alt="'dropdown'"
   />
