@@ -1,0 +1,45 @@
+@use '../../../../../theme/scss/settings';
+@use '../../../../../theme/scss/tools';
+
+:host(mustache-phone) {
+  display: block;
+  margin-bottom: settings.$spacing-l;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    height: settings.$spacing-m * 3;
+
+    mustache-form-field {
+      flex: 1 1 auto;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+    }
+
+    select {
+      all: unset;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: settings.$spacing-xs;
+      border-top-left-radius: settings.$border-radius-s;
+      border-bottom-left-radius: settings.$border-radius-s;
+      background-color: settings.$primary-500;
+      height: 100%;
+      color: settings.$primary;
+      font-size: settings.$font-size-s;
+      width: 4rem;
+
+      &:focus {
+        background-color: settings.$primary-300;
+      }
+    }
+  }
+
+  .custom-label {
+    margin-left: settings.$spacing-xs;
+    margin-bottom: settings.$spacing-xs;
+  }
+}

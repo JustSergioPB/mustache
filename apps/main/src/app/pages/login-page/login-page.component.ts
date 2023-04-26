@@ -11,9 +11,8 @@ import {
   SignupComponent,
   UserCredentials,
 } from '@mustache/auth-ui';
-import { Error, Result } from '@mustache/basic-ui';
+import { Result } from '@mustache/basic-ui';
 import { ButtonDirective } from '@mustache/basic-ui';
-import { animate, style, transition, trigger } from '@angular/animations';
 import {
   debounceTime,
   filter,
@@ -21,9 +20,9 @@ import {
   Subject,
   takeUntil,
   tap,
-  throttleTime,
 } from 'rxjs';
 import { Router } from '@angular/router';
+import { SUPPORTED_DIALLING_CODES } from '../../supported-dialling-codes';
 
 @Component({
   selector: 'main-login-page',
@@ -34,17 +33,6 @@ import { Router } from '@angular/router';
     SignupComponent,
     RecoverComponent,
     ButtonDirective,
-  ],
-  animations: [
-    trigger('slideInOut', [
-      transition(':enter', [
-        style({ transform: 'translateY(-100%)' }),
-        animate('200ms ease-in', style({ transform: 'translateY(0%)' })),
-      ]),
-      transition(':leave', [
-        animate('200ms ease-in', style({ transform: 'translateY(-100%)' })),
-      ]),
-    ]),
   ],
   providers: [
     {
@@ -59,6 +47,13 @@ export class LoginPageComponent implements OnDestroy {
   shownWidget: 'login' | 'signup' | 'recover' = 'login';
   title = 'Welcome back!';
   subtitle = 'Start building applications faster';
+
+  year = new Date().getFullYear();
+  //TODO: move to config
+  GITHUB_URL = 'https://github.com/JustSergioPB';
+
+  defaultDiallingCode = SUPPORTED_DIALLING_CODES[0];
+  diallingCodes = SUPPORTED_DIALLING_CODES;
 
   session$: Observable<Result<Session>> = this.sessionService.session$;
   private destroy$: Subject<void> = new Subject();

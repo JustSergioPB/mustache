@@ -1,0 +1,21 @@
+<ul class="tabs">
+  <li
+    class="tab {{ activeTab === i ? 'tab--active' : '' }}"
+    *ngFor="let tab of tabs; let i = index"
+    (click)="selectTab(i)"
+  >
+    <img
+      *ngIf="tab.iconSrc"
+      src="{{ tab.iconSrc }}"
+      alt="{{ tab.title }}-tab"
+    />
+    <p
+      class="text--comment-semibold {{
+        activeTab === i ? 'text--primary-500' : 'text--gray-400'
+      }}"
+    >
+      {{ tab.title }}
+    </p>
+  </li>
+</ul>
+<ng-content></ng-content>

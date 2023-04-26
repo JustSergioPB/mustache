@@ -10,6 +10,7 @@ import {
 import { FormFieldComponent } from '..';
 import { InputDirective } from '../../directives';
 
+//TODO: add wrap behaviour when overflowing
 @Component({
   selector: 'mustache-code',
   standalone: true,

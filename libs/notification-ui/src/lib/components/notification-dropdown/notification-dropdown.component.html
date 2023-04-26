@@ -4,7 +4,7 @@
     <p class="text--body-semibold">Notifications</p>
     <button
       mustacheButton
-      [type]="'empty'"
+      [appearance]="'empty'"
       [size]="'s'"
       *ngIf="notifications?.length"
       (click)="onReadAllClicked()"
@@ -30,7 +30,7 @@
   <div class="dropdown__footer">
     <button
       mustacheButton
-      [type]="'empty'"
+      [appearance]="'empty'"
       [size]="'s'"
       (click)="onTurnOffClicked()"
     >

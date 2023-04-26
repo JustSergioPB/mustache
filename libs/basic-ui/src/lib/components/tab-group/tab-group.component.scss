@@ -1,0 +1,24 @@
+@use '../../../../../theme/scss/settings';
+@use '../../../../../theme/scss/tools';
+
+.tabs {
+  display: flex;
+  align-items: center;
+
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: settings.$spacing-s;
+    flex: 1 1 auto;
+    border-radius: settings.$border-radius-m;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--active {
+      background-color: settings.$primary;
+    }
+  }
+}

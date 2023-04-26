@@ -17,7 +17,7 @@
       >
         <button
           mustacheButton
-          [type]="'complementary'"
+          [appearance]="'complementary'"
           [position]="'center'"
           (click)="onLoginWithGoogleClicked()"
         >
@@ -30,7 +30,7 @@
         </button>
         <button
           mustacheButton
-          [type]="'complementary'"
+          [appearance]="'complementary'"
           [position]="'center'"
           (click)="onLoginWithGoogleClicked()"
         >
@@ -43,7 +43,7 @@
         </button>
         <button
           mustacheButton
-          [type]="'complementary'"
+          [appearance]="'complementary'"
           [position]="'center'"
           (click)="onLoginWithGoogleClicked()"
         >
@@ -56,7 +56,7 @@
         </button>
         <button
           mustacheButton
-          [type]="'complementary'"
+          [appearance]="'complementary'"
           [position]="'center'"
           (click)="onLoginWithGoogleClicked()"
         >
@@ -81,6 +81,8 @@
     </ng-container>
     <mustache-recover
       *ngIf="shownWidget === 'recover'"
+      [defaultDiallingCode]="defaultDiallingCode"
+      [diallingCodes]="diallingCodes"
       (sendCodeSubmited)="onSendCodeSubmited($event)"
       (resetSubmited)="onResetSubmited($event)"
       (loginClicked)="onLoginClicked()"
@@ -89,17 +91,30 @@
 </div>
 <div class="content">
   <div class="content__wrapper">
-    <img
-      src="../../../assets/icons/moustache.svg"
-      alt="logo"
-      class="icon icon--login"
-    />
-    <p class="title text--desktop-h1 text--primary">
-      Build your dream application in a blink using mustache
-    </p>
-    <p class="subtitle text--title-semibold text--primary-100">
-      Mustache is a highly customizable and ready to go UI library built in the
-      latest Angular version.
-    </p>
+    <div class="content__top">
+      <img
+        src="../../../assets/icons/moustache.svg"
+        alt="logo"
+        class="icon icon--login"
+      />
+      <p class="title text--desktop-h1 text--primary">
+        Build your dream application in a blink using MustacheUI
+      </p>
+      <p class="text--title-semibold text--primary-100">
+        MustacheUI is a set of highly customizable and ready to go UI libraries
+        built in the latest Angular version.
+      </p>
+    </div>
+    <div class="content__bottom">
+      <p class="text--label-semibold text--primary-100">
+        &copy; {{ year }} ALL RIGHTS RESERVED
+      </p>
+      <p class="text--label-semibold text--primary-100">
+        Built by
+        <a class="link text--primary-100" href="{{ GITHUB_URL }}"
+          >Sergio Peña Bayona</a
+        >
+      </p>
+    </div>
   </div>
 </div>

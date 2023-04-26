@@ -6,11 +6,11 @@
   border-radius: settings.$border-radius-xs;
   padding: settings.$spacing-2xs settings.$spacing-xs;
   transition: background-color 0.25s ease;
-  background-color: settings.$primary;
+  //background-color: settings.$primary;
 
   &:hover {
     cursor: pointer;
-    background-color: settings.$primary-100;
+    background-color: settings.$primary;
   }
 
   .icon--chevron {

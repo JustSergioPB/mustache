@@ -12,3 +12,5 @@ export * from './tooltip/tooltip.component';
 export * from './spinner/spinner.component';
 export * from './requirement/requirement.component';
 export * from './countdown/countdown.component';
+export * from './tab/tab.component';
+export * from './tab-group/tab-group.component';

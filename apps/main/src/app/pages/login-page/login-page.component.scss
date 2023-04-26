@@ -37,6 +37,13 @@
     padding: settings.$spacing-4xl;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 

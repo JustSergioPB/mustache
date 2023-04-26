@@ -10,12 +10,16 @@ import {
   ButtonDirective,
   CountdownComponent,
   SpinnerComponent,
+  TabComponent,
+  TabGroupComponent,
 } from '@mustache/basic-ui';
 import {
   InputDirective,
   FormFieldComponent,
   LabelDirective,
   CodeComponent,
+  PhoneComponent,
+  DiallingCode,
 } from '@mustache/forms-ui';
 import { RecoverCrendetials, RecoverMethod } from '../../models';
 
@@ -31,6 +35,9 @@ import { RecoverCrendetials, RecoverMethod } from '../../models';
     CountdownComponent,
     SpinnerComponent,
     CodeComponent,
+    TabGroupComponent,
+    TabComponent,
+    PhoneComponent,
   ],
   templateUrl: './recover.component.html',
   styleUrls: ['./recover.component.scss'],
@@ -40,10 +47,13 @@ export class RecoverComponent {
   public showSpinner = false;
   public firstCodeSent = false;
   @ViewChild(CountdownComponent) counter: CountdownComponent | undefined;
+  @ViewChild(CodeComponent) code: CodeComponent | undefined;
   @Input() isSuccessful: boolean | null | undefined = false;
   @Input() isLoading: boolean | null | undefined = false;
   @Input() errorMessage: string | null | undefined;
   @Input() codeIsVerified: boolean | null | undefined = false;
+  @Input() defaultDiallingCode: DiallingCode | undefined;
+  @Input() diallingCodes: DiallingCode[] = [];
   @Output() sendCodeSubmited = new EventEmitter<RecoverMethod>();
   @Output() verifySubmited = new EventEmitter<RecoverMethod>();
   @Output() resetSubmited = new EventEmitter<RecoverCrendetials>();

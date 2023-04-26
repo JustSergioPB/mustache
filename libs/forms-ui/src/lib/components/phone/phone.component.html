@@ -1,1 +1,27 @@
-<p>phone works!</p>
+<p class="custom-label text--label-semibold">{{ label }}</p>
+<div class="wrapper">
+  <select name="phones" id="phones">
+    <option
+      value="{{ diallingCode.prefix }}"
+      *ngFor="let diallingCode of diallingCodes"
+    >
+      <p mustacheEmoji="{{ diallingCode.iconSrc }}" class="emoji emoji--m"></p>
+      +{{ diallingCode.prefix }}
+    </option>
+  </select>
+  <mustache-form-field>
+    <input
+      id="phone"
+      mustacheInput
+      type="tel"
+      placeholder="{{ defaultDiallingCode?.placeholder || '--' }}"
+      [formControl]="formControl"
+    />
+    <p
+      mustacheFormFieldError
+      *ngIf="formControl.touched && formControl.invalid"
+    >
+      {{ getError() }}
+    </p>
+  </mustache-form-field>
+</div>

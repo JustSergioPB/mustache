@@ -1,41 +1,51 @@
-<form class="form" *ngIf="!codeIsVerified">
-  <mustache-form-field>
-    <label mustacheLabel for="email"> Email </label>
-    <input
-      id="email"
-      mustacheInput
-      type="email"
-      placeholder="mr.mustache@gmail.com"
-    />
-  </mustache-form-field>
-  <p
-    class="hint text--label-semibold text--gray-400"
-    *ngIf="firstCodeSent && !counterIsVisible"
-  >
-    Haven't received a code? Hit the button again
-  </p>
-  <div class="form__actions">
-    <button
-      mustacheButton
-      [position]="'center'"
-      (click)="onSendCodeSubmited()"
-      [disabled]="counterIsVisible"
+<ng-container *ngIf="!codeIsVerified">
+  <form class="form" (ngSubmit)="onSendCodeSubmited()">
+    <mustache-tab-group>
+      <mustache-tab [title]="'Email'">
+        <mustache-form-field>
+          <label mustacheLabel for="email"> Email </label>
+          <input
+            id="email"
+            mustacheInput
+            type="email"
+            placeholder="mr.mustache@gmail.com"
+          />
+        </mustache-form-field>
+      </mustache-tab>
+      <mustache-tab [title]="'Phone'">
+        <mustache-phone
+          [defaultDiallingCode]="defaultDiallingCode"
+          [diallingCodes]="diallingCodes"
+        ></mustache-phone>
+      </mustache-tab>
+    </mustache-tab-group>
+    <p
+      class="hint text--label-semibold text--gray-400"
+      *ngIf="firstCodeSent && !counterIsVisible"
     >
-      Send code
-    </button>
-    <mustache-countdown
-      *ngIf="counterIsVisible"
-      [totalSeconds]="60"
-      (counterFinished)="counterIsVisible = !counterIsVisible"
-    ></mustache-countdown>
-  </div>
-</form>
-<form class="form">
-  <mustache-code [label]="'Code label'" [digits]="6"> </mustache-code>
-  <button mustacheButton [position]="'center'" (click)="onVerifySubmited()">
-    Verify
-  </button>
-</form>
+      Haven't received a code? Hit the button again
+    </p>
+    <div class="form__actions">
+      <button
+        mustacheButton
+        type="submit"
+        [position]="'center'"
+        [disabled]="counterIsVisible"
+      >
+        Send code
+      </button>
+      <mustache-countdown
+        *ngIf="counterIsVisible"
+        [totalSeconds]="60"
+        (counterFinished)="counterIsVisible = !counterIsVisible"
+      ></mustache-countdown>
+    </div>
+  </form>
+  <form class="form" (ngSubmit)="onVerifySubmited()">
+    <mustache-code [label]="'Code'" [digits]="6"> </mustache-code>
+    <button mustacheButton type="submit" [position]="'center'">Verify</button>
+  </form>
+</ng-container>
 <form class="form" *ngIf="codeIsVerified">
   <mustache-form-field>
     <label mustacheLabel for="password"> Password </label>
