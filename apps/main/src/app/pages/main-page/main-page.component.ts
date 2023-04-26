@@ -27,7 +27,6 @@ import {
   AbstractLanguageService,
   DEFAULT_LANG,
   Language,
-  LanguageDropdownComponent,
   LanguageMockService,
   LanguageSelectorComponent,
 } from '@mustache/language-ui';
@@ -59,7 +58,6 @@ import { ToggleComponent } from '@mustache/forms-ui';
     BannerComponent,
     ToolbarComponent,
     LanguageSelectorComponent,
-    LanguageDropdownComponent,
     ToggleComponent,
     StatusComponent,
     UnreadNotificationsPipe,

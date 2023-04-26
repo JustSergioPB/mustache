@@ -1,6 +1,24 @@
-<p mustacheEmoji="{{ iconSrc }}" class="emoji emoji--m"></p>
-<img
-  class="icon icon--chevron icon--m icon--empty icon--primary"
-  src="'../../../../../assets/icons/chevron-down.svg"
-  alt="'dropdown'"
-/>
+<button
+  mustacheButton
+  [variant]="variant"
+  [appearance]="appearance"
+  [size]="'xs'"
+  (click)="isOpen = !isOpen"
+>
+  <p mustacheEmoji="{{ value?.iconSrc }}" class="emoji emoji--m"></p>
+  <img
+    class="icon icon--chevron icon--m icon--empty icon--primary"
+    src="'../../../../../assets/icons/chevron-down.svg"
+    alt="'dropdown'"
+  />
+</button>
+<div class="dropdown" [ngClass]="{ 'dropdown--visible': isOpen }">
+  <div
+    class="dropdown__item"
+    *ngFor="let language of languages; let i = index"
+    (click)="onItemClick(i)"
+  >
+    <p mustacheEmoji="{{ language?.iconSrc }}" class="emoji emoji--m"></p>
+    <p class="text--comment">{{ language?.name ?? '--' }}</p>
+  </div>
+</div>

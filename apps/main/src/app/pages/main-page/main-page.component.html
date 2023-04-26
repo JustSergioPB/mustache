@@ -11,18 +11,13 @@
     </mustache-navbar>
   </ng-container>
   <ng-container right>
-    <mustache-language-dropdown
+    <mustache-language-selector
+      [appearance]="'complementary'"
       [languages]="supportedLangs"
       [value]="lang$ | async"
-      [isOpen]="langsOpen"
       (languageChanged)="onLanguageChanged($event)"
     >
-      <mustache-language-selector
-        [iconSrc]="(lang$ | async)?.iconSrc"
-        (click)="langsOpen = !langsOpen"
-      >
-      </mustache-language-selector>
-    </mustache-language-dropdown>
+    </mustache-language-selector>
     <mustache-notification-dropdown
       [notifications]="notifications$ | async"
       [notificationsOn]="notificationsOn"

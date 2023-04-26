@@ -1,5 +1,5 @@
 import { Directive, HostBinding, Input } from '@angular/core';
-import { ColorVariant, ButtonSize } from '../../models';
+import { ColorVariant, ButtonSize, Appearance } from '../../models';
 
 @Directive({
   selector: '[mustacheButton]',
@@ -8,7 +8,7 @@ import { ColorVariant, ButtonSize } from '../../models';
 export class ButtonDirective {
   @Input() variant: ColorVariant = 'primary';
   @Input() size: ButtonSize = 'm';
-  @Input() appearance: 'filled' | 'complementary' | 'empty' = 'filled';
+  @Input() appearance: Appearance = 'filled';
   @Input() position: 'start' | 'center' = 'start';
 
   @HostBinding('class') get classes(): string {

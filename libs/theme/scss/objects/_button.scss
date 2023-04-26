@@ -43,6 +43,12 @@
     justify-content: center;
   }
 
+  &--xs {
+    border-radius: settings.$border-radius-xs;
+    padding: settings.$spacing-2xs settings.$spacing-xs;
+    gap: settings.$spacing-2xs;
+  }
+
   &--s {
     border-radius: settings.$border-radius-xs;
     padding: settings.$spacing-xs settings.$spacing-s;
