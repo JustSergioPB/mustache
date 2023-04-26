@@ -12,6 +12,7 @@ import {
   SpinnerComponent,
 } from '@mustache/basic-ui';
 import {
+  CheckboxComponent,
   FormFieldComponent,
   FormFieldErrorDirective,
   FormFieldIconDirective,
@@ -42,6 +43,7 @@ import { Subject, takeUntil } from 'rxjs';
     SpinnerComponent,
     ReactiveFormsModule,
     RequirementComponent,
+    CheckboxComponent,
   ],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],

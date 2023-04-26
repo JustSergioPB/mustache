@@ -8,7 +8,7 @@ export const appRoutes: Route[] = [
     component: MainPageComponent,
   },
   {
-    path: 'login',
+    path: 'auth',
     component: LoginPageComponent,
   },
 ];

@@ -2,8 +2,8 @@
 
 //TODO: add variant modification
 input[type='checkbox'] {
-  width: settings.$spacing-m;
-  height: settings.$spacing-m;
+  min-width: settings.$spacing-m;
+  min-height: settings.$spacing-m;
   border-radius: 0.3rem;
   border: settings.$border-thickness-m solid settings.$gray-300;
   display: flex;
@@ -41,7 +41,7 @@ input[type='checkbox'] {
 
 .container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .checkbox {

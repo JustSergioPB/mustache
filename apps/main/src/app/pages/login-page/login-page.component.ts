@@ -2,6 +2,8 @@ import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   AbstractSessionService,
+  AuthWidget,
+  isValidAuthWidget,
   LoginComponent,
   RecoverComponent,
   RecoverCrendetials,
@@ -21,7 +23,7 @@ import {
   takeUntil,
   tap,
 } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SUPPORTED_DIALLING_CODES } from '../../supported-dialling-codes';
 
 @Component({
@@ -44,7 +46,7 @@ import { SUPPORTED_DIALLING_CODES } from '../../supported-dialling-codes';
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnDestroy {
-  shownWidget: 'login' | 'signup' | 'recover' = 'login';
+  shownWidget: AuthWidget = 'login';
   title = 'Welcome back!';
   subtitle = 'Start building applications faster';
 
@@ -60,9 +62,16 @@ export class LoginPageComponent implements OnDestroy {
 
   constructor(
     private sessionService: AbstractSessionService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
-    this.onRecoverClicked();
+    this.route.queryParams
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((params) => {
+        if (isValidAuthWidget(params['mode'])) {
+          this.shownWidget = params['mode'];
+        }
+      });
   }
 
   ngOnDestroy(): void {
@@ -71,20 +80,20 @@ export class LoginPageComponent implements OnDestroy {
   }
 
   onSignUpClicked(): void {
-    this.shownWidget = 'signup';
+    this.router.navigate(['auth'], { queryParams: { mode: 'signup' } });
     this.title = 'Get started';
     this.subtitle = "Let's get you ready in 5 seconds";
   }
 
   onRecoverClicked(): void {
-    this.shownWidget = 'recover';
+    this.router.navigate(['auth'], { queryParams: { mode: 'recover' } });
     this.title = 'Forgot your password?';
     this.subtitle =
       "Don't worry! We've got you covered. Where should we send you a recovery code?";
   }
 
   onLoginClicked(): void {
-    this.shownWidget = 'login';
+    this.router.navigate(['auth'], { queryParams: { mode: 'login' } });
     this.title = 'Welcome back!';
     this.subtitle = 'Start building applications faster';
   }
