@@ -19,12 +19,8 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./form-field.component.scss'],
 })
 export class FormFieldComponent implements AfterContentInit, OnDestroy {
-  @ContentChild(InputDirective, { read: ElementRef }) input:
-    | ElementRef
-    | undefined;
-  @ContentChild(LabelDirective, { read: ElementRef }) label:
-    | ElementRef
-    | undefined;
+  @ContentChild(InputDirective) input: InputDirective | undefined;
+  @ContentChild(LabelDirective) label: LabelDirective | undefined;
   @ContentChild(FormControlName)
   controlName: FormControlName | undefined;
   @HostBinding('class') get class() {
@@ -38,32 +34,42 @@ export class FormFieldComponent implements AfterContentInit, OnDestroy {
   private destroy$: Subject<void> = new Subject();
 
   ngAfterContentInit(): void {
-    const input = this.input?.nativeElement as HTMLInputElement;
-    const label = this.label?.nativeElement as HTMLLabelElement;
-
-    if (this.controlName?.control.hasValidator(Validators.required)) {
-      label.classList.add('label--required');
-      input.required = true;
-    }
-
     this.isDisabled = !!this.controlName?.control.disabled;
+    const isRequired =
+      this.controlName?.control.hasValidator(Validators.required) ?? false;
+    this.setLabel(isRequired);
+    this.setErrorListener();
+    this.setInputListener();
+  }
 
+  private setLabel(isRequired: boolean): void {
+    if (isRequired && this.label) {
+      this.label.isRequired = true;
+    }
+  }
+
+  private setInputListener(): void {
+    this.input?.blured
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.setValues());
+  }
+
+  private setErrorListener(): void {
     this.controlName?.control.valueChanges
       .pipe(takeUntil(this.destroy$))
-      .subscribe(() => {
-        if (
-          this.controlName?.control.touched &&
-          this.controlName?.control.invalid
-        ) {
-          this.hasError = true;
-          input.classList.add('input--error');
-          label.classList.add('label--error');
-        } else {
-          this.hasError = false;
-          input.classList.remove('input--error');
-          label.classList.remove('label--error');
-        }
-      });
+      .subscribe(() => this.setValues());
+  }
+
+  private setValues(): void {
+    if (this.controlName?.control.errors) {
+      this.hasError = true;
+      if (this.input) this.input.hasError = true;
+      if (this.label) this.label.hasError = true;
+    } else {
+      this.hasError = false;
+      if (this.input) this.input.hasError = false;
+      if (this.label) this.label.hasError = false;
+    }
   }
 
   ngOnDestroy(): void {
