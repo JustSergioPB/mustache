@@ -1,4 +1,3 @@
-export * from './test-setup';
 export * from './lib/pipes';
 export * from './lib/models';
 export * from './lib/directives';

@@ -45,9 +45,9 @@ import { SUPPORTED_LANGS } from './supported-langs';
 @NgModule({
   declarations: [AppComponent, LoginPageComponent, MainPageComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
-    CommonModule,
     LoginComponent,
     SignupComponent,
     RecoverComponent,

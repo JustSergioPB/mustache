@@ -1,20 +1,14 @@
 import { Component, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {
   AbstractSessionService,
   AuthWidget,
   isValidAuthWidget,
-  LoginComponent,
-  RecoverComponent,
   RecoverCrendetials,
   RecoverMethod,
   Session,
-  SessionMockService,
-  SignupComponent,
   UserCredentials,
 } from '@mustache/auth-ui';
 import { Result } from '@mustache/basic-ui';
-import { ButtonDirective } from '@mustache/basic-ui';
 import {
   debounceTime,
   filter,
