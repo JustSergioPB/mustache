@@ -1,6 +1,7 @@
 @use '../settings';
 
 .link {
+  text-decoration: none;
   &:hover {
     cursor: pointer;
     text-decoration: underline;
