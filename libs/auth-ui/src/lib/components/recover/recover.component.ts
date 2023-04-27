@@ -77,7 +77,8 @@ export class RecoverComponent {
     this.resetSubmited.emit();
   }
 
-  onLoginClicked(): void {
+  onLoginClicked(event: MouseEvent): void {
+    event.preventDefault();
     this.loginClicked.emit();
   }
 }

@@ -125,15 +125,18 @@ export class SignupComponent implements OnDestroy {
     }
   }
 
-  onLoginClicked(): void {
+  onLoginClicked(e: MouseEvent): void {
+    e.preventDefault();
     this.loginClicked.emit();
   }
 
-  onTermsClicked(): void {
+  onTermsClicked(e: MouseEvent): void {
+    e.preventDefault();
     this.termsClicked.emit();
   }
 
-  onPolicyClicked(): void {
+  onPolicyClicked(e: MouseEvent): void {
+    e.preventDefault();
     this.policyClicked.emit();
   }
 }

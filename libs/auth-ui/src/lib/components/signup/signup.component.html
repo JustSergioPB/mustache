@@ -62,6 +62,7 @@
       <a
         href="#"
         class="link link--primary-500 text--comment-semibold text--primary-500"
+        (click)="onTermsClicked($event)"
       >
         Terms & conditions
       </a>
@@ -69,6 +70,7 @@
       <a
         href="#"
         class="link link--primary-500 text--comment-semibold text--primary-500"
+        (click)="onPolicyClicked($event)"
       >
         Privacy policy
       </a>
@@ -101,7 +103,7 @@
   <a
     href="#"
     class="link link--primary-500 text--comment-semibold text--primary-500"
-    (click)="onLoginClicked()"
+    (click)="onLoginClicked($event)"
   >
     Log in
   </a>

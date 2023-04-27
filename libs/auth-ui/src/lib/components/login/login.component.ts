@@ -79,11 +79,13 @@ export class LoginComponent {
     return error;
   }
 
-  onSignUpClicked(): void {
+  onSignUpClicked(e: MouseEvent): void {
+    e.preventDefault();
     this.signUpClicked.emit();
   }
 
-  onRecoverClicked(): void {
+  onRecoverClicked(e: MouseEvent): void {
+    e.preventDefault();
     this.recoverClicked.emit();
   }
 
