@@ -9,7 +9,7 @@
   <!--TODO: change this so it works as expected with appearance-->
   <img
     class="icon icon--chevron icon--m icon icon--empty icon--discrete"
-    src="'../../../../../assets/icons/chevron-down.svg"
+    src="assets/icons/chevron-down.svg"
     alt="'dropdown'"
   />
 </button>
@@ -19,7 +19,7 @@
     *ngFor="let language of languages; let i = index"
     (click)="onItemClick(i)"
   >
-    <p mustacheEmoji="{{ language?.iconSrc }}" class="emoji emoji--m"></p>
-    <p class="text--comment">{{ language?.name ?? '--' }}</p>
+    <p mustacheEmoji="{{ language.iconSrc }}" class="emoji emoji--m"></p>
+    <p class="text--comment">{{ language.name }}</p>
   </div>
 </div>

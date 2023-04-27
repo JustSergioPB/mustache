@@ -1,6 +1,6 @@
 <mustache-toolbar>
   <ng-container left>
-    <mustache-banner [logoSrc]="'../assets/icons/moustache.svg'"
+    <mustache-banner [logoSrc]="'assets/icons/moustache.svg'"
       >Mustache</mustache-banner
     >
     <mustache-navbar
@@ -29,7 +29,7 @@
       (notificationClicked)="onNotificationClicked($event)"
     >
       <mustache-notification-icon
-        [iconSrc]="'../assets/icons/bell.svg'"
+        [iconSrc]="'assets/icons/bell.svg'"
         [numberOfNotifications]="notifications$ | async | unreadNotifications"
         (click)="notificationsOpen = !notificationsOpen"
       ></mustache-notification-icon>
@@ -78,7 +78,7 @@
         >
           <img
             class="icon icon--m icon--empty icon--discrete"
-            src="../assets/icons/settings.svg"
+            src="assets/icons/settings.svg"
             alt="'settings'"
           />
           Settings
@@ -91,7 +91,7 @@
         >
           <img
             class="icon icon--m icon--empty icon--discrete"
-            src="../assets/icons/logout.svg"
+            src="assets/icons/logout.svg"
             alt="'log out'"
           />
           Log out

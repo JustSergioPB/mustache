@@ -24,6 +24,11 @@
       flex: 1 1 0;
     }
   }
+
+  mustache-form-field,
+  mustache-phone {
+    margin-top: settings.$spacing-2xl;
+  }
 }
 
 .hint {
