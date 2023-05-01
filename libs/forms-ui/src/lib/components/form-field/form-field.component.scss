@@ -13,7 +13,7 @@
     border: solid settings.$border-thickness-m settings.$primary-500;
   }
 
-  &.form-field--error:focus-within {
+  &.form-field--error {
     border: solid settings.$border-thickness-m settings.$danger-500;
   }
 

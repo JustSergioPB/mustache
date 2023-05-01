@@ -19,8 +19,6 @@ import { SUPPORTED_LANGS } from '../../supported-langs';
   styleUrls: ['./main-page.component.scss'],
 })
 export class MainPageComponent implements OnInit {
-  title = 'main';
-
   /** NAVBAR */
   activeRoute: string = NAVBAR_CONFIG[0].route;
   items: NavbarItem[] = NAVBAR_CONFIG;

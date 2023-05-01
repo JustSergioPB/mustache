@@ -50,4 +50,11 @@
       @include emptyColor('success');
     }
   }
+  &--gray {
+    @include badgeColor('gray');
+
+    &.badge--empty {
+      @include emptyColor('gray');
+    }
+  }
 }

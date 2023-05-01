@@ -58,4 +58,19 @@
     border-radius: settings.$border-radius-s;
     padding: settings.$spacing-s settings.$spacing-xl;
   }
+
+  &--icon-xs {
+    border-radius: settings.$border-radius-xs;
+    padding: settings.$spacing-2xs;
+  }
+
+  &--icon-s {
+    border-radius: settings.$border-radius-xs;
+    padding: settings.$spacing-xs;
+  }
+
+  &--icon-m {
+    border-radius: settings.$border-radius-s;
+    padding: settings.$spacing-s;
+  }
 }

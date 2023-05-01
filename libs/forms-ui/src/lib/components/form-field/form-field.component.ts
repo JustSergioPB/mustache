@@ -64,11 +64,9 @@ export class FormFieldComponent implements AfterContentInit, OnDestroy {
     if (this.controlName?.control.errors) {
       this.hasError = true;
       if (this.input) this.input.hasError = true;
-      if (this.label) this.label.hasError = true;
     } else {
       this.hasError = false;
       if (this.input) this.input.hasError = false;
-      if (this.label) this.label.hasError = false;
     }
   }
 

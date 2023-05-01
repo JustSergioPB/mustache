@@ -125,6 +125,8 @@ $colors: (
 
 $filter-primary-500: invert(9%) sepia(99%) saturate(6048%) hue-rotate(266deg)
   brightness(107%) contrast(130%);
+$filter-primary: invert(95%) sepia(100%) saturate(4781%) hue-rotate(182deg)
+  brightness(105%) contrast(102%);
 $filter-accent-500: invert(12%) sepia(79%) saturate(7461%) hue-rotate(327deg)
   brightness(102%) contrast(103%);
 $filter-warn-500: invert(78%) sepia(81%) saturate(955%) hue-rotate(0deg)
@@ -138,6 +140,7 @@ $filter-gray-500: invert(45%) sepia(4%) saturate(22%) hue-rotate(1deg)
 
 $filters: (
   'filter-primary-500': $filter-primary-500,
+  'filter-primary': $filter-primary,
   'filter-accent-500': $filter-accent-500,
   'filter-warn-500': $filter-warn-500,
   'filter-danger-500': $filter-danger-500,

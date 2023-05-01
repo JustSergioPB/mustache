@@ -1,22 +1,45 @@
-<p class="custom-label text--label-semibold">{{ label }}</p>
 <div class="wrapper">
-  <select name="phones" id="phones">
-    <option
-      value="{{ diallingCode.prefix }}"
-      *ngFor="let diallingCode of diallingCodes"
+  <button
+    mustacheButton
+    [variant]="variant"
+    [appearance]="appearance"
+    [size]="'s'"
+    (click)="openDropdown($event)"
+  >
+    <p
+      mustacheEmoji="{{ defaultDiallingCode?.iconSrc }}"
+      class="emoji emoji--m"
+    ></p>
+    <!--TODO: change this so it works as expected with appearance-->
+    <img
+      class="icon icon--chevron icon--m icon icon--empty"
+      src="assets/icons/chevron-down.svg"
+      alt="'dropdown'"
+    />
+  </button>
+  <div class="dropdown" [ngClass]="{ 'dropdown--visible': isOpen }">
+    <div
+      class="dropdown__item"
+      *ngFor="let diallingCode of diallingCodes; let i = index"
+      (click)="onItemClick(i)"
     >
       <p mustacheEmoji="{{ diallingCode.iconSrc }}" class="emoji emoji--m"></p>
-      +{{ diallingCode.prefix }}
-    </option>
-  </select>
+      <p class="text--label-regular">{{ diallingCode.country }}</p>
+      <p class="text--label-regular">(+{{ diallingCode.prefix }})</p>
+    </div>
+  </div>
   <mustache-form-field>
-    <input
-      id="phone"
-      mustacheInput
-      type="tel"
-      placeholder="{{ defaultDiallingCode?.placeholder || '--' }}"
-      [formControl]="formControl"
-    />
+    <p class="label text--label-semibold">{{ label }}</p>
+    <div class="phone-wrapper">
+      <p class="prefix">+{{ defaultDiallingCode?.prefix }}</p>
+      <input
+        id="phone"
+        mustacheInput
+        type="tel"
+        placeholder="{{ defaultDiallingCode?.placeholder || '--' }}"
+        [formControl]="formControl"
+      />
+    </div>
     <p
       mustacheFormFieldError
       *ngIf="formControl.touched && formControl.invalid"

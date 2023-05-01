@@ -1,0 +1,188 @@
+<section class="entrance">
+  <div class="entrance__text">
+    <p class="title text--desktop-h1">
+      La
+      <span class="text--primary-500">inversión inmobiliaria</span>
+      nunca ha sido más
+      <span class="text--primary-500">sencilla</span>
+    </p>
+    <p class="subtitle text--title-semibold text--gray-500">
+      Comienza a invertir de manera fácil y rápida utilizando las tecnologías
+      que definirán el
+      <span class="text--primary-500">futuro</span> de la inversión
+      inmobiliaria. La tokenización de inmuebles te permite invertir con
+      cantidades más pequeñas que en métodos tradicionales y además ¿Sabés qué?
+      <span class="text--primary-500"
+        >¡Con menores costes y una mayor rentabilidad!</span
+      >
+    </p>
+    <div class="buttons">
+      <button mustacheButton>Empieza ahora</button>
+      <button mustacheButton [appearance]="'empty'">Quiero saber más</button>
+    </div>
+  </div>
+  <div class="entrance__img">
+    <img src="assets/images/housing.avif" alt="house" />
+  </div>
+</section>
+<section class="housing">
+  <p class="title text--desktop-h5">Nuevos inmuebles</p>
+  <p class="subtitle text--title-semibold text--primary-500">
+    ¡No te pierdas los proyectos más recientes en los que estámos trabajando!
+  </p>
+  <ng-container *ngIf="(projects$ | async)?.value as projects">
+    <div class="projects">
+      <block-house-project
+        *ngFor="let project of projects"
+        [project]="project"
+      ></block-house-project>
+    </div>
+  </ng-container>
+</section>
+<section class="advantajes">
+  <p class="title text--desktop-h5">¿Por qué House3.0?</p>
+  <p class="subtitle text--title-semibold text--gray-600">
+    Muy sencillo! Nuestros profesionales trabajan para encontrar los mejores
+    proyectos. Adémas las características que definen a nuestra plataforma son:
+  </p>
+  <div class="list">
+    <div class="advantaje">
+      <p class="title text--desktop-h6 text--primary-500">01. Sencillez</p>
+      <ol>
+        <li class="text--body-regular text--primary-500">Registrate</li>
+        <li class="text--body-regular">Mira viviendas</li>
+        <li class="text--body-regular">
+          ¡Comienza a <span class="text--primary-500">invertir</span>!
+        </li>
+        <li class="text--body-regular">Observa el valor de tus dividendos</li>
+        <li class="text--body-regular">
+          Haz <span class="text--primary-500">líquidas</span> tus
+          participaciones
+          <span class="text--primary-500">cuando y donde quieras</span>
+        </li>
+      </ol>
+      <p class="text--body-regular">¡Así de sencillo!</p>
+    </div>
+    <div class="advantaje">
+      <p class="title text--desktop-h6 text--primary-500">02. Accesibilidad</p>
+      <p class="text--body-regular">
+        ¿No posees una
+        <span class="text--primary-500">cartera digital</span> para activos
+        digitales y criptoactivos? ¿Prefieres pagar haciendo una
+        <span class="text--primary-500">transacción tradicional</span>? No te
+        preocupes te tenemos cubierto.
+        <span class="text--primary-500"
+          >Paga tanto utilizando criptodivisas como de manera tradicional con
+          una transferencia</span
+        >. ¡Nosotros nos encargamos de todo!
+      </p>
+    </div>
+    <div class="advantaje">
+      <p class="title text--desktop-h6 text--primary-500">03. Seguridad</p>
+      <p class="text--body-regular">
+        El uso de tecnologías
+        <span class="text--primary-500">blockchain y NFT</span> permite que cada
+        transacción sea
+        <span class="text--primary-500">validada y respaladada</span> por todas
+        las partes implicadas de manera sencilla. Adicionalmente la blockchain
+        se encarga de manera rápida de
+        <span class="text--primary-500">comprobar la autenticidad</span> de
+        cualquier criptoactivo.
+      </p>
+    </div>
+    <div class="advantaje">
+      <p class="title text--desktop-h6 text--primary-500">04. Trazabilidad</p>
+      <p class="text--body-regular">
+        ¿Quieres hacer un
+        <span class="text--primary-500">seguimiento de tus dividendos</span>?
+        Ningún problema. Nosotros te brindamos de las herramientas para que
+        puedas hacerlo
+        <span class="text--primary-500"
+          >desde cualquier ordenador o móvil en cualquier momento</span
+        >.
+      </p>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <mustache-banner [logoSrc]="'assets/icons/home-stats.svg'"
+    >House3.0</mustache-banner
+  >
+  <div class="footer__content">
+    <div class="footer__section">
+      <p class="title text--title-semibold text--primary">Legal</p>
+      <a href="#" class="link link--primary text--comment-semibold"
+        >Aviso Legal</a
+      >
+      <a href="#" class="link link--primary text--comment-semibold"
+        >Política de privacidad</a
+      >
+      <a href="#" class="link link--primary text--comment-semibold"
+        >Política de cookies</a
+      >
+      <a href="#" class="link link--primary text--comment-semibold"
+        >Aspectos legales</a
+      >
+      <a href="#" class="link link--primary text--comment-semibold"
+        >Términos y condiciones</a
+      >
+    </div>
+    <div class="footer__section">
+      <p class="title text--title-semibold text--primary">Sobre nosotros</p>
+      <a href="#" class="link link--primary text--comment-semibold"
+        >Conocenos</a
+      >
+      <a href="#" class="link link--primary text--comment-semibold">FAQ</a>
+      <div class="field">
+        <img
+          class="icon icon--m icon--empty icon--secondary"
+          src="assets/icons/map-pin.svg"
+          alt="location"
+        />
+        <p class="text--comment-semibold text--primary">
+          Av. Portugal N7 5G, Logroño, La Rioja, España, 26001
+        </p>
+      </div>
+      <div class="field">
+        <img
+          class="icon icon--m icon--empty icon--secondary"
+          src="assets/icons/mail.svg"
+          alt="email"
+        />
+        <p class="text--comment-semibold text--primary">house3.0@gmail.com</p>
+      </div>
+      <div class="field">
+        <img
+          class="icon icon--m icon--empty icon--secondary"
+          src="assets/icons/phone.svg"
+          alt="phone"
+        />
+        <p class="text--comment-semibold text--primary">+34 941 57 43 98</p>
+      </div>
+    </div>
+    <div class="footer__section">
+      <p class="title text--title-semibold text--primary">Sobre invertir</p>
+      <p class="disclaimer text--label-semibold text--primary">
+        Los criptoactivos son productos de inversión de alto riesgo y pueden no
+        ser adecuados para inversores no profesionales. Aunque en House3.0 el
+        criptoactivo está respaldado por un inmueble real, el valor de las
+        inversiones y el rendimiento derivado de las mismas puede experimentar
+        significativas variaciones, pudiendo perderse la totalidad del importe
+        invertido. Es importante leer y comprender los riesgos que implica esta
+        inversión y que se detallan en el White Paper o libro blanco de cada
+        emisión
+      </p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="text--label-semibold text--primary-100">
+      &copy; {{ year }} ALL RIGHTS RESERVED
+    </p>
+    <p class="text--label-semibold text--primary-100">
+      Built by
+      <a class="link text--primary-100" href="{{ GITHUB_URL }}" target="_blank"
+        >Sergio Peña Bayona</a
+      >
+    </p>
+  </div>
+</footer>

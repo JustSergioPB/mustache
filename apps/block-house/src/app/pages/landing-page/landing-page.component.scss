@@ -1,0 +1,124 @@
+@use '../../../../../../libs/theme/scss/settings';
+
+:host(block-house-landing-page) {
+  display: block;
+}
+
+.entrance {
+  padding: settings.$spacing-7xl settings.$margin * 2;
+  display: flex;
+
+  &__text {
+    flex-basis: 50%;
+    .title {
+      margin-top: settings.$spacing-4xl;
+      margin-bottom: settings.$spacing-s;
+    }
+
+    .subtitle {
+      margin-bottom: settings.$spacing-2xl;
+    }
+
+    .buttons {
+      display: flex;
+      gap: settings.$spacing-xs;
+    }
+  }
+
+  &__img {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-top: settings.$spacing-3xl;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.housing {
+  padding: settings.$spacing-5xl settings.$margin * 2;
+  background-color: settings.$gray-100;
+
+  .title {
+    margin-bottom: settings.$spacing-s;
+  }
+
+  .subtitle {
+    margin-bottom: settings.$spacing-3xl;
+  }
+
+  .projects {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.advantajes {
+  padding: settings.$spacing-5xl settings.$margin * 2;
+
+  .subtitle {
+    margin-bottom: settings.$spacing-3xl;
+  }
+
+  .list {
+    display: flex;
+    gap: settings.$spacing-l;
+
+    .advantaje {
+      background-color: settings.$gray-100;
+      padding: settings.$spacing-2xl;
+      border-radius: settings.$border-radius-m;
+      flex-basis: 25%;
+
+      .title {
+        margin-bottom: settings.$spacing-m;
+      }
+
+      ol {
+        padding: 0 settings.$spacing-s;
+        margin-bottom: settings.$spacing-l;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: settings.$margin * 2;
+  background-color: settings.$primary-500;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: settings.$spacing-s;
+
+    .title {
+      margin-bottom: settings.$spacing-xl;
+    }
+
+    .field {
+      display: flex;
+      align-items: center;
+      gap: settings.$spacing-xs;
+    }
+
+    .disclaimer {
+      text-align: justify;
+      max-width: 20rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: settings.$spacing-3xl;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+}

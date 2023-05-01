@@ -1,13 +1,17 @@
 @use '../../../../../theme/scss/settings';
 
 :host(mustache-toolbar) {
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   //TODO: separate this into level logic for config
-  //border-bottom: solid settings.$border-thickness-m settings.$gray-200;
-  //box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-  padding: settings.$spacing-l settings.$margin;
+  border-bottom: solid settings.$border-thickness-m settings.$gray;
+  box-shadow: settings.$shadow-s;
+  padding: settings.$spacing-l settings.$margin * 2;
+  background-color: settings.$bg-color;
+  z-index: settings.$level-1;
 }
 
 .left {

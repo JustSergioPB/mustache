@@ -1,7 +1,7 @@
 @use '../settings';
 
-@mixin iconColor($color) {
-  filter: map-get(settings.$filters, 'filter-' + $color + '-500');
+@mixin iconColor($color, $opacity: 500) {
+  filter: map-get(settings.$filters, 'filter-' + $color + '-' + $opacity);
 }
 
 @mixin buttonColor($color) {

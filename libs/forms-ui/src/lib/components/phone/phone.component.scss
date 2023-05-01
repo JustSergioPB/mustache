@@ -2,6 +2,7 @@
 @use '../../../../../theme/scss/tools';
 
 :host(mustache-phone) {
+  position: relative;
   display: block;
   margin-bottom: settings.$spacing-l;
 
@@ -17,29 +18,68 @@
       border-left: none;
     }
 
-    select {
-      all: unset;
+    button {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border: solid calc(settings.$border-thickness-m + 0.05rem)
+        settings.$primary-500;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: settings.$spacing-xs;
-      border-top-left-radius: settings.$border-radius-s;
-      border-bottom-left-radius: settings.$border-radius-s;
-      background-color: settings.$primary-500;
-      height: 100%;
-      color: settings.$primary;
-      font-size: settings.$font-size-s;
-      width: 4rem;
-
+      &:hover,
       &:focus {
-        background-color: settings.$primary-300;
+        border: solid calc(settings.$border-thickness-m + 0.05rem)
+          settings.$primary-300;
       }
     }
   }
 
-  .custom-label {
-    margin-left: settings.$spacing-xs;
-    margin-bottom: settings.$spacing-xs;
+  .label {
+    left: -4.25rem;
+  }
+
+  .phone-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: settings.$spacing-xs;
+    top: settings.$spacing-s;
+    left: settings.$spacing-s;
+  }
+
+  .prefix {
+    font-size: settings.$font-size-s;
+    color: settings.$primary-500;
+  }
+
+  .input {
+    position: unset;
+    left: settings.$spacing-xl;
+  }
+
+  .dropdown {
+    top: settings.$spacing-3xl + settings.$spacing-s;
+    left: -0.1rem;
+    min-width: 9rem;
+    padding: settings.$spacing-s;
+  }
+
+  .dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: settings.$spacing-xs;
+    padding: settings.$spacing-xs;
+    border-radius: settings.$border-radius-xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: settings.$primary;
+
+      .text--label-semibold {
+        color: settings.$primary-500;
+      }
+    }
   }
 }

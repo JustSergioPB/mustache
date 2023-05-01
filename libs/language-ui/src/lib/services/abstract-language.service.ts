@@ -3,7 +3,7 @@ import { Language } from '../models';
 
 export abstract class AbstractLanguageService {
   public language$: Observable<Language>;
-  protected _language$;
+  protected _language$: BehaviorSubject<Language>;
   protected defaultLanguage: Language;
   public abstract getLanguage(): void;
   public abstract changeLanguage(lang: Language): void;

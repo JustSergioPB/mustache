@@ -1,0 +1,95 @@
+@use '../../../../../../../../libs/theme/scss/settings';
+
+:host(block-house-project) {
+  display: block;
+  width: 26rem;
+  height: 22rem;
+  box-shadow: settings.$shadow-m;
+  border-radius: settings.$border-radius-m;
+  background-color: settings.$bg-color;
+
+  .img {
+    width: 100%;
+    height: 9rem;
+    border-top-left-radius: settings.$border-radius-m;
+    border-top-right-radius: settings.$border-radius-m;
+    object-fit: cover;
+  }
+
+  .body {
+    padding: settings.$spacing-m;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title {
+    margin-bottom: settings.$spacing-xs;
+  }
+
+  .address {
+    display: flex;
+    align-items: center;
+    gap: settings.$spacing-2xs;
+    margin-bottom: settings.$spacing-m;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 settings.$spacing-m;
+  }
+
+  .actions {
+    display: flex;
+    gap: settings.$spacing-s;
+  }
+
+  .stats {
+    display: flex;
+    gap: settings.$spacing-l;
+  }
+
+  .stat {
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: settings.$spacing-2xs;
+    }
+
+    &__progress {
+      display: flex;
+      align-items: center;
+      gap: settings.$spacing-xs;
+      margin-top: settings.$spacing-2xs;
+    }
+  }
+
+  .status-bar {
+    background-color: settings.$gray-200;
+    width: 10rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .status-bar__content {
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: settings.$primary-500;
+  }
+
+  .status-bar__content--100 {
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: settings.$success-600;
+  }
+
+  @for $i from 1 to 100 {
+    .status-bar__content--#{$i} {
+      width: #{$i}#{'%'};
+    }
+  }
+}

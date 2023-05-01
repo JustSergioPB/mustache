@@ -1,0 +1,76 @@
+<mustache-toolbar>
+  <ng-container left>
+    <mustache-banner [logoSrc]="'assets/icons/home-stats.svg'"
+      >House3.0</mustache-banner
+    >
+    <mustache-navbar
+      [activeRoute]="activeRoute"
+      [items]="items"
+      [activeRoute]="activeRoute"
+      (itemClicked)="onItemClick($event)"
+    >
+    </mustache-navbar>
+  </ng-container>
+  <ng-container right>
+    <button
+      mustacheButton
+      [appearance]="'empty'"
+      [size]="'s'"
+      (click)="onSignupClicked()"
+    >
+      Registrarse
+    </button>
+    <button mustacheButton [size]="'s'" (click)="onLoginClicked()">
+      Acceder
+    </button>
+  </ng-container>
+</mustache-toolbar>
+<router-outlet></router-outlet>
+
+<!--
+    TODO: do when retreiving login
+    <mustache-avatar-dropdown
+      [userNickname]="(session$ | async)?.value?.nickName"
+      [isOpen]="avatarOpen"
+    >
+      <ng-container iconButton>
+        <mustache-avatar-connection
+          [status]="connectionStatus$ | async"
+          (click)="avatarOpen = !avatarOpen"
+        ></mustache-avatar-connection>
+      </ng-container>
+      <ng-container actions>
+        <mustache-toggle
+          [value]="darkModeOn"
+          (valueChanged)="onDarkModeChange($event)"
+          >Dark mode</mustache-toggle
+        >
+        <button
+          mustacheButton
+          [appearance]="'empty'"
+          [size]="'s'"
+          (click)="onSettingsClicked()"
+        >
+          <img
+            class="icon icon--m icon--empty icon--discrete"
+            src="assets/icons/settings.svg"
+            alt="'settings'"
+          />
+          Ajustes
+        </button>
+        <button
+          mustacheButton
+          [appearance]="'empty'"
+          [size]="'s'"
+          (click)="onLogOutClicked()"
+        >
+          <img
+            class="icon icon--m icon--empty icon--discrete"
+            src="assets/icons/logout.svg"
+            alt="'log out'"
+          />
+          Log out
+        </button>
+      </ng-container>
+    </mustache-avatar-dropdown>
+-->

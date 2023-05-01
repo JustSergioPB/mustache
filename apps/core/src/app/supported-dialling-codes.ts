@@ -15,6 +15,6 @@ export const SUPPORTED_DIALLING_CODES: DiallingCode[] = [
     prefix: 34,
     country: 'Spain',
     iconSrc: '&#x1F1EA;&#x1F1F8;',
-    placeholder: '699431240',
+    placeholder: '699 43 12 40',
   },
 ];
