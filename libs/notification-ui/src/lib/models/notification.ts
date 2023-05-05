@@ -1,4 +1,4 @@
-import { ColorVariant } from '@mustache/basic-ui';
+import { Color } from '@mustache/basic-ui';
 import { NotificationStatus } from './notification-status';
 
 export type Notification = {
@@ -7,5 +7,5 @@ export type Notification = {
   description: string;
   date: string;
   status: NotificationStatus;
-  variant: ColorVariant;
+  color: Color;
 };

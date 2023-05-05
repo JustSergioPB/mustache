@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {
   Appearance,
   ButtonDirective,
-  ColorVariant,
+  Color,
   EmojiDirective,
 } from '@mustache/basic-ui';
 import { Language } from '../../models';
@@ -17,7 +17,7 @@ import { Language } from '../../models';
 })
 export class LanguageSelectorComponent {
   @Input() appearance: Appearance = 'filled';
-  @Input() variant: ColorVariant = 'primary';
+  @Input() color: Color = 'primary';
   @Input() languages: Language[] = [];
   @Input() value: Language | undefined | null;
   @Output() languageChanged = new EventEmitter<number>();

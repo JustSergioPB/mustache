@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorVariant } from '../../models';
+import { Appearance, Color, TextSize } from '../../models';
 
 @Component({
   selector: 'mustache-stat',
@@ -12,7 +12,7 @@ import { ColorVariant } from '../../models';
 export class StatComponent {
   @Input() iconSrc: string | undefined;
   @Input() label: string | undefined;
-  @Input() variant: ColorVariant = 'primary';
-  @Input() appearance: string | undefined;
-  @Input() size: string | undefined;
+  @Input() color: Color = 'primary';
+  @Input() appearance: Appearance = 'empty';
+  @Input() size: TextSize = 'body';
 }

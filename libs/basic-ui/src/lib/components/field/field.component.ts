@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorVariant } from '../../models';
+import { Color, TextSize } from '../../models';
 
 @Component({
   selector: 'mustache-field',
@@ -12,6 +12,6 @@ import { ColorVariant } from '../../models';
 export class FieldComponent {
   @Input() iconSrc: string | undefined;
   @Input() label: string | undefined;
-  @Input() variant: ColorVariant = 'primary';
-  @Input() size: string | undefined;
+  @Input() color: Color = 'primary';
+  @Input() size: TextSize = 'body';
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Appearance, ColorVariant } from '../../models';
+import { Appearance, Color } from '../../models';
 
 @Component({
   selector: 'mustache-banner',
@@ -11,6 +11,6 @@ import { Appearance, ColorVariant } from '../../models';
 })
 export class BannerComponent {
   @Input() logoSrc: string | undefined;
-  @Input() variant: ColorVariant = 'primary';
+  @Input() color: Color = 'primary';
   @Input() appearance: Appearance = 'empty';
 }

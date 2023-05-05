@@ -3,6 +3,6 @@
   src="{{ iconSrc }}"
   alt="'notification'"
 />
-<mustache-badge *ngIf="numberOfNotifications" [variant]="variant">{{
+<mustache-badge *ngIf="numberOfNotifications" [color]="color">{{
   numberOfNotifications > 99 ? '99+' : numberOfNotifications
 }}</mustache-badge>

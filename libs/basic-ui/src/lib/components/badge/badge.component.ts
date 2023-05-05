@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorVariant } from '../../models';
+import { Color } from '../../models';
 
 @Component({
   selector: 'mustache-badge',
@@ -10,6 +10,6 @@ import { ColorVariant } from '../../models';
   styleUrls: ['./badge.component.scss'],
 })
 export class BadgeComponent {
-  @Input() variant: ColorVariant = 'primary';
+  @Input() color: Color = 'primary';
   @Input() empty = false;
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorVariant } from '../../models';
+import { Appearance, Color, TextSize } from '../../models';
 
 @Component({
   selector: 'mustache-percentaje-bar',
@@ -11,7 +11,7 @@ import { ColorVariant } from '../../models';
 })
 export class PercentajeBarComponent {
   @Input() percentaje = 0;
-  @Input() variant: ColorVariant = 'primary';
-  @Input() appearance: string | undefined;
-  @Input() size: string | undefined;
+  @Input() color: Color = 'primary';
+  @Input() appearance: Appearance = 'empty';
+  @Input() size: TextSize = 'body';
 }

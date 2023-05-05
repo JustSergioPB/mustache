@@ -46,21 +46,21 @@
       </ng-container>
       <ng-container body>
         <mustache-status
-          [variant]="'success'"
+          [color]="'success'"
           (click)="onStatusClicked('active')"
         >
           Active
         </mustache-status>
         <mustache-status
-          [variant]="'warn'"
+          [color]="'warn'"
           (click)="onStatusClicked('inactive')"
         >
           Inactive
         </mustache-status>
-        <mustache-status [variant]="'danger'" (click)="onStatusClicked('busy')">
+        <mustache-status [color]="'danger'" (click)="onStatusClicked('busy')">
           Busy
         </mustache-status>
-        <mustache-status [variant]="'gray'" (click)="onStatusClicked('out')">
+        <mustache-status [color]="'gray'" (click)="onStatusClicked('out')">
           Out
         </mustache-status>
       </ng-container>

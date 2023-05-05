@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorVariant, BadgeComponent } from '@mustache/basic-ui';
+import { Color, BadgeComponent } from '@mustache/basic-ui';
 
 @Component({
   selector: 'mustache-notification-icon',
@@ -12,5 +12,5 @@ import { ColorVariant, BadgeComponent } from '@mustache/basic-ui';
 export class NotificationIconComponent {
   @Input() numberOfNotifications: number | undefined | null;
   @Input() iconSrc: string | undefined;
-  @Input() variant: ColorVariant = 'primary';
+  @Input() color: Color = 'primary';
 }

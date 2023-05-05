@@ -11,7 +11,7 @@ import { DiallingCode } from '../../models';
 import {
   Appearance,
   ButtonDirective,
-  ColorVariant,
+  Color,
   EmojiDirective,
 } from '@mustache/basic-ui';
 
@@ -33,7 +33,7 @@ import {
 })
 export class PhoneComponent implements OnInit {
   @Input() appearance: Appearance = 'filled';
-  @Input() variant: ColorVariant = 'primary';
+  @Input() color: Color = 'primary';
   @Input() label = 'Phone';
   @Input() defaultDiallingCode: DiallingCode | undefined;
   @Input() diallingCodes: DiallingCode[] = [];

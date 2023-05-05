@@ -1,4 +1,4 @@
-export type ColorVariant =
+export type Color =
   | 'primary'
   | 'accent'
   | 'gray'

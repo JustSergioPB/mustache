@@ -17,7 +17,7 @@ export class NotificationMockService extends AbstractNotificationService {
         description: 'Congratulations! Daniel just purchased the solo licence',
         date: new Date().toISOString(),
         status: 'unread',
-        variant: 'primary',
+        color: 'primary',
       },
       {
         iconSrc: 'assets/icons/message-circle-2.svg',
@@ -25,7 +25,7 @@ export class NotificationMockService extends AbstractNotificationService {
         description: 'Hey! Sergio do you know when will we meet with William?',
         date: new Date().toISOString(),
         status: 'read',
-        variant: 'primary',
+        color: 'primary',
       },
       {
         iconSrc: 'assets/icons/tool.svg',
@@ -33,7 +33,7 @@ export class NotificationMockService extends AbstractNotificationService {
         description: '',
         date: new Date().toISOString(),
         status: 'unread',
-        variant: 'warn',
+        color: 'warn',
       },
       {
         iconSrc: 'assets/icons/x.svg',
@@ -41,7 +41,7 @@ export class NotificationMockService extends AbstractNotificationService {
         description: 'Please change it as soon as posible',
         date: new Date().toISOString(),
         status: 'read',
-        variant: 'danger',
+        color: 'danger',
       },
       {
         iconSrc: 'assets/icons/check.svg',
@@ -49,7 +49,7 @@ export class NotificationMockService extends AbstractNotificationService {
         description: 'Enjoy your new laptop!',
         date: new Date().toISOString(),
         status: 'read',
-        variant: 'success',
+        color: 'success',
       },
       {
         iconSrc: 'assets/icons/activity.svg',
@@ -59,7 +59,7 @@ export class NotificationMockService extends AbstractNotificationService {
           'Vivamus maximus auctor felis eget efficitur. Vivamus gravida orci sed nunc aliquet accumsan. Quisque tempor fringilla magna, et gravida dui. Donec venenatis porta purus, nec aliquam augue accumsan et. Fusce felis est, lobortis vel efficitur id, volutpat at sem. Nullam id eros commodo, rhoncus dui et, elementum nisi. Quisque nisl risus, eleifend mollis pulvinar ut, luctus ornare quam. Nunc aliquet consequat purus ac feugiat',
         date: new Date().toISOString(),
         status: 'read',
-        variant: 'primary',
+        color: 'primary',
       },
     ]);
   }
