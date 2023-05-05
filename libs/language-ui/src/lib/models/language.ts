@@ -3,5 +3,5 @@ export type Language = {
   value: string;
   name: string;
   country: string;
-  iconSrc: string;
+  icon: string;
 };

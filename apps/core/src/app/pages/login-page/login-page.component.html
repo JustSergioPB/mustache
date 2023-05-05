@@ -17,54 +17,38 @@
       >
         <button
           mustacheButton
+          [icon]="'heart'"
           [appearance]="'complementary'"
           [position]="'center'"
           (click)="onLoginWithGoogleClicked()"
         >
-          <img
-            class="icon icon--m icon--empty icon--discrete"
-            src="assets/icons/brand-google.svg"
-            alt="'log out'"
-          />
           Google
         </button>
         <button
           mustacheButton
+          [icon]="'heart'"
           [appearance]="'complementary'"
           [position]="'center'"
           (click)="onLoginWithGoogleClicked()"
         >
-          <img
-            class="icon icon--m icon--empty icon--discrete"
-            src="assets/icons/brand-apple.svg"
-            alt="'log out'"
-          />
           Apple
         </button>
         <button
           mustacheButton
+          [icon]="'heart'"
           [appearance]="'complementary'"
           [position]="'center'"
           (click)="onLoginWithGoogleClicked()"
         >
-          <img
-            class="icon icon--m icon--empty icon--discrete"
-            src="assets/icons/brand-windows.svg"
-            alt="'log out'"
-          />
           Microsoft
         </button>
         <button
           mustacheButton
+          [icon]="'heart'"
           [appearance]="'complementary'"
           [position]="'center'"
           (click)="onLoginWithGoogleClicked()"
         >
-          <img
-            class="icon icon--m icon--empty icon--discrete"
-            src="assets/icons/wallet.svg"
-            alt="'log out'"
-          />
           Web3
         </button>
       </mustache-login>
@@ -92,11 +76,12 @@
 <div class="content">
   <div class="content__wrapper">
     <div class="content__top">
-      <img
-        src="assets/icons/moustache.svg"
-        alt="logo"
-        class="icon icon--login"
-      />
+      <mustache-icon
+        [name]="'heart'"
+        [color]="'gray'"
+        [size]="'body'"
+        [appearance]="'empty'"
+      ></mustache-icon>
       <p class="title text--h1 text--primary">
         Build your dream application in a blink using MustacheUI
       </p>
@@ -111,7 +96,10 @@
       </p>
       <p class="text--label-semibold text--primary-100">
         Built by
-        <a class="link text--primary-100" href="{{ GITHUB_URL }}" target="_blank"
+        <a
+          class="link text--primary-100"
+          href="{{ GITHUB_URL }}"
+          target="_blank"
           >Sergio Peña Bayona</a
         >
       </p>

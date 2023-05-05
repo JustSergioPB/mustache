@@ -7,14 +7,14 @@
         status
       }}</mustache-badge>
     </div>
-    <mustache-field [iconSrc]="'assets/icons/map-pin.svg'">
+    <mustache-field [icon]="'assets/icons/map-pin.svg'">
       {{ address }}
     </mustache-field>
     <div class="stats">
       <mustache-stat [label]="'Inversión total'">
         {{ totalInvestment | currency : currency }}
       </mustache-stat>
-      <mustache-stat [label]="'ROI'" [iconSrc]="'assets/icons/info-circle.svg'">
+      <mustache-stat [label]="'ROI'" [icon]="'assets/icons/info-circle.svg'">
         <mustache-tooltip
           [message]="
             'El ROI mostrado es la rentabilidad media anual estimada, dicha estimación no es vinculante'
@@ -42,26 +42,16 @@
         mustacheIconButton
         [appearance]="'empty'"
         [size]="'s'"
+        [icon]="'heart'"
         (click)="onSaveClicked()"
-      >
-        <img
-          class="icon icon--m icon--empty icon--discrete"
-          src="assets/icons/heart.svg"
-          alt="'save'"
-        />
-      </button>
+      ></button>
       <button
         class="button--mobile"
         mustacheIconButton
         [size]="'s'"
+        [icon]="'heart'"
         (click)="onSeeDetailsClicked()"
-      >
-        <img
-          class="icon icon--m icon--empty icon--secondary"
-          src="assets/icons/arrows-maximize.png"
-          alt="'go to'"
-        />
-      </button>
+      ></button>
       <button
         class="button--desktop"
         mustacheButton

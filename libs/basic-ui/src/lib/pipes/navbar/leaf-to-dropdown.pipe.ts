@@ -10,7 +10,7 @@ export class LeafToDropdownPipe implements PipeTransform {
     let items: DropdownItem[] = [];
     if (leafs) {
       items = leafs.map((leaf) => {
-        return { title: leaf.title, iconSrc: leaf.iconSrc };
+        return { title: leaf.title, icon: leaf.icon };
       });
     }
     return items;

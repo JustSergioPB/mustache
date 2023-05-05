@@ -144,32 +144,11 @@
         >Conocenos</a
       >
       <a href="#" class="link link--primary text--comment-semibold">FAQ</a>
-      <div class="field">
-        <img
-          class="icon icon--m icon--empty icon--secondary"
-          src="assets/icons/map-pin.svg"
-          alt="location"
-        />
-        <p class="text--comment-semibold text--primary">
-          Av. Portugal N7 5G, Logroño, La Rioja, España, 26001
-        </p>
-      </div>
-      <div class="field">
-        <img
-          class="icon icon--m icon--empty icon--secondary"
-          src="assets/icons/mail.svg"
-          alt="email"
-        />
-        <p class="text--comment-semibold text--primary">house3.0@gmail.com</p>
-      </div>
-      <div class="field">
-        <img
-          class="icon icon--m icon--empty icon--secondary"
-          src="assets/icons/phone.svg"
-          alt="phone"
-        />
-        <p class="text--comment-semibold text--primary">+34 941 57 43 98</p>
-      </div>
+      <mustache-field [icon]="'map-pin'">
+        Av. Portugal N7 5G, Logroño, La Rioja, España, 26001
+      </mustache-field>
+      <mustache-field [icon]="'mail'"> house3.0@gmail.com </mustache-field>
+      <mustache-field [icon]="'phone'"> +34 941 57 43 98 </mustache-field>
     </div>
     <div class="footer__section">
       <p class="title text--h6 text--primary">Sobre invertir</p>

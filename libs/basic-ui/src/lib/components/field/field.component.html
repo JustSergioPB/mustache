@@ -1,9 +1,9 @@
-<img
-  *ngIf="iconSrc"
-  class="icon icon--m icon--empty icon--discrete"
-  src="{{ iconSrc }}"
-  alt="{{ label }}"
-/>
+<mustache-icon
+  [name]="'heart'"
+  [color]="'gray'"
+  [size]="'body'"
+  [appearance]="'empty'"
+></mustache-icon>
 <p *ngIf="label" class="text--comment-semibold text--gray-600">
   {{ label }}
 </p>

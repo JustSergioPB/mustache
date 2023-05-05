@@ -5,6 +5,7 @@ import {
   ButtonDirective,
   FieldComponent,
   IconButtonDirective,
+  IconComponent,
   StatComponent,
   TooltipComponent,
 } from '@mustache/basic-ui';
@@ -24,6 +25,7 @@ import { DurationPipe } from '../../pipes';
     DurationPipe,
     FieldComponent,
     StatComponent,
+    IconComponent
   ],
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss'],

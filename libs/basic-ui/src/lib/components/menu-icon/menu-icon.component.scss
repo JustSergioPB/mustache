@@ -1,9 +1,0 @@
-@use '../../../../../theme/scss/settings';
-@use '../../../../../theme/scss/tools';
-
-:host(mustache-menu-icon) {
-  @include tools.navbarIcon;
-  &:hover > .icon--discrete {
-    filter: settings.$filter-primary-500;
-  }
-}

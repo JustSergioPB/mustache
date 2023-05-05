@@ -12,17 +12,17 @@ export const NAVBAR_CONFIG: NavbarItem[] = [
       {
         title: 'Basic',
         route: 'basic-ui',
-        iconSrc: 'assets/icons/components.svg',
+        icon: 'assets/icons/components.svg',
       },
       {
         title: 'Forms',
         route: 'forms-ui',
-        iconSrc: 'assets/icons/components.svg',
+        icon: 'assets/icons/components.svg',
       },
       {
         title: 'Auth',
         route: 'auth-ui',
-        iconSrc: 'assets/icons/components.svg',
+        icon: 'assets/icons/components.svg',
       },
     ],
   },

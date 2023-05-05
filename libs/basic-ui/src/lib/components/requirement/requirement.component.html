@@ -3,11 +3,12 @@
     isFulfilled ? 'circle--success' : 'circle--dotted'
   }}"
 >
-  <img
-    *ngIf="isFulfilled"
-    src="assets/icons/check.svg"
-    class="icon icon--s icon--empty icon--success"
-  />
+  <mustache-icon
+    [name]="'heart'"
+    [color]="'gray'"
+    [size]="'body'"
+    [appearance]="'empty'"
+  ></mustache-icon>
 </div>
 <p
   class="text--comment-semibold {{

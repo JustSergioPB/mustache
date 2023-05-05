@@ -1,8 +1,9 @@
-<img
-  class="icon icon--l icon--empty icon--discrete"
-  src="{{ iconSrc }}"
-  alt="'notification'"
-/>
+<mustache-icon
+  [name]="'bell'"
+  [color]="'gray'"
+  [size]="'body'"
+  [appearance]="'empty'"
+></mustache-icon>
 <mustache-badge *ngIf="numberOfNotifications" [color]="color">{{
   numberOfNotifications > 99 ? '99+' : numberOfNotifications
 }}</mustache-badge>

@@ -10,7 +10,7 @@ import { Color, TextSize } from '../../models';
   styleUrls: ['./field.component.scss'],
 })
 export class FieldComponent {
-  @Input() iconSrc: string | undefined;
+  @Input() icon: string | undefined;
   @Input() label: string | undefined;
   @Input() color: Color = 'primary';
   @Input() size: TextSize = 'body';

@@ -5,13 +5,12 @@
     *ngFor="let item of items; let i = index"
     (click)="onItemClick(i)"
   >
-    <div class="icon-wrapper icon-wrapper--primary">
-      <img
-        src="{{ item.iconSrc }}"
-        alt="Decorative"
-        class="icon icon--primary icon--empty icon--m"
-      />
-    </div>
+    <mustache-icon
+      [name]="'heart'"
+      [color]="'gray'"
+      [size]="'body'"
+      [appearance]="'empty'"
+    ></mustache-icon>
     <p class="text--comment">{{ item.title }}</p>
   </div>
 </div>

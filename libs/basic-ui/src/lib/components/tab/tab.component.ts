@@ -10,6 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class TabComponent {
   @Input() title: string | undefined;
-  @Input() iconSrc: string | undefined;
+  @Input() icon: string | undefined;
   active = false;
 }

@@ -1,17 +1,12 @@
 <button
   mustacheButton
+  [icon]="'heart'"
   [color]="color"
   [appearance]="appearance"
   [size]="'xs'"
   (click)="isOpen = !isOpen"
 >
-  <p mustacheEmoji="{{ value?.iconSrc }}" class="emoji emoji--l"></p>
-  <!--TODO: change this so it works as expected with appearance-->
-  <img
-    class="icon icon--chevron icon--m icon icon--empty icon--discrete"
-    src="assets/icons/chevron-down.svg"
-    alt="'dropdown'"
-  />
+  <p mustacheEmoji="{{ value?.icon }}" class="emoji emoji--l"></p>
 </button>
 <div class="dropdown" [ngClass]="{ 'dropdown--visible': isOpen }">
   <div
@@ -19,7 +14,7 @@
     *ngFor="let language of languages; let i = index"
     (click)="onItemClick(i)"
   >
-    <p mustacheEmoji="{{ language.iconSrc }}" class="emoji emoji--m"></p>
+    <p mustacheEmoji="{{ language.icon }}" class="emoji emoji--m"></p>
     <p class="text--comment">{{ language.name }}</p>
   </div>
 </div>

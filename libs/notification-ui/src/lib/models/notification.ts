@@ -2,7 +2,7 @@ import { Color } from '@mustache/basic-ui';
 import { NotificationStatus } from './notification-status';
 
 export type Notification = {
-  iconSrc: string;
+  icon: string;
   title: string;
   description: string;
   date: string;

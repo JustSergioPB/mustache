@@ -24,13 +24,11 @@
       placeholder="mustache"
       formControlName="password"
     />
-    <button mustacheFormFieldIcon (click)="showPassword = !showPassword">
-      <img
-        class="icon icon--m icon--empty icon--discrete"
-        src="assets/icons/{{ showPassword ? 'eye-off' : 'eye' }}.svg"
-        alt="'show password'"
-      />
-    </button>
+    <button
+      mustacheFormFieldIcon
+      [icon]="'heart'"
+      (click)="showPassword = !showPassword"
+    ></button>
     <p
       mustacheFormFieldError
       *ngIf="form.controls.password.touched && form.controls.password.invalid"

@@ -1,14 +1,11 @@
 <div class="previous">
-  <div
-    class="circle circle--{{ notification?.color || 'primary' }} circle--s"
-  >
-    <img
-      class="icon icon--m icon--empty icon--{{
-        notification?.color || 'primary'
-      }}"
-      src="{{ notification?.iconSrc }}"
-      alt="'menu'"
-    />
+  <div class="circle circle--{{ notification?.color || 'primary' }} circle--s">
+    <mustache-icon
+      [name]="'heart'"
+      [color]="'gray'"
+      [size]="'body'"
+      [appearance]="'empty'"
+    ></mustache-icon>
   </div>
 </div>
 <div class="content">
@@ -21,15 +18,10 @@
     <div class="content__actions">
       <mustache-tooltip [message]="'Remove'">
         <button
-          class="icon-wrapper icon-wrapper--navbar"
+          mustacheIconButton
+          [icon]="'heart'"
           (click)="onRemoveClicked()"
-        >
-          <img
-            class="icon icon--delete icon--xs icon--empty icon--discrete"
-            src="'../assets/icons/x.svg"
-            alt="'menu'"
-          />
-        </button>
+        ></button>
       </mustache-tooltip>
       <mustache-tooltip
         [message]="

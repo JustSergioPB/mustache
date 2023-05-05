@@ -4,8 +4,10 @@
     success ? 'success' : 'danger'
   }}"
 >
-  <img
-    src="{{ success ? 'assets/icons/check.svg' : 'assets/icons/x.svg' }}"
-    class="icon icon--l icon--empty icon--{{ success ? 'success' : 'danger' }}"
-  />
+  <mustache-icon
+    [name]="'heart'"
+    [color]="'gray'"
+    [size]="'body'"
+    [appearance]="'empty'"
+  ></mustache-icon>
 </div>

@@ -6,6 +6,7 @@ import { Color, ButtonSize, Appearance } from '../../models';
   standalone: true,
 })
 export class ButtonDirective {
+  @Input() icon: string | undefined;
   @Input() color: Color = 'primary';
   @Input() size: ButtonSize = 'm';
   @Input() appearance: Appearance = 'filled';

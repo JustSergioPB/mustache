@@ -24,7 +24,7 @@
       Acceder
     </button>
     <mustache-menu-icon
-      [iconSrc]="'../assets/icons/menu-2.svg'"
+      [icon]="'../assets/icons/menu-2.svg'"
     ></mustache-menu-icon>
   </ng-container>
 </mustache-toolbar>
@@ -51,27 +51,19 @@
         <button
           mustacheButton
           [appearance]="'empty'"
+          [icon]="'settings'"
           [size]="'s'"
           (click)="onSettingsClicked()"
         >
-          <img
-            class="icon icon--m icon--empty icon--discrete"
-            src="assets/icons/settings.svg"
-            alt="'settings'"
-          />
           Ajustes
         </button>
         <button
           mustacheButton
+          [icon]="'logout'"
           [appearance]="'empty'"
           [size]="'s'"
           (click)="onLogOutClicked()"
         >
-          <img
-            class="icon icon--m icon--empty icon--discrete"
-            src="assets/icons/logout.svg"
-            alt="'log out'"
-          />
           Log out
         </button>
       </ng-container>

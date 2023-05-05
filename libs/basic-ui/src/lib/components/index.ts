@@ -5,7 +5,6 @@ export * from './badge/badge.component';
 export * from './banner/banner.component';
 export * from './dropdown/dropdown.component';
 export * from './loading-bar/loading-bar.component';
-export * from './menu-icon/menu-icon.component';
 export * from './navbar/navbar.component';
 export * from './toolbar/toolbar.component';
 export * from './tooltip/tooltip.component';

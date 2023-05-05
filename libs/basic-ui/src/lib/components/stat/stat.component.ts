@@ -10,7 +10,7 @@ import { Appearance, Color, TextSize } from '../../models';
   styleUrls: ['./stat.component.scss'],
 })
 export class StatComponent {
-  @Input() iconSrc: string | undefined;
+  @Input() icon: string | undefined;
   @Input() label: string | undefined;
   @Input() color: Color = 'primary';
   @Input() appearance: Appearance = 'empty';

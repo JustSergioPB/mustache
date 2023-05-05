@@ -3,6 +3,6 @@ export type DiallingCode = {
   pattern: string;
   prefix: number;
   country: string;
-  iconSrc: string;
+  icon: string;
   placeholder: string;
 };

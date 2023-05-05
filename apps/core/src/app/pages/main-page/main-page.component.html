@@ -29,7 +29,7 @@
       (notificationClicked)="onNotificationClicked($event)"
     >
       <mustache-notification-icon
-        [iconSrc]="'assets/icons/bell.svg'"
+        [icon]="'assets/icons/bell.svg'"
         [numberOfNotifications]="notifications$ | async | unreadNotifications"
         (click)="notificationsOpen = !notificationsOpen"
       ></mustache-notification-icon>
@@ -51,10 +51,7 @@
         >
           Active
         </mustache-status>
-        <mustache-status
-          [color]="'warn'"
-          (click)="onStatusClicked('inactive')"
-        >
+        <mustache-status [color]="'warn'" (click)="onStatusClicked('inactive')">
           Inactive
         </mustache-status>
         <mustache-status [color]="'danger'" (click)="onStatusClicked('busy')">
@@ -72,28 +69,20 @@
         >
         <button
           mustacheButton
+          [icon]="'heart'"
           [appearance]="'empty'"
           [size]="'s'"
           (click)="onSettingsClicked()"
         >
-          <img
-            class="icon icon--m icon--empty icon--discrete"
-            src="assets/icons/settings.svg"
-            alt="'settings'"
-          />
           Settings
         </button>
         <button
           mustacheButton
+          [icon]="'heart'"
           [appearance]="'empty'"
           [size]="'s'"
           (click)="onLogOutClicked()"
         >
-          <img
-            class="icon icon--m icon--empty icon--discrete"
-            src="assets/icons/logout.svg"
-            alt="'log out'"
-          />
           Log out
         </button>
       </ng-container>

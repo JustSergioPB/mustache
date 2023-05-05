@@ -2,44 +2,32 @@
   <ng-container left>
     <button
       mustacheButton
+      [icon]="'arrow-back'"
       [appearance]="'empty'"
       [size]="'s'"
       (click)="onGoBackClicked()"
     >
-      <img
-        class="icon icon--s icon--empty icon--discrete"
-        src="assets/icons/arrow-back.svg"
-        alt="'go back'"
-      />
       Volver
     </button>
   </ng-container>
   <ng-container right>
     <button
       mustacheButton
+      [icon]="'arrow-big-left'"
       [appearance]="'empty'"
       [size]="'s'"
       (click)="onPreviousClicked()"
     >
-      <img
-        class="icon icon--s icon--empty icon--discrete"
-        src="assets/icons/arrow-big-left.svg"
-        alt="'go back'"
-      />
       Anterior
     </button>
     <button
       mustacheButton
+      [icon]="'arrow-big-right'"
       [appearance]="'empty'"
       [size]="'s'"
       (click)="onNextClicked()"
     >
       Siguiente
-      <img
-        class="icon icon--s icon--empty icon--discrete"
-        src="assets/icons/arrow-big-right.svg"
-        alt="'go back'"
-      />
     </button>
   </ng-container>
 </mustache-toolbar>
@@ -48,17 +36,10 @@
     <div class="header">
       <p class="title text--h4">{{ project.name }}</p>
     </div>
-    <div class="address">
-      <img
-        class="icon icon--l icon--empty icon--discrete"
-        src="assets/icons/map-pin.svg"
-        alt="'location'"
-      />
-      <p class="text--h6 text--gray-600">
-        {{ project.housing.address.street }},
-        {{ project.housing.address.city }}
-      </p>
-    </div>
+    <mustache-field [icon]="'map-pin'">
+      {{ project.housing.address.street }},
+      {{ project.housing.address.city }}
+    </mustache-field>
     <div class="project__analytics">
       <div class="project__statistics">
         <p *ngIf="project.description" class="description text--body-regular">
@@ -79,11 +60,12 @@
                   'El ROI mostrado es la rentabilidad media anual estimada, dicha estimación no es vinculante'
                 "
               >
-                <img
-                  class="icon icon--s icon--empty icon--primary"
-                  src="assets/icons/info-circle.svg"
-                  alt="'location'"
-                />
+                <mustache-icon
+                  [name]="'heart'"
+                  [color]="'gray'"
+                  [size]="'body'"
+                  [appearance]="'empty'"
+                ></mustache-icon>
               </mustache-tooltip>
             </div>
             <p class="text--h6 text--gray-500">{{ project.roi }}%</p>
@@ -200,32 +182,29 @@
   <ng-container right>
     <button
       mustacheButton
+      [icon]="'heart'"
       [appearance]="'empty'"
       [size]="'s'"
       (click)="onPreviousClicked()"
     >
-      <img
-        class="icon icon--s icon--empty icon--discrete"
-        src="assets/icons/heart.svg"
-        alt="'go back'"
-      />
       Guardar
     </button>
-    <button mustacheButton [size]="'s'" (click)="onNextClicked()">
-      <img
-        class="icon icon--s icon--empty"
-        src="assets/icons/wallet.svg"
-        alt="'go back'"
-      />
+    <button
+      mustacheButton
+      [icon]="'heart'"
+      [size]="'s'"
+      (click)="onNextClicked()"
+    >
       Invertir
     </button>
   </ng-container>
 </mustache-toolbar>
 
 <ng-template #emptyImg>
-  <img
-    class="icon icon--l icon--empty icon--discrete"
-    src="assets/icons/camera-off.svg"
-    alt="'no img'"
-  />
+  <mustache-icon
+    [name]="'heart'"
+    [color]="'gray'"
+    [size]="'body'"
+    [appearance]="'empty'"
+  ></mustache-icon>
 </ng-template>
