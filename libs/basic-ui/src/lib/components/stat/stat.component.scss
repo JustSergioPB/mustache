@@ -1,0 +1,7 @@
+:host(mustache-stat) {
+  .header {
+    display: flex;
+    align-items: center;
+    gap: settings.$spacing-2xs;
+  }
+}

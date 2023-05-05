@@ -2,6 +2,9 @@
 
 :host(block-house-landing-page) {
   display: block;
+  overflow-x: hidden;
+  height: 100%;
+  max-width: 100%;
 }
 
 .entrance {
@@ -10,6 +13,8 @@
 
   &__text {
     flex-basis: 50%;
+    flex-grow: 1;
+
     .title {
       margin-top: settings.$spacing-4xl;
       margin-bottom: settings.$spacing-s;
@@ -22,6 +27,11 @@
     .buttons {
       display: flex;
       gap: settings.$spacing-xs;
+      flex-wrap: wrap;
+
+      button {
+        flex-grow: 1;
+      }
     }
   }
 
@@ -53,12 +63,22 @@
 
   .projects {
     display: flex;
-    justify-content: space-between;
+    gap: settings.$spacing-l;
+    overflow: hidden;
+    max-width: 100%;
+
+    block-house-project {
+      flex-basis: 33%;
+    }
   }
 }
 
 .advantajes {
   padding: settings.$spacing-5xl settings.$margin * 2;
+
+  .title {
+    margin-bottom: settings.$spacing-s;
+  }
 
   .subtitle {
     margin-bottom: settings.$spacing-3xl;
@@ -67,12 +87,14 @@
   .list {
     display: flex;
     gap: settings.$spacing-l;
+    overflow-x: auto;
 
     .advantaje {
       background-color: settings.$gray-100;
       padding: settings.$spacing-2xl;
       border-radius: settings.$border-radius-m;
       flex-basis: 25%;
+      flex-grow: 1;
 
       .title {
         margin-bottom: settings.$spacing-m;
@@ -114,11 +136,44 @@
   &__content {
     display: flex;
     justify-content: space-between;
+    gap: settings.$spacing-xl;
     margin-bottom: settings.$spacing-3xl;
+    flex-wrap: wrap;
   }
 
   &__bottom {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: settings.$breakpoint-s) {
+  .entrance,
+  .housing,
+  .advantajes,
+  .footer {
+    padding: settings.$spacing-4xl settings.$margin;
+  }
+
+  .housing,
+  .advantajes {
+    .subtitle {
+      margin-bottom: settings.$spacing-2xl;
+    }
+  }
+  .entrance__img {
+    display: none;
+  }
+
+  .advantajes .advantaje {
+    min-width: 100%;
+  }
+
+  .housing .projects {
+    overflow-x: auto;
+  }
+
+  .footer__section .title {
+    margin-bottom: settings.$spacing-s;
   }
 }

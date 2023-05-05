@@ -1,0 +1,12 @@
+<img
+  *ngIf="iconSrc"
+  class="icon icon--m icon--empty icon--discrete"
+  src="{{ iconSrc }}"
+  alt="{{ label }}"
+/>
+<p *ngIf="label" class="text--comment-semibold text--gray-600">
+  {{ label }}
+</p>
+<p class="text--comment-regular text--gray-600">
+  <ng-content></ng-content>
+</p>

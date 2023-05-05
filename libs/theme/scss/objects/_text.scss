@@ -1,65 +1,67 @@
 @use '../settings';
 
-.text--desktop-h1 {
+.text--h1 {
   font-size: settings.$font-size-6xl;
   line-height: settings.$line-height-6xl;
   font-weight: 700;
 }
-.text--desktop-h2 {
+.text--h2 {
   font-size: settings.$font-size-5xl;
   line-height: settings.$line-height-5xl;
   font-weight: 700;
 }
-.text--desktop-h3 {
+.text--h3 {
   font-size: settings.$font-size-4xl;
   line-height: settings.$line-height-4xl;
   font-weight: 700;
 }
-.text--desktop-h4 {
+.text--h4 {
   font-size: settings.$font-size-3xl;
   line-height: settings.$line-height-3xl;
   font-weight: 700;
 }
-.text--desktop-h5 {
+.text--h5 {
   font-size: settings.$font-size-2xl;
   line-height: settings.$line-height-2xl;
   font-weight: 600;
 }
-.text--desktop-h6 {
+.text--h6 {
   font-size: settings.$font-size-xl;
   line-height: settings.$line-height-xl;
   font-weight: 600;
 }
 
-.text--mobile-h1 {
-  font-size: settings.$font-size-5xl;
-  line-height: settings.$line-height-5xl;
-  font-weight: 700;
-}
-.text--mobile-h2 {
-  font-size: settings.$font-size-4xl;
-  line-height: settings.$line-height-4xl;
-  font-weight: 700;
-}
-.text--mobile-h3 {
-  font-size: settings.$font-size-3xl;
-  line-height: settings.$line-height-3xl;
-  font-weight: 700;
-}
-.text--mobile-h4 {
-  font-size: settings.$font-size-2xl;
-  line-height: settings.$line-height-2xl;
-  font-weight: 600;
-}
-.text--mobile-h5 {
-  font-size: settings.$font-size-xl;
-  line-height: settings.$line-height-xl;
-  font-weight: 600;
-}
-.text--mobile-h6 {
-  font-size: settings.$font-size-l;
-  line-height: settings.$line-height-l;
-  font-weight: 600;
+@media (max-width: settings.$breakpoint-s) {
+  .text--h1 {
+    font-size: settings.$font-size-5xl;
+    line-height: settings.$line-height-5xl;
+    font-weight: 700;
+  }
+  .text--h2 {
+    font-size: settings.$font-size-4xl;
+    line-height: settings.$line-height-4xl;
+    font-weight: 700;
+  }
+  .text--h3 {
+    font-size: settings.$font-size-3xl;
+    line-height: settings.$line-height-3xl;
+    font-weight: 700;
+  }
+  .text--h4 {
+    font-size: settings.$font-size-2xl;
+    line-height: settings.$line-height-2xl;
+    font-weight: 600;
+  }
+  .text--h5 {
+    font-size: settings.$font-size-xl;
+    line-height: settings.$line-height-xl;
+    font-weight: 600;
+  }
+  .text--h6 {
+    font-size: settings.$font-size-l;
+    line-height: settings.$line-height-l;
+    font-weight: 600;
+  }
 }
 
 //TODO: check what the hell is wrong with this

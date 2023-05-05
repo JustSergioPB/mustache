@@ -14,7 +14,7 @@ export abstract class AbstractSessionService {
     error: null,
     loading: false,
   });
-  public abstract getSession(): void;
+  public abstract getSession(): Session | null;
   public abstract login(credentials: UserCredentials): void;
   public abstract signup(credentials: UserCredentials): void;
   public abstract logout(): Observable<boolean>;

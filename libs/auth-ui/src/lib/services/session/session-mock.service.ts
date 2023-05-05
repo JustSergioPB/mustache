@@ -4,6 +4,7 @@ import { AbstractSessionService } from '.';
 import {
   RecoverCrendetials,
   RecoverMethod,
+  Session,
   UserCredentials,
 } from '../../models';
 
@@ -15,12 +16,8 @@ export class SessionMockService extends AbstractSessionService {
     super();
   }
 
-  public getSession(): void {
-    this._session$.next({
-      value: { nickName: 'oigresanep@gmail.com' },
-      error: null,
-      loading: false,
-    });
+  public getSession(): Session | null {
+    return this._session$.getValue().value;
   }
 
   public login(credentials: UserCredentials): void {

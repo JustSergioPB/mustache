@@ -1,13 +1,13 @@
 @use '../../../../../theme/scss/settings';
 
 :host(mustache-toolbar) {
-  position: fixed;
+  //position: fixed;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   //TODO: separate this into level logic for config
-  border-bottom: solid settings.$border-thickness-m settings.$gray;
+  border-bottom: solid settings.$border-thickness-m settings.$gray-200;
   box-shadow: settings.$shadow-s;
   padding: settings.$spacing-l settings.$margin * 2;
   background-color: settings.$bg-color;
@@ -28,14 +28,8 @@
 
 @media (max-width: settings.$breakpoint-s) {
   :host(mustache-toolbar) {
-    padding: settings.$spacing-m;
+    padding: settings.$spacing-m settings.$margin;
     border-bottom: none;
     box-shadow: none;
-  }
-}
-
-@media (min-width: settings.$breakpoint-s) {
-  .icon--menu {
-    display: none;
   }
 }

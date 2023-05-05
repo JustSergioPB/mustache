@@ -1,3 +1,22 @@
+@use '../../../../../../libs/theme/scss/settings';
+
 :host(block-house-main-page) {
+  display: block;
   height: 100%;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+mustache-menu-icon {
+  display: none !important;
+}
+
+@media (max-width: settings.$breakpoint-s) {
+  mustache-navbar {
+    display: none !important;
+  }
+
+  mustache-menu-icon {
+    display: flex !important;
+  }
 }

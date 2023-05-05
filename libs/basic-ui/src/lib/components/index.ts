@@ -14,3 +14,7 @@ export * from './requirement/requirement.component';
 export * from './countdown/countdown.component';
 export * from './tab/tab.component';
 export * from './tab-group/tab-group.component';
+export * from './percentaje-bar/percentaje-bar.component';
+export * from './stat/stat.component';
+export * from './icon/icon.component';
+export * from './field/field.component';

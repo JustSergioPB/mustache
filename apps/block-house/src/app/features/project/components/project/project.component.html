@@ -1,79 +1,42 @@
 <ng-container *ngIf="project">
-  <img class="img" src="{{ project.imgUrls[0] }}" alt="{{ project.name }}" />
+  <img class="img" src="{{ imgUrl }}" alt="{{ name }}" />
   <div class="body">
     <div class="header">
-      <p class="title text--desktop-h6">{{ project.name }}</p>
-      <mustache-badge
-        [variant]="project.status !== 'active' ? 'gray' : 'primary'"
-        >{{ status }}</mustache-badge
-      >
+      <p class="title text--h6">{{ name }}</p>
+      <mustache-badge [variant]="status !== 'financing' ? 'gray' : 'primary'">{{
+        status
+      }}</mustache-badge>
     </div>
-    <div class="address">
-      <img
-        class="icon icon--m icon--empty icon--discrete"
-        src="assets/icons/map-pin.svg"
-        alt="'location'"
-      />
-      <p class="text--comment-semibold text--gray-600">
-        {{ project.housing.address.street }}, {{ project.housing.address.city }}
-      </p>
-    </div>
+    <mustache-field [iconSrc]="'assets/icons/map-pin.svg'">
+      {{ address }}
+    </mustache-field>
     <div class="stats">
-      <div class="stat">
-        <p class="text--label-semibold text--primary-500">Inversión total</p>
-        <p class="text--body-semibold text--gray-500">
-          {{ project.totalInvestment | currency : project.currency }}
-        </p>
-      </div>
-      <mustache-tooltip
-        [message]="
-          'El ROI mostrado es la rentabilidad media anual estimada, dicha estimación no es vinculante'
-        "
-      >
-        <div class="stat">
-          <div class="stat__header">
-            <p class="text--label-semibold text--primary-500">ROI</p>
-            <img
-              class="icon icon--xs icon--empty icon--primary"
-              src="assets/icons/info-circle.svg"
-              alt="'location'"
-            />
-          </div>
-          <p class="text--body-semibold text--gray-500">{{ project.roi }}%</p>
-        </div>
-      </mustache-tooltip>
-      <div class="stat">
-        <p class="text--label-semibold text--primary-500">Precio NFT</p>
-        <p class="text--body-semibold text--gray-500">
-          {{ project.sharingPrice | currency : project.currency }}
-        </p>
-      </div>
-      <div class="stat">
-        <p class="text--label-semibold text--primary-500">Duración</p>
-        <p class="text--body-semibold text--gray-500">
-          {{ project.duration.amount }} meses
-        </p>
-      </div>
+      <mustache-stat [label]="'Inversión total'">
+        {{ totalInvestment | currency : currency }}
+      </mustache-stat>
+      <mustache-stat [label]="'ROI'" [iconSrc]="'assets/icons/info-circle.svg'">
+        <mustache-tooltip
+          [message]="
+            'El ROI mostrado es la rentabilidad media anual estimada, dicha estimación no es vinculante'
+          "
+        >
+          {{ roi }}%
+        </mustache-tooltip>
+      </mustache-stat>
+      <mustache-stat [label]="'Precio NFT'">{{
+        sharingPrice | currency : currency
+      }}</mustache-stat>
+      <mustache-stat [label]="'Duración'">
+        {{ duration?.amout }} {{ duration?.type | duration }}
+      </mustache-stat>
     </div>
   </div>
   <div class="footer">
-    <div class="stat">
-      <p class="text--label-semibold text--primary-500">Financiado</p>
-      <div class="stat__progress">
-        <div class="status-bar">
-          <div
-            class="status-bar__content status-bar__content--{{ percentaje }}"
-          ></div>
-        </div>
-        <p
-          class="text--label-semibold {{
-            percentaje < 100 ? 'text--primary-500' : 'text--success-600'
-          }}"
-        >
-          {{ percentaje }}%
-        </p>
-      </div>
-    </div>
+    <mustache-stat>
+      <mustache-percentaje-bar
+        [percentaje]="percentaje"
+      ></mustache-percentaje-bar>
+    </mustache-stat>
     <div class="actions">
       <button
         mustacheIconButton
@@ -87,7 +50,24 @@
           alt="'save'"
         />
       </button>
-      <button mustacheButton [size]="'s'" (click)="onSeeDetailsClicked()">
+      <button
+        class="button--mobile"
+        mustacheIconButton
+        [size]="'s'"
+        (click)="onSeeDetailsClicked()"
+      >
+        <img
+          class="icon icon--m icon--empty icon--secondary"
+          src="assets/icons/arrows-maximize.png"
+          alt="'go to'"
+        />
+      </button>
+      <button
+        class="button--desktop"
+        mustacheButton
+        [size]="'s'"
+        (click)="onSeeDetailsClicked()"
+      >
         Ver detalles
       </button>
     </div>

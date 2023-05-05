@@ -1,12 +1,16 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Project } from '../../models';
 import {
   BadgeComponent,
   ButtonDirective,
+  FieldComponent,
   IconButtonDirective,
+  StatComponent,
   TooltipComponent,
 } from '@mustache/basic-ui';
+import { ProjectEntity } from '../..';
+import { DurationProps } from '../../domain/project/value-objects/duration.props';
+import { DurationPipe } from '../../pipes';
 
 @Component({
   selector: 'block-house-project',
@@ -17,23 +21,34 @@ import {
     ButtonDirective,
     IconButtonDirective,
     TooltipComponent,
+    DurationPipe,
+    FieldComponent,
+    StatComponent,
   ],
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent implements OnInit {
-  @Input() project: Project | undefined;
+  @Input() project: ProjectEntity | undefined;
+  @Input() isLoading = false;
   @Output() seeDetailsClicked = new EventEmitter<void>();
   @Output() saveClicked = new EventEmitter<void>();
-  status: string | undefined;
   percentaje = 0;
+  roi = 0;
+  totalInvestment = 0;
+  currency = 'EUR';
+  sharingPrice = 0;
+  name: string | undefined;
+  imgUrl: string | undefined;
+  duration: DurationProps | undefined;
+  status: string | undefined;
+  address: string | undefined;
 
   ngOnInit(): void {
     if (this.project) {
-      this.status = this.project.status === 'active' ? 'Activo' : 'Vendido';
-      this.percentaje = Math.round(
-        (this.project.invested * 100) / this.project.totalInvestment
-      );
+      this.percentaje = this.project.calculateFinancingPercentaje();
+      this.roi = this.project.calculateRoi();
+      this.duration = this.project.calculateDuration();
     }
   }
 

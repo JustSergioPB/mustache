@@ -1,0 +1,231 @@
+<mustache-toolbar class="top">
+  <ng-container left>
+    <button
+      mustacheButton
+      [appearance]="'empty'"
+      [size]="'s'"
+      (click)="onGoBackClicked()"
+    >
+      <img
+        class="icon icon--s icon--empty icon--discrete"
+        src="assets/icons/arrow-back.svg"
+        alt="'go back'"
+      />
+      Volver
+    </button>
+  </ng-container>
+  <ng-container right>
+    <button
+      mustacheButton
+      [appearance]="'empty'"
+      [size]="'s'"
+      (click)="onPreviousClicked()"
+    >
+      <img
+        class="icon icon--s icon--empty icon--discrete"
+        src="assets/icons/arrow-big-left.svg"
+        alt="'go back'"
+      />
+      Anterior
+    </button>
+    <button
+      mustacheButton
+      [appearance]="'empty'"
+      [size]="'s'"
+      (click)="onNextClicked()"
+    >
+      Siguiente
+      <img
+        class="icon icon--s icon--empty icon--discrete"
+        src="assets/icons/arrow-big-right.svg"
+        alt="'go back'"
+      />
+    </button>
+  </ng-container>
+</mustache-toolbar>
+<ng-container *ngIf="(project$ | async)?.value as projects">
+  <div class="project" *ngIf="projects[0] as project">
+    <div class="header">
+      <p class="title text--h4">{{ project.name }}</p>
+    </div>
+    <div class="address">
+      <img
+        class="icon icon--l icon--empty icon--discrete"
+        src="assets/icons/map-pin.svg"
+        alt="'location'"
+      />
+      <p class="text--h6 text--gray-600">
+        {{ project.housing.address.street }},
+        {{ project.housing.address.city }}
+      </p>
+    </div>
+    <div class="project__analytics">
+      <div class="project__statistics">
+        <p *ngIf="project.description" class="description text--body-regular">
+          {{ project.description }}
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <p class="text--body-semibold text--primary-500">Inversión total</p>
+            <p class="text--h6 text--gray-500">
+              {{ project.totalInvestment | currency : project.currency }}
+            </p>
+          </div>
+          <div class="stat">
+            <div class="stat__header">
+              <p class="text--body-semibold text--primary-500">ROI</p>
+              <mustache-tooltip
+                [message]="
+                  'El ROI mostrado es la rentabilidad media anual estimada, dicha estimación no es vinculante'
+                "
+              >
+                <img
+                  class="icon icon--s icon--empty icon--primary"
+                  src="assets/icons/info-circle.svg"
+                  alt="'location'"
+                />
+              </mustache-tooltip>
+            </div>
+            <p class="text--h6 text--gray-500">{{ project.roi }}%</p>
+          </div>
+          <div class="stat">
+            <p class="text--body-semibold text--primary-500">Precio NFT</p>
+            <p class="text--h6 text--gray-500">
+              {{ project.sharingPrice | currency : project.currency }}
+            </p>
+          </div>
+          <div class="stat">
+            <p class="text--body-semibold text--primary-500">Tipo</p>
+            <p class="text--h6 text--gray-500">{{ project.type }}</p>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <p class="text--body-semibold text--primary-500">Duración</p>
+            <p class="text--h6 text--gray-500">
+              {{ project.duration.amount }} meses
+            </p>
+          </div>
+          <div class="stat">
+            <p class="text--body-semibold text--primary-500">Fecha de inicio</p>
+            <p class="text--h6 text--gray-500">
+              {{ project.startDate | date }}
+            </p>
+          </div>
+          <div class="stat">
+            <p class="text--body-semibold text--primary-500">Estado</p>
+            <p class="text--h6 text--gray-500">{{ status }}</p>
+          </div>
+          <div class="stat">
+            <p class="text--body-semibold text--primary-500">Financiado</p>
+            <div class="stat__progress">
+              <div class="status-bar">
+                <div
+                  class="status-bar__content status-bar__content--{{
+                    percentaje
+                  }}"
+                ></div>
+              </div>
+              <p
+                class="text--h6{{
+                  percentaje < 100 ? 'text--primary-500' : 'text--success-600'
+                }}"
+              >
+                {{ percentaje }}%
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project__trading">
+        <select name="" id="">
+          <option value="día">Día</option>
+          <option value="mes">Mes</option>
+        </select>
+      </div>
+    </div>
+    <p class="title text--h5">Fotos</p>
+    <div class="project__images">
+      <div class="image image--main">
+        <img
+          *ngIf="project.imgUrls[0]; else emptyImg"
+          class="image__content image__content--main"
+          src="{{ project.imgUrls[0] }}"
+          alt="Foto principal"
+        />
+      </div>
+      <div class="gallery">
+        <div class="gallery__row">
+          <div class="image image--quarter">
+            <img
+              *ngIf="project.imgUrls[1]; else emptyImg"
+              class="image__content"
+              src="{{ project.imgUrls[1] }}"
+              alt="Foto secundaria"
+            />
+          </div>
+          <div class="image image--quarter">
+            <img
+              *ngIf="project.imgUrls[2]; else emptyImg"
+              class="image__content"
+              src="{{ project.imgUrls[2] }}"
+              alt="Foto secundaria"
+            />
+          </div>
+        </div>
+        <div class="gallery__row">
+          <div class="image image--quarter">
+            <img
+              *ngIf="project.imgUrls[3]; else emptyImg"
+              class="image__content"
+              src="{{ project.imgUrls[3] }}"
+              alt="Foto secundaria"
+            />
+          </div>
+          <div class="image image--quarter">
+            <img
+              *ngIf="project.imgUrls[4]; else emptyImg"
+              class="image__content"
+              src="{{ project.imgUrls[4] }}"
+              alt="Foto secundaria"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="title text--h5">Proyectos que podrían interesarte</p>
+  </div>
+</ng-container>
+<mustache-toolbar class="bottom">
+  <ng-container right>
+    <button
+      mustacheButton
+      [appearance]="'empty'"
+      [size]="'s'"
+      (click)="onPreviousClicked()"
+    >
+      <img
+        class="icon icon--s icon--empty icon--discrete"
+        src="assets/icons/heart.svg"
+        alt="'go back'"
+      />
+      Guardar
+    </button>
+    <button mustacheButton [size]="'s'" (click)="onNextClicked()">
+      <img
+        class="icon icon--s icon--empty"
+        src="assets/icons/wallet.svg"
+        alt="'go back'"
+      />
+      Invertir
+    </button>
+  </ng-container>
+</mustache-toolbar>
+
+<ng-template #emptyImg>
+  <img
+    class="icon icon--l icon--empty icon--discrete"
+    src="assets/icons/camera-off.svg"
+    alt="'no img'"
+  />
+</ng-template>

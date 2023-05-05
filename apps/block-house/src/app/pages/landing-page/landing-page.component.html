@@ -1,12 +1,12 @@
 <section class="entrance">
   <div class="entrance__text">
-    <p class="title text--desktop-h1">
+    <p class="title text--h1">
       La
       <span class="text--primary-500">inversión inmobiliaria</span>
       nunca ha sido más
       <span class="text--primary-500">sencilla</span>
     </p>
-    <p class="subtitle text--title-semibold text--gray-500">
+    <p class="subtitle text--h6 text--gray-500">
       Comienza a invertir de manera fácil y rápida utilizando las tecnologías
       que definirán el
       <span class="text--primary-500">futuro</span> de la inversión
@@ -17,8 +17,17 @@
       >
     </p>
     <div class="buttons">
-      <button mustacheButton>Empieza ahora</button>
-      <button mustacheButton [appearance]="'empty'">Quiero saber más</button>
+      <button mustacheButton [position]="'center'" (click)="onStartClicked()">
+        Empieza ahora
+      </button>
+      <button
+        mustacheButton
+        [appearance]="'empty'"
+        [position]="'center'"
+        (click)="onLearnMoreClicked()"
+      >
+        Quiero saber más
+      </button>
     </div>
   </div>
   <div class="entrance__img">
@@ -26,8 +35,8 @@
   </div>
 </section>
 <section class="housing">
-  <p class="title text--desktop-h5">Nuevos inmuebles</p>
-  <p class="subtitle text--title-semibold text--primary-500">
+  <p class="title text--h5">Nuevos proyectos</p>
+  <p class="subtitle text--h6 text--primary-500">
     ¡No te pierdas los proyectos más recientes en los que estámos trabajando!
   </p>
   <ng-container *ngIf="(projects$ | async)?.value as projects">
@@ -35,19 +44,21 @@
       <block-house-project
         *ngFor="let project of projects"
         [project]="project"
+        (seeDetailsClicked)="onSeeDetailsClicked(project)"
+        (saveClicked)="onSaveClicked(project)"
       ></block-house-project>
     </div>
   </ng-container>
 </section>
 <section class="advantajes">
-  <p class="title text--desktop-h5">¿Por qué House3.0?</p>
-  <p class="subtitle text--title-semibold text--gray-600">
+  <p class="title text--h5">¿Por qué House3.0?</p>
+  <p class="subtitle text--h6 text--gray-600">
     Muy sencillo! Nuestros profesionales trabajan para encontrar los mejores
     proyectos. Adémas las características que definen a nuestra plataforma son:
   </p>
   <div class="list">
     <div class="advantaje">
-      <p class="title text--desktop-h6 text--primary-500">01. Sencillez</p>
+      <p class="title text--h6 text--primary-500">01. Sencillez</p>
       <ol>
         <li class="text--body-regular text--primary-500">Registrate</li>
         <li class="text--body-regular">Mira viviendas</li>
@@ -64,7 +75,7 @@
       <p class="text--body-regular">¡Así de sencillo!</p>
     </div>
     <div class="advantaje">
-      <p class="title text--desktop-h6 text--primary-500">02. Accesibilidad</p>
+      <p class="title text--h6 text--primary-500">02. Accesibilidad</p>
       <p class="text--body-regular">
         ¿No posees una
         <span class="text--primary-500">cartera digital</span> para activos
@@ -78,7 +89,7 @@
       </p>
     </div>
     <div class="advantaje">
-      <p class="title text--desktop-h6 text--primary-500">03. Seguridad</p>
+      <p class="title text--h6 text--primary-500">03. Seguridad</p>
       <p class="text--body-regular">
         El uso de tecnologías
         <span class="text--primary-500">blockchain y NFT</span> permite que cada
@@ -91,7 +102,7 @@
       </p>
     </div>
     <div class="advantaje">
-      <p class="title text--desktop-h6 text--primary-500">04. Trazabilidad</p>
+      <p class="title text--h6 text--primary-500">04. Trazabilidad</p>
       <p class="text--body-regular">
         ¿Quieres hacer un
         <span class="text--primary-500">seguimiento de tus dividendos</span>?
@@ -110,7 +121,7 @@
   >
   <div class="footer__content">
     <div class="footer__section">
-      <p class="title text--title-semibold text--primary">Legal</p>
+      <p class="title text--h6 text--primary">Legal</p>
       <a href="#" class="link link--primary text--comment-semibold"
         >Aviso Legal</a
       >
@@ -128,7 +139,7 @@
       >
     </div>
     <div class="footer__section">
-      <p class="title text--title-semibold text--primary">Sobre nosotros</p>
+      <p class="title text--h6 text--primary">Sobre nosotros</p>
       <a href="#" class="link link--primary text--comment-semibold"
         >Conocenos</a
       >
@@ -161,7 +172,7 @@
       </div>
     </div>
     <div class="footer__section">
-      <p class="title text--title-semibold text--primary">Sobre invertir</p>
+      <p class="title text--h6 text--primary">Sobre invertir</p>
       <p class="disclaimer text--label-semibold text--primary">
         Los criptoactivos son productos de inversión de alto riesgo y pueden no
         ser adecuados para inversores no profesionales. Aunque en House3.0 el

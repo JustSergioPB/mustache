@@ -1,0 +1,10 @@
+<div class="status-bar">
+  <div class="status-bar__content status-bar__content--{{ percentaje }}"></div>
+</div>
+<p
+  class="text--label-semibold {{
+    percentaje < 100 ? 'text--primary-500' : 'text--success-600'
+  }}"
+>
+  {{ percentaje }}%
+</p>

@@ -6,8 +6,8 @@ export const NAVBAR_CONFIG: NavbarItem[] = [
     route: '',
   },
   {
-    title: 'Viviendas',
-    route: 'housing',
+    title: 'Proyectos',
+    route: 'projects',
   },
   {
     title: 'Nosotros',
