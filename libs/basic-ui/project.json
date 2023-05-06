@@ -26,6 +26,47 @@
       "options": {
         "lintFilePatterns": ["libs/basic-ui/**/*.ts", "libs/basic-ui/**/*.html"]
       }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/basic-ui/.storybook",
+        "browserTarget": "basic-ui:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/basic-ui",
+        "configDir": "libs/basic-ui/.storybook",
+        "browserTarget": "basic-ui:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "basic-ui:build-storybook",
+        "staticFilePath": "dist/storybook/basic-ui"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "basic-ui:build-storybook:ci"
+        }
+      }
     }
   }
 }

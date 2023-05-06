@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuIconComponent } from '../menu-icon/menu-icon.component';
 
 @Component({
   selector: 'mustache-toolbar',
   standalone: true,
-  imports: [CommonModule, MenuIconComponent],
+  imports: [CommonModule],
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })

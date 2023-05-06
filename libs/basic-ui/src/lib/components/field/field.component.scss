@@ -1,3 +1,5 @@
+@use '../../../../../theme/scss/settings';
+
 :host(mustache-field) {
   display: flex;
   align-items: center;

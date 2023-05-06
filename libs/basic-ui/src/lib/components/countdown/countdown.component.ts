@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CountdownComponent {
   public countdown!: string;
-  private interval!: number;
+  private interval!: NodeJS.Timer;
   @Input() totalSeconds!: number;
   @Output() counterFinished = new EventEmitter<void>();
 
