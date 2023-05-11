@@ -13,6 +13,7 @@ import {
   AvatarDropdownComponent,
   BannerComponent,
   ButtonDirective,
+  IconComponent,
   NavbarComponent,
   ToolbarComponent,
 } from '@mustache/basic-ui';
@@ -63,6 +64,7 @@ import { SUPPORTED_LANGS } from './supported-langs';
     ToggleComponent,
     StatusComponent,
     UnreadNotificationsPipe,
+    IconComponent,
   ],
   providers: [
     {

@@ -29,7 +29,7 @@
       (notificationClicked)="onNotificationClicked($event)"
     >
       <mustache-notification-icon
-        [icon]="'assets/icons/bell.svg'"
+        [icon]="'bell'"
         [numberOfNotifications]="notifications$ | async | unreadNotifications"
         (click)="notificationsOpen = !notificationsOpen"
       ></mustache-notification-icon>

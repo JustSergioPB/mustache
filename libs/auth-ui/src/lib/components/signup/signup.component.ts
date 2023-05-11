@@ -8,6 +8,8 @@ import {
 import { CommonModule } from '@angular/common';
 import {
   ButtonDirective,
+  IconButtonDirective,
+  IconComponent,
   RequirementComponent,
   SpinnerComponent,
 } from '@mustache/basic-ui';
@@ -44,6 +46,8 @@ import { Subject, takeUntil } from 'rxjs';
     ReactiveFormsModule,
     RequirementComponent,
     CheckboxComponent,
+    IconComponent,
+    IconButtonDirective,
   ],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],

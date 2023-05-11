@@ -2,13 +2,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotificationComponent } from '../notification/notification.component';
 import { NotificationReadEvent, Notification } from '../../models';
-import { ButtonDirective } from '@mustache/basic-ui';
+import { ButtonDirective, IconComponent } from '@mustache/basic-ui';
 
 //TODO: Add loading animation
 @Component({
   selector: 'mustache-notification-dropdown',
   standalone: true,
-  imports: [CommonModule, NotificationComponent, ButtonDirective],
+  imports: [
+    CommonModule,
+    NotificationComponent,
+    ButtonDirective,
+    IconComponent,
+  ],
   templateUrl: './notification-dropdown.component.html',
   styleUrls: ['./notification-dropdown.component.scss'],
 })

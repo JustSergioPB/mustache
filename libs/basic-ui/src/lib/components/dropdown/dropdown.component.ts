@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownItem } from '../../models';
+import { IconComponent } from '..';
 
 //TODO: Add mirror effect for when it exits the screen
 //TODO: Add scrollbar for extreme efects
@@ -8,7 +9,7 @@ import { DropdownItem } from '../../models';
 @Component({
   selector: 'mustache-dropdown',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
 })

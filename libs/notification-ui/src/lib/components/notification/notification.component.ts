@@ -2,14 +2,24 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Notification } from '../../models';
 import { NotificationDatePipe } from '../../pipes';
-import { TooltipComponent } from '@mustache/basic-ui';
+import {
+  IconButtonDirective,
+  IconComponent,
+  TooltipComponent,
+} from '@mustache/basic-ui';
 
 //TODO: Refactor HTML + SCSS to improve maintainability
 
 @Component({
   selector: 'mustache-notification',
   standalone: true,
-  imports: [CommonModule, TooltipComponent, NotificationDatePipe],
+  imports: [
+    CommonModule,
+    TooltipComponent,
+    NotificationDatePipe,
+    IconComponent,
+    IconButtonDirective,
+  ],
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.scss'],
 })
