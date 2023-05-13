@@ -11,7 +11,7 @@ import { IconComponent } from '../icon/icon.component';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent {
-  @Input() logoSrc: string | undefined;
+  @Input() icon: string = 'mustache';
   @Input() color: Color = 'primary';
   @Input() appearance: Appearance = 'empty';
 }

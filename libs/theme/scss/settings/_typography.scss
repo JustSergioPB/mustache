@@ -20,3 +20,16 @@ $font-size-6xl: 2.5rem !default;
 $line-height-6xl: 3rem !default;
 
 $font-family: url('../../fonts/Poppins-Regular.ttf') !default;
+
+$fontSizes: (
+  'label': $font-size-xs,
+  'comment': $font-size-s,
+  'body': $font-size-m,
+  'title': $font-size-l,
+  'h6': $font-size-xl,
+  'h5': $font-size-2xl,
+  'h4': $font-size-3xl,
+  'h3': $font-size-4xl,
+  'h2': $font-size-5xl,
+  'h1': $font-size-6xl,
+);

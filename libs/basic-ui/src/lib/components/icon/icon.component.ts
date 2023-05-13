@@ -12,6 +12,7 @@ import { Color, Appearance, TextSize } from '../../models';
 export class IconComponent {
   @Input() name = 'mustache';
   @Input() color: Color = 'primary';
+  @Input() oppacity: number = 500;
   @Input() appearance: Appearance = 'empty';
   @Input() size: TextSize = 'body';
 }

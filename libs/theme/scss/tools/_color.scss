@@ -1,9 +1,5 @@
 @use '../settings';
 
-@mixin iconColor($color, $opacity: 500) {
-  filter: map-get(settings.$filters, 'filter-' + $color + '-' + $opacity);
-}
-
 @mixin buttonColor($color) {
   background-color: map-get(settings.$colors, $color + '-500');
   transition: background-color 0.25s ease;
@@ -22,10 +18,6 @@
     &:focus {
       background-color: map-get(settings.$colors, $color);
       color: map-get(settings.$colors, $color + '-500');
-
-      .icon {
-        @include iconColor($color);
-      }
     }
   }
 
@@ -33,10 +25,6 @@
     background-color: map-get(settings.$colors, $color);
     color: map-get(settings.$colors, $color + '-500');
     transition: background-color 0.25s;
-
-    .icon {
-      @include iconColor($color);
-    }
 
     &:hover,
     &:focus {
