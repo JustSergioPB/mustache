@@ -4,7 +4,7 @@
 //TODO: since toolbar has no max-height$secondary-toolbar-height: 4.156rem;
 $main-toolbar-height: 5.406rem;
 
-:host(block-house-project-detail-page) {
+:host {
   display: flex;
   flex-direction: column;
   height: calc(100% - $main-toolbar-height);
@@ -146,7 +146,7 @@ $main-toolbar-height: 5.406rem;
 }
 
 @media (max-width: settings.$breakpoint-s) {
-  :host(block-house-project-detail-page) {
+  :host {
     .project {
       padding: settings.$spacing-m settings.$margin;
     }

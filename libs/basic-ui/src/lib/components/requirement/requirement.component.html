@@ -4,8 +4,10 @@
   }}"
 >
   <mustache-icon
-    [name]="'heart'"
-    [color]="'gray'"
+    *ngIf="isFulfilled"
+    [name]="'checkmark'"
+    [color]="'success'"
+    [oppacity]="600"
     [size]="'body'"
     [appearance]="'empty'"
   ></mustache-icon>

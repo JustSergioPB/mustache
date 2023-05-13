@@ -1,6 +1,6 @@
 @use '../../../../../../../../libs/theme/scss/settings';
 
-:host(block-house-project) {
+:host {
   display: block;
   height: 22rem;
   box-shadow: settings.$shadow-m;
@@ -56,7 +56,7 @@
 }
 
 @media (max-width: settings.$breakpoint-s) {
-  :host(block-house-project) {
+  :host {
     max-width: 100%;
     min-width: 100%;
     height: 19rem;

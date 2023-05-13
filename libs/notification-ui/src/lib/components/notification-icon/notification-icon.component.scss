@@ -1,7 +1,7 @@
 @use '../../../../../theme/scss/settings';
 @use '../../../../../theme/scss/tools';
 
-:host(mustache-notification-icon) {
+:host {
   @include tools.navbarIcon;
   position: relative;
 

@@ -1,6 +1,6 @@
 @use '../../../../../theme/scss/settings';
 
-:host(mustache-notification) {
+:host {
   height: settings.$notifiacition-height;
   display: flex;
   padding: settings.$spacing-s;

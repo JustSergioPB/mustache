@@ -1,6 +1,6 @@
 @use '../../../../../theme/scss/settings';
 
-:host(mustache-status) {
+:host {
   display: flex;
   align-items: center;
   gap: settings.$spacing-xs;

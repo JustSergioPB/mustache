@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownItem } from '../../models';
-import { IconComponent } from '..';
+import { IconComponent } from '../icon/icon.component';
 
 //TODO: Add mirror effect for when it exits the screen
 //TODO: Add scrollbar for extreme efects

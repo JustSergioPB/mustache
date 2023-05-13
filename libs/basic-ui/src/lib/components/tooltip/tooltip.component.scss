@@ -1,6 +1,6 @@
 @use '../../../../../theme/scss/settings';
 
-:host(mustache-tooltip) {
+:host {
   position: relative;
 
   &:hover .tooltip {

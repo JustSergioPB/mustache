@@ -1,7 +1,7 @@
 @use '../../../../../theme/scss/settings';
 @use '../../../../../theme/scss/tools';
 
-:host(mustache-login) {
+:host {
   display: block;
   height: 100%;
 }

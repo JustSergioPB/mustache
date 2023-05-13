@@ -1,6 +1,6 @@
 @use '../../../../../theme/scss/settings';
 
-:host(mustache-navbar) {
+:host {
   display: flex;
   align-items: center;
   gap: settings.$spacing-s;

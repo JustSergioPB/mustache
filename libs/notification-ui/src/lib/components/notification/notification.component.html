@@ -1,58 +1,62 @@
-<div class="previous">
-  <div class="circle circle--{{ notification?.color || 'primary' }} circle--s">
-    <mustache-icon
-      [name]="'heart'"
-      [color]="'gray'"
-      [size]="'body'"
-      [appearance]="'empty'"
-    ></mustache-icon>
+<ng-container *ngIf="notification">
+  <div class="previous">
+    <div class="circle circle--{{ notification.color }} circle--s">
+      <mustache-icon
+        [name]="notification.icon"
+        [color]="notification.color"
+        [size]="'body'"
+        [appearance]="'empty'"
+      ></mustache-icon>
+    </div>
   </div>
-</div>
-<div class="content">
-  <div class="content__header">
-    <div class="content__title">
-      <p class="title text--comment-semibold">
-        {{ notification?.title || '--' }}
+  <div class="content">
+    <div class="content__header">
+      <div class="content__title">
+        <p class="title text--comment-semibold">
+          {{ notification.title }}
+        </p>
+      </div>
+      <div class="content__actions">
+        <mustache-tooltip [message]="'Remove'">
+          <button
+            mustacheIconButton
+            [icon]="'close'"
+            [appearance]="'empty'"
+            [color]="'gray'"
+            (click)="onRemoveClicked()"
+          ></button>
+        </mustache-tooltip>
+        <mustache-tooltip
+          [message]="
+            notification.status === 'unread' ? 'Mark as read' : 'Mark as unread'
+          "
+        >
+          <button
+            class="dot-wrapper {{
+              notification.status === 'unread'
+                ? 'dot-wrapper--primary'
+                : 'dot-wrapper--discrete'
+            }}"
+            (click)="onReadClicked()"
+          >
+            <div
+              class="dot dot--s {{
+                notification.status === 'unread'
+                  ? 'dot--primary'
+                  : 'dot--discrete'
+              }}"
+            ></div>
+          </button>
+        </mustache-tooltip>
+      </div>
+    </div>
+    <div class="content__description">
+      <p class="text--comment-medium text--gray-600">
+        {{ notification.description || '--' }}
       </p>
     </div>
-    <div class="content__actions">
-      <mustache-tooltip [message]="'Remove'">
-        <button
-          mustacheIconButton
-          [icon]="'heart'"
-          (click)="onRemoveClicked()"
-        ></button>
-      </mustache-tooltip>
-      <mustache-tooltip
-        [message]="
-          notification?.status === 'unread' ? 'Mark as read' : 'Mark as unread'
-        "
-      >
-        <button
-          class="dot-wrapper {{
-            notification?.status === 'unread'
-              ? 'dot-wrapper--primary'
-              : 'dot-wrapper--discrete'
-          }}"
-          (click)="onReadClicked()"
-        >
-          <div
-            class="dot dot--s {{
-              notification?.status === 'unread'
-                ? 'dot--primary'
-                : 'dot--discrete'
-            }}"
-          ></div>
-        </button>
-      </mustache-tooltip>
-    </div>
-  </div>
-  <div class="content__description">
-    <p class="text--comment-medium text--gray-600">
-      {{ notification?.description || '--' }}
+    <p class="text--label-regular text--gray-500">
+      {{ notification.date | notificationDate }}
     </p>
   </div>
-  <p class="text--label-regular text--gray-500">
-    {{ notification?.date | notificationDate }}
-  </p>
-</div>
+</ng-container>

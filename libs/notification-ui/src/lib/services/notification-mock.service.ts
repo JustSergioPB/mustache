@@ -12,7 +12,7 @@ export class NotificationMockService extends AbstractNotificationService {
   public getNofitications(): void {
     this._notifications$.next([
       {
-        icon: 'assets/icons/receipt-2.svg',
+        icon: 'bell',
         title: 'Daniel bought your library',
         description: 'Congratulations! Daniel just purchased the solo licence',
         date: new Date().toISOString(),
@@ -20,7 +20,7 @@ export class NotificationMockService extends AbstractNotificationService {
         color: 'primary',
       },
       {
-        icon: 'assets/icons/message-circle-2.svg',
+        icon: 'message-circle',
         title: 'Erika just contacted you',
         description: 'Hey! Sergio do you know when will we meet with William?',
         date: new Date().toISOString(),
@@ -28,7 +28,7 @@ export class NotificationMockService extends AbstractNotificationService {
         color: 'primary',
       },
       {
-        icon: 'assets/icons/tool.svg',
+        icon: 'monitor',
         title: 'Sysadmin service will be updated in 2hrs',
         description: '',
         date: new Date().toISOString(),
@@ -36,7 +36,7 @@ export class NotificationMockService extends AbstractNotificationService {
         color: 'warn',
       },
       {
-        icon: 'assets/icons/x.svg',
+        icon: 'alert-triangle',
         title: 'Your password has expired',
         description: 'Please change it as soon as posible',
         date: new Date().toISOString(),
@@ -44,7 +44,7 @@ export class NotificationMockService extends AbstractNotificationService {
         color: 'danger',
       },
       {
-        icon: 'assets/icons/check.svg',
+        icon: 'checkmark-circle',
         title: 'Your purchase was successful',
         description: 'Enjoy your new laptop!',
         date: new Date().toISOString(),
@@ -52,7 +52,7 @@ export class NotificationMockService extends AbstractNotificationService {
         color: 'success',
       },
       {
-        icon: 'assets/icons/activity.svg',
+        icon: 'activity',
         title:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ipsum at libero semper fermentum nec vel augue. Sed sagittis rhoncus augue.',
         description:

@@ -1,7 +1,7 @@
 @use '../../../../../theme/scss/settings';
 @use '../../../../../theme/scss/tools';
 
-:host(mustache-form-field) {
+:host {
   display: block;
   border-radius: settings.$border-radius-s;
   border: solid settings.$border-thickness-m settings.$gray-300;

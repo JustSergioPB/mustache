@@ -1,6 +1,6 @@
 @use '../../../../../theme/scss/settings';
 
-:host(mustache-stat) {
+:host {
   .header {
     display: flex;
     align-items: center;

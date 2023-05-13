@@ -12,7 +12,7 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-:host(mustache-code) {
+:host {
   display: block;
   margin-bottom: settings.$spacing-l;
 }

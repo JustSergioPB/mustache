@@ -4,7 +4,7 @@ $dropdown-width: 12rem;
 $button-width: 2.5rem;
 $header-horizontal-padding: settings.$spacing-m;
 
-:host(mustache-avatar-dropdown) {
+:host {
   position: relative;
 }
 

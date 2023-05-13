@@ -1,6 +1,6 @@
 @use '../../../../../theme/scss/settings';
 
-:host(mustache-toolbar) {
+:host {
   //position: fixed;
   width: 100%;
   display: flex;
@@ -27,7 +27,7 @@
 }
 
 @media (max-width: settings.$breakpoint-s) {
-  :host(mustache-toolbar) {
+  :host {
     padding: settings.$spacing-m settings.$margin;
     border-bottom: none;
     box-shadow: none;
