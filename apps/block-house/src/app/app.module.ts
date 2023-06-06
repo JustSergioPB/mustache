@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import {
   BannerComponent,
   ButtonDirective,
+  IconComponent,
   MenuIconComponent,
   NavbarComponent,
   ToolbarComponent,
@@ -46,6 +47,7 @@ import { AbstractSessionService, SessionMockService } from '@mustache/auth-ui';
     ProjectComponent,
     TooltipComponent,
     MenuIconComponent,
+    IconComponent
   ],
   providers: [
     {
